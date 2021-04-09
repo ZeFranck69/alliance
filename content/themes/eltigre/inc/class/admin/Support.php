@@ -25,7 +25,7 @@ if ( ! class_exists( 'Eltigre\Admin\Support' ) ) {
           'edit_pages', 
           'eltigre-support', 
           array( $this, 'display_form' ), 
-          get_template_directory_uri() . '/static/logo30x30.png',
+          'dashicons-superhero',
           99 
         );
       }
