@@ -3,8 +3,7 @@
 namespace Eltigre\Ajax;
 
 class Contact {
-
-
+    
     public function __construct() {
         add_action('wp_ajax_send_contact_mail', array( $this, 'send_contact_mail' ) );
         add_action('wp_ajax_nopriv_send_contact_mail', array( $this, 'send_contact_mail' ) );
