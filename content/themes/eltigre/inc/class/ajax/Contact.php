@@ -59,17 +59,17 @@ class Contact {
     private function get_fields() {
         return array(
             'firstname' => array(
-                'value' => sanitize_text_field( $_POST['firstname'] ),
+                'value' => isset( $_POST['firstname'] ) ? sanitize_text_field( $_POST['firstname'] ) : null,
                 'label' => __( 'Prénom', 'eltigre' ),
                 'required' => true
             ),
             'lastname' => array(
-                'value' => sanitize_text_field( $_POST['lastname'] ),
+                'value' => isset( $_POST['lastname'] ) ? sanitize_text_field( $_POST['lastname'] ) : null,
                 'label' => __( 'Nom', 'eltigre' ),
                 'required' => true
             ),
             'email' => array(
-                'value' => sanitize_email( $_POST['email'] ),
+                'value' => isset( T['email'] ) ? sanitize_email( $_POST['email'] ) : null,
                 'label' => __( 'Prénom', 'eltigre' ),
                 'required' => true
             )
