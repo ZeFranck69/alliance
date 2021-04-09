@@ -32,7 +32,7 @@ if ( ! class_exists( 'Eltigre\Admin\Support' ) ) {
 
       public static function display_form() { ?>
         <div class="container-fluid container">
-          <h1 class="title"><?php _e( 'Contactez-nous !', 'eltigre' ); ?></h1>
+          <h1 class="title"><?php _e( 'Contactez-nous', 'eltigre' ); ?></h1>
 
           <form id="support-form" method="post">
             <div class="input-wrapper">
