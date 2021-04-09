@@ -1,4 +1,5 @@
 <?php
+
 class Eltigre {
 
     public function __construct() {
