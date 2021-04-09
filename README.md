@@ -4,9 +4,13 @@ Le boilerplate utilisé pour démarrer un projet WP El Tigre.
 
 # Latest
 
-- Formulaire de contact
-- Formulaire support intégré au Dashboard
-- Sanitize filename (Suppression des accents à l'upload);
+- ACF/Wysiwyg color picker
+- Table prefix .env
+- Swiper enqueue par défaut (CDN)
+- Check si Yoast est installé pour éviter les meta description en double
+- Contact (Ajax, JS, Twig)
+- Formulaire support intégré au Dashboard (In progress)
+- Sanitize à l'upload;
 ## Installation
 
 Cloner le repository
