@@ -9,8 +9,11 @@ Le boilerplate utilisé pour démarrer un projet WP El Tigre.
 - Swiper enqueue par défaut (CDN)
 - Check si Yoast est installé pour éviter les meta description en double
 - Contact (Ajax, JS, Twig)
-- Formulaire support intégré au Dashboard (In progress)
-- Sanitize à l'upload;
+- Sanitize des noms de fichier à l'upload
+- composer.json WP Mail SMTP et Google Site Kit
+
+# In Development
+- Formulaire support intégré au Dashboard
 ## Installation
 
 Cloner le repository
