@@ -63,8 +63,26 @@ a {
   }
 }
 
+.descritpion,
+.description p{
+  
+  font-family: "Optima",sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: normal;
+  color: $white;
+
+  strong{
+    font-weight: bold;
+  }
+}
+
 // Modules
 
 @import 'modules/_header';
 @import 'modules/_footer';
 @import 'modules/_cta';
+
+// FLEXIBLES
+
+@import 'flexible/_splash';

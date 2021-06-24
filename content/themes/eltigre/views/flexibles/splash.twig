@@ -1,0 +1,9 @@
+<section id="{{ section.title|sanitize }}" class="splash" style="height: {{ section.height }}vh;">
+    <div class="splash-container">
+        <div class="splash__image" style="background-image:url('{{ section.background_image.url }}');background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }}; ">
+            <div class="splash-content description">
+                {{ section.description }}
+            </div>
+        </div>
+    </div>
+</section>
