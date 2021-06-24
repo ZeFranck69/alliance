@@ -1,5 +1,20 @@
 .contact {
     padding-top: 71px;
+    .title__wrapper{
+        align-items: flex-end;
+    }
+    .title__number{
+        line-height: 85px;
+    }
+    .title__container{
+        
+        .title__second-line{
+            font-weight: normal;
+            font-size: 64px;
+            line-height: 49px;
+            letter-spacing: 7.68px;
+        }
+    }
 }
 .contact__form{
     display: flex;
@@ -7,7 +22,7 @@
     justify-content: center;
     max-width: 100%;
     width: 100%;
-    margin: 20px 0;
+    margin: 132px 0 20px;
     padding:0 67.5px;
 }
 .textarea-wrapper,

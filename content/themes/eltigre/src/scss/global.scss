@@ -66,6 +66,8 @@ a {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  position: relative;
+  left: -34px;
 }
 
 .title__number{
