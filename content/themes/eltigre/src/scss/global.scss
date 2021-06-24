@@ -67,7 +67,7 @@ a {
   flex-flow: row wrap;
   align-items: center;
   position: relative;
-  left: -34px;
+  left: -40px;
 }
 
 .title__number{
@@ -78,6 +78,7 @@ a {
 }
 .title--montserrat{
   font-family: "Montserrat",sans-serif;
+  font-weight: 600;
 }
 .title--misto{
   font-family: "Misto", sans-serif;

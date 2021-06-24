@@ -1,0 +1,65 @@
+<section id="{{ section.title|sanitize }}" class="organisation">
+    <div class="organisation__image" style="background-image:url('{{ section.background_image.url }}'); background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }};">
+        <div class="title__wrapper">
+            <div class="title__number">
+                {{ section.number }}
+            </div>
+            <div class="title__container">
+                {% if section.first_line_title.title %}
+                <div class="title__first-line">
+                    <h2 class="title--{{ section.first_line_title.fonts }}" style="color: {{section.first_line_title.color}};">{{ section.first_line_title.title }}</h2>
+                </div>
+                {% endif %}
+                {% if section.second_line_title.title %}
+                <div class="title__second-line">
+                    <h2 class="title--{{ section.second_line_title.fonts }}" style="color: {{section.second_line_title.color}};">{{ section.second_line_title.title }}</h2>    
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="organisation__subtitle">
+            <h3 class="subtitle" style="color: {{ section.first_part.subtitle_color }};">
+                {{ section.first_part.subtitle }}
+            </h3>
+        </div>
+        <div class="main-wrapper organisation__first-part">
+            <div class="blocks">
+                {% for block in section.first_part.blocks %}
+                    <div class="block" style="background-color: {{ block.background_color }}; color:{{ block.text_color }};">
+                        <div class="block__title">
+                            <h4 class="title">{{ block.block_title }}</h4>
+                        </div>
+                        <div class="block__picto">
+                            <img src="" alt="" class="picto__image">
+                        </div>
+                        <div class="block__content">
+                            {% for paragraph in block.contents %}
+                            <div class="content__paragraph">
+                                {{ paragraph.paragraph }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="organisation__subtitle">
+        <h3 class="subtitle " style="color: {{ section.second_part.subtitle_color }};">
+            {{ section.second_part.subtitle }}
+        </h3>
+    </div>
+    <div class="main-wrapper organisation__second-part">
+        {% for block in section.second_part.blocks %}
+        <div class="block" style="background-color: {{ block.background_color }};">
+            <div class="block__title">
+                <h4 class="title">{{ block.block_title }}</h4>
+            </div>
+            <div class="block__content">
+                {{ block.content }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+</section>

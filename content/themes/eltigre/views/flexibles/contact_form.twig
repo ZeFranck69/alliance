@@ -4,15 +4,19 @@
             {{ section.number }}
         </div>
         <div class="title__container">
+            {% if section.first_line_title.title %}
             <div class="title__first-line">
                 <h2 class="title--{{ section.first_line_title.fonts }}">{{ section.first_line_title.title }}</h2>
             </div>
+            {% endif %}
+            {% if section.second_line_title.title %}
             <div class="title__second-line">
                 <h2 class="title--{{ section.second_line_title.fonts }}">{{ section.second_line_title.title }}</h2>    
             </div>
+            {% endif %}
         </div>
-	</div>
-	
+    </div>
+
 	<div class="main-wrapper">
 		<form class="contact__form">
 			<div class="contact__form--left">
@@ -45,7 +49,7 @@
 					</label>
 				</div>
 				
-				<button class="cta">
+				<button class="cta cta--gold cta--small">
 					{{ __( 'Envoyer', 'eltigre' ) }}
 				</button>
 			</div>

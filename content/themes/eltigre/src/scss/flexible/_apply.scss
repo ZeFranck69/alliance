@@ -30,6 +30,7 @@
 .apply-content{
     max-width: 631px;
     width: 100%;
+    margin-right: 90px;
 }
 .apply-content__subtitle{
     font-size: 16px;
@@ -57,6 +58,9 @@
             letter-spacing: 3px;
             font-family: "Montserrat",sans-serif;
             margin-bottom: 29px;
+            font-weight: bold;
+            text-align: center;
+            padding-right: 70px;
         }
         .column__events{
             padding-left: 35px;
