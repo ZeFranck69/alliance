@@ -1,0 +1,126 @@
+
+.apply {
+    padding:145px 0; 
+    
+    .title__container{
+        max-width: 250px;
+        width: 100%;
+
+        .title__first-line{
+            font-weight: normal;
+            font-size: 64px;
+            line-height: 58px;
+            letter-spacing: 7.68px;
+        }
+        .title__second-line{
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 29px;
+            letter-spacing: 3.36px;
+        }
+    }
+}
+.apply-content__wrapper{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -42px;
+}
+
+.apply-content{
+    max-width: 631px;
+    width: 100%;
+}
+.apply-content__subtitle{
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: 0.32px;
+    font-family: "Optima", sans-serif;
+    margin-bottom: 35px;
+    strong{
+        font-weight: bold;
+    }
+    em{
+        font-style: italic;
+    }
+
+}
+.apply-content__columns{
+    display: flex;
+    flex-flow: row wrap;
+    .columns__column{
+        max-width: 300px;
+        width: 100%;
+        .column-title{
+            font-size: 10px;
+            line-height: 12px;
+            letter-spacing: 3px;
+            font-family: "Montserrat",sans-serif;
+            margin-bottom: 29px;
+        }
+        .column__events{
+            padding-left: 35px;
+            position: relative;
+            .event{
+                .event-title{
+                    font-size: 13px;
+                    line-height: 16px;
+                    letter-spacing: 0.65px;
+                    font-family: "Optima",sans-serif;
+                    font-weight: normal;
+                    margin-bottom: 2px;
+                }
+                .event-date{
+                    font-size: 13px;
+                    line-height: 16px;
+                    letter-spacing: 0.65px;
+                    font-family: "Optima",sans-serif;
+                    font-weight: bold;
+                }
+                &:nth-child(2){
+                    margin: 30px 0;
+                }
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                background-image: url("../images/apply.jpg");;
+                background-position: center;
+                width: 5px;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+    .critera{
+        margin-bottom: 24px;
+    }
+    .column__critera{
+        .critera-description{
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.7px;
+            font-family: "Optima",sans-serif;
+            font-weight: normal;
+            margin-bottom: 15px;
+            max-width: 276px;
+        }
+        .event__cta-wrapper{
+
+            a{
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.6px;
+                font-family: "Optima",sans-serif;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    
+}

@@ -1,0 +1,69 @@
+<section id="{{ section.title|sanitize }}" class="apply" style="background-color: {{ section.background_color }};">
+    <div class="title__wrapper">
+        <div class="title__number">
+            {{ section.number }}
+        </div>
+        <div class="title__container">
+            <div class="title__first-line">
+                <h2 class="title--{{ section.first_line_title.fonts }}">{{ section.first_line_title.title }}</h2>
+            </div>
+            <div class="title__second-line">
+                <h2 class="title--{{ section.second_line_title.fonts }}">{{ section.second_line_title.title }}</h2>    
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper apply-content__wrapper">
+        <div class="apply-content">
+            <div class="apply-content__subtitle">
+                {{ section.subtitle }}
+            </div>
+            <div class="apply-content__columns">
+                <div class="columns__column">
+                    <div class="column-title">
+                        <h3 style="color: {{ section.left_column.color }};">{{ section.left_column.title }}</h3>
+                    </div>
+                    <div class="column__events">
+                        {% for event in section.left_column.events %}
+                        <div class="event">
+                            <div class="event-title">
+                                {{ event.title }}
+                            </div>
+                            <div class="event-date">
+                                {{ event.date }}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="columns__column">
+                    <div class="column-title">
+                        <h3 style="color: {{ section.right_column.color }};">{{ section.right_column.title }}</h3>
+                    </div>
+                    <div class="column__critera">
+                        <div class="critera">
+                            <div class="critera-description">
+                                {{ section.right_column.description }}
+                            </div>
+                            <div class="event__cta-wrapper">
+                                <a href=" {{ section.right_column.button.url }}" target=" {{ section.right_column.button.target }}" >
+                                    {{ section.right_column.button.title }}
+                                </a> 
+                            </div>
+                        </div>
+                        <div class="cta-wrapper">
+                            <a href="{{ section.link.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">{{ section.link.title }}</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .title__number{
+        color: {{ section.background_color }};
+        text-shadow: {{ section.number_color }} 1px 1px, {{ section.number_color }} -1px 1px, {{ section.number_color }} -1px -1px,{{ section.number_color }} 1px -1px;
+    }
+</style>

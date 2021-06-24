@@ -62,6 +62,27 @@ a {
     display: block;
   }
 }
+.title__wrapper{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.title__number{
+  font-family: "Misto", sans-serif;
+  font-size: 109px;
+  line-height: 131px;
+  letter-spacing: 10.9px;
+}
+.title--montserrat{
+  font-family: "Montserrat",sans-serif;
+}
+.title--misto{
+  font-family: "Misto", sans-serif;
+}
+.title--optima{
+  font-family: "Optima", sans-serif;
+}
 
 .descritpion,
 .description p{
@@ -86,3 +107,8 @@ a {
 // FLEXIBLES
 
 @import 'flexible/_splash';
+@import 'flexible/_about';
+@import 'flexible/_apply';
+@import 'flexible/_organisation';
+@import 'flexible/_members';
+@import 'flexible/_contact-form';

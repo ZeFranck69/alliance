@@ -1,4 +1,20 @@
 .cta {
   display: inline-block;
   cursor: pointer;
+  border-radius: 25%;
+}
+.cta--small{
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 1.32px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 5px 23px 4px;
+  text-transform: uppercase;
+}
+.cta--gold{
+  border: 1px solid $moutarde;
+  color: $moutarde;
+
 }

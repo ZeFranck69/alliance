@@ -1,35 +1,56 @@
 <section class="contact" style="background-color: {{ section.background_color }};">
-  	<form class="contact__form">
-		<div class="contact__input-wrapper input-wrapper">
-			<input id="lastname" name="lastname" type="text" class="contact__input required">
-			<label class="contact__label" for="lastname">
-				{{ __( 'Nom', 'eltigre' ) }}
-			</label>
-		</div>
+	<div class="title__wrapper">
+        <div class="title__number">
+            {{ section.number }}
+        </div>
+        <div class="title__container">
+            <div class="title__first-line">
+                <h2 class="title--{{ section.first_line_title.fonts }}">{{ section.first_line_title.title }}</h2>
+            </div>
+            <div class="title__second-line">
+                <h2 class="title--{{ section.second_line_title.fonts }}">{{ section.second_line_title.title }}</h2>    
+            </div>
+        </div>
+	</div>
+	
+	<div class="main-wrapper">
+		<form class="contact__form">
+			<div class="contact__form--left">
+				<div class="contact__input-wrapper input-wrapper">
+					<input id="lastname" name="lastname" type="text" class="contact__input required">
+					<label class="contact__label" for="lastname">
+						{{ __( 'Name', 'eltigre' ) }}
+					</label>
+				</div>
+		
+				<div class="contact__input-wrapper input-wrapper">
+					<input id="entreprise" name="entreprise" type="text" class="contact__input required">
+					<label class="contact__label" for="entreprise">
+						{{ __( 'Company', 'eltigre' ) }}
+					</label>
+				</div>
+		
+				<div class="contact__input-wrapper input-wrapper">
+					<input id="email" name="email" type="email" class="contact__input required">
+					<label class="contact__label" for="email">
+						{{ __( 'Email', 'eltigre' ) }}
+					</label>
+				</div>
+			</div>
+			<div class="contact__form--right">
+				<div class="input-wrapper textarea-wrapper">
+					<textarea id="message" name="message" class="required" type="text"></textarea>
+					<label class="contact__label" for="message">
+						{{ __( 'Message', 'eltigre' ) }}
+					</label>
+				</div>
+				
+				<button class="cta">
+					{{ __( 'Envoyer', 'eltigre' ) }}
+				</button>
+			</div>
+	
+		</form>
 
-		<div class="contact__input-wrapper input-wrapper">
-			<input id="firstname" name="firstname" type="text" class="contact__input required">
-			<label class="contact__label" for="firstname">
-				{{ __( 'Prénom', 'eltigre' ) }}
-			</label>
-		</div>
-
-		<div class="contact__input-wrapper input-wrapper">
-			<input id="email" name="email" type="email" class="contact__input required">
-			<label class="contact__label" for="email">
-				{{ __( 'Email', 'eltigre' ) }}
-			</label>
-		</div>
-
-		<div class="input-wrapper textarea-wrapper">
-			<textarea id="message" name="message" class="required" type="text"></textarea>
-			<label class="contact__label" for="message">
-				{{ __( 'Message', 'eltigre' ) }}
-			</label>
-		</div>
-
-		<button class="cta">
-			{{ __( 'Envoyer', 'eltigre' ) }}
-		</button>
- 	</form>
+	</div>
 </section>
