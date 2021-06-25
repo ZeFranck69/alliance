@@ -1,7 +1,17 @@
 <div class='footer__content'>
+    <div class="footer__column">
+        <nav class="footer-column__nav">
+            {% include "partial/menu.twig" with {'items':menu.footer.left.get_items} %}
+        </nav>
+    </div>
     <div class="footer__logo-wrapper">
         <a href="{{ site.url }}">
-            {{ logo }}
+            <img src="{{ options.footer_logo.url }}" alt="{{ options.footer_logo.alt }}">
         </a>
+    </div>
+    <div class="footer__column">            
+        <nav class="footer-column__nav">
+            {% include "partial/menu.twig" with {'items':menu.footer.right.get_items} %}
+        </nav>
     </div>
 </div>

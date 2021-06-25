@@ -54,7 +54,16 @@ if ( class_exists( 'Timber' ) ) {
 		public function add_to_context( $context ) {
 			
 			// Menus
-			$context['menu']  = new Timber\Menu();
+			$context['menu'] = array(
+				'header' => array(
+					'left' 	=> new Timber\Menu( 'menu-header-left' ),
+					'right' => new Timber\Menu( 'menu-header-right' )
+				),
+				'footer' => array(
+					'left' 	=> new Timber\Menu( 'menu-footer-left' ),
+					'right' => new Timber\Menu( 'menu-footer-right' )
+				),
+			);
 			
 			// Logo
 			$logo_ID 				= get_theme_mod( 'custom_logo' );
