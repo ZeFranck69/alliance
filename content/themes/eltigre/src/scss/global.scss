@@ -35,15 +35,15 @@ html {
   }
 
   @include laptop {
-    margin: 0 30px;
+    padding: 0 30px;
   }
 
   @include mobile {
-    margin: 0 15px;
+    padding: 0 15px;
   }
 
   @include tablet {
-    margin: 0 24px;
+    padding: 0 24px;
   }
 }
 
@@ -68,6 +68,7 @@ a {
   align-items: center;
   position: relative;
   left: -40px;
+  width: 100%;
 }
 
 .title__number{
@@ -86,7 +87,16 @@ a {
 .title--optima{
   font-family: "Optima", sans-serif;
 }
-
+.block__title{
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 3.6px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
 .descritpion,
 .description p{
   
@@ -99,6 +109,14 @@ a {
   strong{
     font-weight: bold;
   }
+}
+.description--small, 
+.description--small p{
+  font-family: "Optima",sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: normal;
+  letter-spacing: 0.8px;
 }
 
 // Modules

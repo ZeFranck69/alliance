@@ -1,21 +1,5 @@
-<section id="{{ section.title|sanitize }}" class="apply" style="background-color: {{ section.background_color }};">
-    <div class="title__wrapper">
-        <div class="title__number">
-            {{ section.number }}
-        </div>
-        <div class="title__container">
-            {% if section.first_line_title.title %}
-            <div class="title__first-line">
-                <h2 class="title--{{ section.first_line_title.fonts }}">{{ section.first_line_title.title }}</h2>
-            </div>
-            {% endif %}
-            {% if section.second_line_title.title %}
-            <div class="title__second-line">
-                <h2 class="title--{{ section.second_line_title.fonts }}">{{ section.second_line_title.title }}</h2>    
-            </div>
-            {% endif %}
-        </div>
-    </div>
+<section id="{{ section.first_line_title.title|sanitize }}" class="apply" style="background-color: {{ section.background_color }};">
+    {% include 'partial/title.twig' %}
     <div class="main-wrapper apply-content__wrapper">
         <div class="apply-content">
             {% if section.subtitle %}
@@ -25,9 +9,11 @@
             {% endif %}
             <div class="apply-content__columns">
                 <div class="columns__column">
+                    {% if section.left_column.title %}
                     <div class="column-title">
                         <h3 style="color: {{ section.left_column.color }};">{{ section.left_column.title }}</h3>
                     </div>
+                    {% endif %}
                     <div class="column__events">
                         {% for event in section.left_column.events %}
                         <div class="event">
@@ -43,9 +29,11 @@
                 </div>
 
                 <div class="columns__column">
+                    {% if section.right_column.title %}
                     <div class="column-title">
                         <h3 style="color: {{ section.right_column.color }};">{{ section.right_column.title }}</h3>
                     </div>
+                    {% endif %}
                     <div class="column__critera">
                         <div class="critera">
                             <div class="critera-description">
@@ -57,9 +45,11 @@
                                 </a> 
                             </div>
                         </div>
+                        {% if section.link.title %}
                         <div class="cta-wrapper">
                             <a href="{{ section.link.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">{{ section.link.title }}</a>
                         </div>
+                        {% endif %}
                     </div>
 
                 </div>
@@ -67,10 +57,3 @@
         </div>
     </div>
 </section>
-<style>
-    .title__number{
-        /* color: #FFFFFF00; */
-        color: {{ section.background_color }}; 
-        text-shadow: {{ section.number_color }} 1px 1px, {{ section.number_color }} -1px 1px, {{ section.number_color }} -1px -1px,{{ section.number_color }} 1px -1px;
-    }
-</style>

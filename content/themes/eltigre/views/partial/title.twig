@@ -1,0 +1,25 @@
+<div class="title__wrapper">
+    <div class="title__number title__number--{{ section.first_line_title.title }}">
+        {{ section.number }}
+    </div>
+    <div class="title__container">
+        {% if section.first_line_title.title %}
+        <div class="title__first-line">
+            <h2 class="title--{{ section.first_line_title.fonts }}" style="color: {{section.first_line_title.color}};">{{ section.first_line_title.title }}</h2>
+        </div>
+        {% endif %}
+        {% if section.second_line_title.title %}
+        <div class="title__second-line">
+            <h2 class="title--{{ section.second_line_title.fonts }}" style="color: {{section.second_line_title.color}};">{{ section.second_line_title.title }}</h2>    
+        </div>
+        {% endif %}
+    </div>
+</div>
+<style>
+    .title__number--{{ section.first_line_title.title }}{ 
+        /* color: {{ section.background_color }}; 
+        text-shadow: {{ section.number_color }} 1px 1px, {{ section.number_color }} -1px 1px, {{ section.number_color }} -1px -1px,{{ section.number_color }} 1px -1px; */
+        color: transparent;
+        -webkit-text-stroke: 1px {{ section.number_color }};
+    }
+</style>

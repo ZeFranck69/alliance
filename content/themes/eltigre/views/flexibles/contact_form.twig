@@ -1,21 +1,5 @@
 <section class="contact" style="background-color: {{ section.background_color }};">
-	<div class="title__wrapper">
-        <div class="title__number">
-            {{ section.number }}
-        </div>
-        <div class="title__container">
-            {% if section.first_line_title.title %}
-            <div class="title__first-line">
-                <h2 class="title--{{ section.first_line_title.fonts }}">{{ section.first_line_title.title }}</h2>
-            </div>
-            {% endif %}
-            {% if section.second_line_title.title %}
-            <div class="title__second-line">
-                <h2 class="title--{{ section.second_line_title.fonts }}">{{ section.second_line_title.title }}</h2>    
-            </div>
-            {% endif %}
-        </div>
-    </div>
+	{% include 'partial/title.twig' %}
 
 	<div class="main-wrapper">
 		<form class="contact__form">

@@ -1,0 +1,24 @@
+<section id="{{ section.first_line_title.title|sanitize }}" class="members">
+    <div class="members__image" style="background-image:url('{{ section.background_image.url }}'); background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }};background-repeat:no-repeat">
+
+        {% include 'partial/title.twig' %}
+
+        <div class="main-wrapper members-wrapper">
+            <div class="members__block" style="background-color: {{ section.first_part.background_color }};">
+                {% if section.first_part.hook %}
+                <div class="hook">
+                    {{ section.first_part.hook }}
+                </div>
+                {% endif %}
+                <div class="logos">
+                    {% for logo in section.first_part.logos %}
+                    <div class="logo">
+                        <img src="{{ logo.logo.url }}" alt="{{ logo.logo.alt }}" style="width: {{ logo.width }}px;">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
