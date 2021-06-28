@@ -1,5 +1,4 @@
 import gsap from 'gsap/gsap-core';
-import { addTransition } from '../utils/functions';
 import Device from './Device';
 
 export default class Menu {
@@ -9,9 +8,13 @@ export default class Menu {
 	constructor() {
 		this.header = document.getElementById('site-header');
 		this.body = document.querySelector('body');
-		this.toggleBtn = document.querySelector('.burger-menu__wrapper');
 
-		this.toggleBtn.addEventListener('click', this.toggleMenu.bind(this));
+		window.addEventListener('DOMContentLoaded', () => {
+			setTimeout(() => {
+				const toggleBtns = document.querySelectorAll('.burger-menu__wrapper');
+				toggleBtns.forEach((btn) => btn.addEventListener('click', this.toggleMenu.bind(this)));
+			}, 100);
+		});
 		const splash = document.querySelector('.splash');
 		if (splash) {
 			this.minScrollPositionBeforeSticky = splash.clientHeight - 100;
@@ -104,6 +107,6 @@ export default class Menu {
 			this.header.classList.add('disabled');
 			this.header.classList.remove('active');
 		}
-		this.toggleBtn.classList.toggle('cross');
+		document.querySelectorAll('.burger-menu__wrapper').forEach((btn) => btn.classList.toggle('cross'));
 	}
 }
