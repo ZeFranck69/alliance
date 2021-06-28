@@ -1,62 +1,92 @@
+import gsap from 'gsap/gsap-core';
 import { addTransition } from '../utils/functions';
 
 export default class Menu {
+	currentScrollPosition = 0;
+	minScrollPositionBeforeSticky = 0;
 
-    distanceBeforeSticky = window.innerHeight / 10;
+	constructor() {
+		this.header = document.getElementById('site-header');
 
-    constructor() {
+		const splash = document.querySelector('.splash');
+		if (splash) {
+			this.minScrollPositionBeforeSticky = splash.clientHeight - 100;
+		}
 
-        this.body = document.querySelector('body');
-        this.header = document.getElementById('site-header');
-        this.closeBtn = document.querySelector('.close-menu__wrapper');
-        this.toggleBtn = document.querySelector('.burger-menu__wrapper');
+		window.addEventListener('scroll', this.stickyMenu);
+	}
 
-        this.toggleBtn.addEventListener('click', () => this.toggleMenu());
-        this.closeBtn.addEventListener('click', () => this.toggleMenu('remove'));
-        window.addEventListener('scroll', this.stickyMenu);
+	stickyMenu = () => {
+		if (this.header) {
+			if (!this.isAnimating()) {
+				const isSticky = this.isSticky();
+				if (
+					// Add sticky if scroll position is passed minScrollPositionBeforeSticky and scroll direction is up and is not sticky
+					this.currentScrollPosition > this.minScrollPositionBeforeSticky &&
+					this.currentScrollPosition > window.scrollY &&
+					!isSticky
+				) {
+					this.stickMenu();
+				} else if (
+					// Remove sticky if scroll position is below minScrollPositionBeforeSticky or scroll direction is down and is currently sticky
+					(this.currentScrollPosition < this.minScrollPositionBeforeSticky ||
+						this.currentScrollPosition < window.scrollY) &&
+					isSticky
+				) {
+					this.unstickMenu();
+				}
+			}
 
-        // REMOVE NO SCROLL ON PAGE CHANGE
-        document.querySelector('body').classList.remove('no-scroll');
-        this.header.classList.remove('active');
+			this.currentScrollPosition = window.scrollY;
+		}
+	};
 
-        const menuItems = document.querySelectorAll('.menu-item, .site-logo, .footer_phone-number, .footer-contact');
-        menuItems.forEach(item => {
-            item.addEventListener('click', ev => {
-                const activeItems = document.querySelectorAll('.current_page_item');
-                activeItems.forEach(activeItem => activeItem.classList.remove('current_page_item'));
+	isSticky = () => this.header && this.header.classList.contains('sticky');
+	isAnimating = () => this.animating;
+	stickMenu() {
+		if (this.isSticky()) return;
 
-                const link = item.querySelector('a');
-                const newActivesLinks = document.querySelectorAll(`a[href="${link.href}"]`);
-                link.parentElement.classList.add('current_page_item');
-                newActivesLinks.forEach(item => item.parentElement.classList.add('current_page_item'));
+		this.animating = true;
+		this.header.classList.add('sticky');
+		gsap.fromTo(
+			this.header,
+			{ y: '-100%' },
+			{
+				y: 0,
+				duration: 0.25,
+				onComplete: () => {
+					this.animating = false;
+				},
+			}
+		);
+	}
 
-            })
+	unstickMenu() {
+		this.animating = true;
+		gsap.fromTo(
+			this.header,
+			{
+				y: 0,
+			},
+			{
+				y: '-100%',
+				duration: 0.25,
+				onComplete: () => {
+					this.animating = false;
+					this.header.style.transform = null;
+					this.header.classList.remove('sticky');
+				},
+			}
+		);
+	}
 
-        });
-        const hashtagLinks = document.querySelectorAll('a[href*="#"]');
-        hashtagLinks.forEach(link => link.parentElement.classList.remove('current_page_item'));
+	toggleMenu = (action = 'toggle') => {
+		const VALID_ACTIONS = ['add', 'remove', 'toggle'];
+		if (!VALID_ACTIONS.includes(action))
+			return console.error(`"${action}" is not allowed. Allowed actions: ${VALID_ACTIONS.join(' ')}`);
 
-    }
-
-    stickyMenu = () => {
-        let header = this.header;
-        if (window.pageYOffset > this.distanceBeforeSticky && !this.isSticky()) {
-            header.classList.add('sticky');
-        }
-        else if (window.pageYOffset < this.distanceBeforeSticky && this.isSticky()) {
-            header.classList.remove('sticky');
-        }
-    };
-
-    isSticky = () => this.header.classList.contains('sticky');
-
-    toggleMenu = (action = 'toggle') => {
-        const VALID_ACTIONS = ['add', 'remove', 'toggle'];
-        if (!VALID_ACTIONS.includes(action))
-            return console.error(`"${action}" is not allowed. Allowed actions: ${VALID_ACTIONS.join(' ')}`);
-
-        this.body.classList[action]('no-scroll');
-        this.header.classList[action]('active');
-        this.header.setAttribute('aria-hidden', !this.header.classList.contains('active'));
-    }
+		this.body.classList[action]('no-scroll');
+		this.header.classList[action]('active');
+		this.header.setAttribute('aria-hidden', !this.header.classList.contains('active'));
+	};
 }

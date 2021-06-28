@@ -64,10 +64,8 @@
     "webpackbar": "^5.0.0-3"
   },
   "dependencies": {
-    "gsap": "^3.6.0",
+    "gsap": "^3.7.0",
     "postcss-preset-env": "^6.7.0",
-    "scrollmagic": "^2.0.8",
-    "scrollmagic-plugin-gsap": "^1.0.4",
     "swup": "^2.0.14"
   }
 }
