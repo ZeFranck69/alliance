@@ -7949,7 +7949,8 @@ var App = /*#__PURE__*/function () {
     _classCallCheck(this, App);
 
     this.revealManager();
-    this.anchorManagers();
+    this.anchorManager();
+    this.modalManager();
     this.menu = new _class_Menu__WEBPACK_IMPORTED_MODULE_3__.default();
     (0,_Flexibles__WEBPACK_IMPORTED_MODULE_2__.default)();
   }
@@ -7975,27 +7976,74 @@ var App = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "anchorManagers",
-    value: function anchorManagers(ev) {
+    key: "anchorManager",
+    value: function anchorManager(ev) {
       var links = document.querySelectorAll('a');
       links.forEach(function (link) {
         var anchor = link.href.replace(window.location.href, '');
 
-        if (anchor.indexOf('#') === 0) {
-          link.removeAttribute('href');
-          link.addEventListener('click', function (ev) {
-            ev.preventDefault();
-            var element = document.querySelector(anchor);
+        if (anchor.indexOf('#') === 0 && anchor.length > 1) {
+          var element = document.querySelector(anchor);
 
-            if (element) {
+          if (element) {
+            link.removeAttribute('href');
+            link.addEventListener('click', function (ev) {
+              ev.preventDefault();
               gsap__WEBPACK_IMPORTED_MODULE_0__.default.to(window, {
                 scrollTo: anchor,
                 duration: 0.5,
                 ease: 'power2.out'
               });
-            }
-          });
+            });
+          }
         }
+      });
+    }
+  }, {
+    key: "modalManager",
+    value: function modalManager() {
+      var modalTriggers = document.querySelectorAll('[data-popup]');
+      modalTriggers.forEach(function (trigger) {
+        var popup = trigger.dataset.popup;
+
+        try {
+          trigger.addEventListener('click', function (ev) {
+            ev.stopPropagation();
+            document.querySelector(popup).classList.add('active');
+            document.body.addEventListener('click', closeModal);
+          });
+        } catch (error) {}
+      });
+      var modals = document.querySelectorAll('.modal');
+      modals.forEach(function (modal) {
+        var clickedInsideModal = false;
+
+        function closeModal() {
+          modal.classList.remove('active');
+        }
+
+        var closeButton = modal.querySelector('.close');
+        var wrapper = modal.querySelector('.modal-wrapper');
+
+        if (wrapper) {
+          wrapper.addEventListener('click', function (ev) {
+            ev.stopPropagation();
+            clickedInsideModal = true;
+          });
+        } // CLOSE EVENTS
+
+
+        if (closeButton) {
+          closeButton.addEventListener('click', closeModal);
+        }
+
+        document.body.addEventListener('click', function () {
+          if (!clickedInsideModal) closeModal();
+          clickedInsideModal = false;
+        });
+        document.body.addEventListener('keydown', function (ev) {
+          if (ev.key === 'Escape') closeModal();
+        });
       });
     }
   }]);

@@ -93,6 +93,9 @@ if ( class_exists( 'Timber' ) ) {
 			// SWIPER
 			wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
 			wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js' );
+
+			// MIDNIGHT
+			wp_enqueue_script( 'midnight-js', get_template_directory_uri() . '/inc/vendor/js/midnight.jquery.min.js', array( 'jquery' ) );
 			
 			//STYLES
 			wp_enqueue_style( 'all', get_template_directory_uri() . '/inc/vendor/css/all.min.css' );

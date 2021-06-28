@@ -1,3 +1,4 @@
+
 <section id="{{ section.first_line_title.title|sanitize }}" class="apply" style="background-color: {{ section.background_color }};">
     {% include 'partial/title.twig' %}
     <div class="main-wrapper apply-content__wrapper">
@@ -40,9 +41,17 @@
                                 {{ section.right_column.description }}
                             </div>
                             <div class="event__cta-wrapper">
-                                <a href=" {{ section.right_column.button.url }}" target=" {{ section.right_column.button.target }}" >
+                            {% if section.right_column.type == 'link' %}
+                                <a href="{{ section.right_column.button.url }}" target="{{ section.right_column.button.target }}">
                                     {{ section.right_column.button.title }}
                                 </a> 
+                            {% elseif section.right_column.type == 'popup' %}
+                                <a data-popup=":scope .modal">
+                                    POPUP
+                                </a>
+
+                                {% include 'partial/modal.twig' with { content: section.right_column.modal_text } %}
+                            {% endif %}
                             </div>
                         </div>
                         {% if section.link.title %}
