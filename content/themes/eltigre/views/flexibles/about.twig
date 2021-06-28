@@ -38,6 +38,11 @@
                                     </div>
                                 {% endfor %}
                             </div> 
+                            {% if block.add_cta_mobile %}
+                            <div class="second-column__cta-wrapper">
+                                <a href="{{ section.first_column.link.url }}" class="cta--join-us">{{ section.first_column.link.title }}</a>
+                            </div>
+                            {% endif %}
                             {% if block.source %}
                             <div class="block__source">
                                 {{ block.source }}
