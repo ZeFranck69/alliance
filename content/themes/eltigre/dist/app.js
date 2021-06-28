@@ -82,19 +82,10 @@ var Menu = /*#__PURE__*/function () {
       return _this.animating;
     });
 
-    _defineProperty(this, "toggleMenu", function () {
-      var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'toggle';
-      var VALID_ACTIONS = ['add', 'remove', 'toggle'];
-      if (!VALID_ACTIONS.includes(action)) return console.error("\"".concat(action, "\" is not allowed. Allowed actions: ").concat(VALID_ACTIONS.join(' ')));
-
-      _this.body.classList[action]('no-scroll');
-
-      _this.header.classList[action]('active');
-
-      _this.header.setAttribute('aria-hidden', !_this.header.classList.contains('active'));
-    });
-
     this.header = document.getElementById('site-header');
+    this.body = document.querySelector('body');
+    this.toggleBtn = document.querySelector('.burger-menu__wrapper');
+    this.toggleBtn.addEventListener('click', this.toggleMenu.bind(this));
     var splash = document.querySelector('.splash');
 
     if (splash) {
@@ -140,6 +131,30 @@ var Menu = /*#__PURE__*/function () {
           _this3.header.classList.remove('sticky');
         }
       });
+    } // toggleMenu = (action = 'toggle') => {
+    // 	const VALID_ACTIONS = ['add', 'remove', 'toggle'];
+    // 	if (!VALID_ACTIONS.includes(action))
+    // 		return console.error(`"${action}" is not allowed. Allowed actions: ${VALID_ACTIONS.join(' ')}`);
+    // 	this.body.classList[action]('no-scroll');
+    // 	this.header.classList[action]('active');
+    // 	this.header.setAttribute('aria-hidden', !this.header.classList.contains('active'));
+    // };
+
+  }, {
+    key: "toggleMenu",
+    value: function toggleMenu(e) {
+      e.stopPropagation();
+      this.body.classList.toggle('no-scroll'); // this.header.classList.toggle('active');
+
+      if (this.header.classList.contains('disabled')) {
+        this.header.classList.remove('disabled');
+        this.header.classList.add('active');
+      } else {
+        this.header.classList.add('disabled');
+        this.header.classList.remove('active');
+      }
+
+      this.toggleBtn.classList.toggle('cross');
     }
   }]);
 

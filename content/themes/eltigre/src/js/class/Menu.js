@@ -7,7 +7,10 @@ export default class Menu {
 
 	constructor() {
 		this.header = document.getElementById('site-header');
+		this.body = document.querySelector('body');
+		this.toggleBtn = document.querySelector('.burger-menu__wrapper');
 
+		this.toggleBtn.addEventListener('click', this.toggleMenu.bind(this));
 		const splash = document.querySelector('.splash');
 		if (splash) {
 			this.minScrollPositionBeforeSticky = splash.clientHeight - 100;
@@ -80,13 +83,26 @@ export default class Menu {
 		);
 	}
 
-	toggleMenu = (action = 'toggle') => {
-		const VALID_ACTIONS = ['add', 'remove', 'toggle'];
-		if (!VALID_ACTIONS.includes(action))
-			return console.error(`"${action}" is not allowed. Allowed actions: ${VALID_ACTIONS.join(' ')}`);
+	// toggleMenu = (action = 'toggle') => {
+	// 	const VALID_ACTIONS = ['add', 'remove', 'toggle'];
+	// 	if (!VALID_ACTIONS.includes(action))
+	// 		return console.error(`"${action}" is not allowed. Allowed actions: ${VALID_ACTIONS.join(' ')}`);
 
-		this.body.classList[action]('no-scroll');
-		this.header.classList[action]('active');
-		this.header.setAttribute('aria-hidden', !this.header.classList.contains('active'));
-	};
+	// 	this.body.classList[action]('no-scroll');
+	// 	this.header.classList[action]('active');
+	// 	this.header.setAttribute('aria-hidden', !this.header.classList.contains('active'));
+	// };
+	toggleMenu(e) {
+		e.stopPropagation();
+		this.body.classList.toggle('no-scroll');
+		// this.header.classList.toggle('active');
+		if (this.header.classList.contains('disabled')) {
+			this.header.classList.remove('disabled');
+			this.header.classList.add('active');
+		} else {
+			this.header.classList.add('disabled');
+			this.header.classList.remove('active');
+		}
+		this.toggleBtn.classList.toggle('cross');
+	}
 }
