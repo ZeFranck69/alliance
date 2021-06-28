@@ -704,10 +704,12 @@ a {
     font-size: 22px;
   }
 }
-.midnightHeader.light .burger-menu__line {
+.midnightHeader .midnightInner {
+  overflow: hidden !important;
+}
+.midnightHeader.dark .burger-menu__line {
   background-color: #fff;
 }
-
 .midnightHeader.light .burger-menu__line {
   background-color: #000;
 }

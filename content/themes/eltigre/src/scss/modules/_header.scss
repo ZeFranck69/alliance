@@ -355,9 +355,20 @@
 
 
 // MIDNIGHT
-.midnightHeader.light .burger-menu__line {
-    background-color: $white;
+.midnightHeader {
+    .midnightInner {
+        overflow: hidden !important;
+    }
+    
+    &.dark {
+        .burger-menu__line {
+            background-color: $white;
+        }
+    }
+
+    &.light {
+        .burger-menu__line {
+            background-color: $black;
+        }
+    }
 }
-.midnightHeader.light .burger-menu__line {
-      background-color: $black;
-  }
