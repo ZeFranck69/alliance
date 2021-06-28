@@ -149,13 +149,11 @@
 @media screen and (max-width: 1024px){
   
   #site-header {
+      
         &.sticky{
             .site__burger-menu{
                 .burger-menu__wrapper{
 
-                    .burger-menu__line{
-                        background-color: $black;
-                    }
                 } 
 
             } 
@@ -251,6 +249,7 @@
       display: block;
       position: relative;
       width: 80%;
+      height: 100px;
       margin: auto;
       .return--link{
           display: none;
@@ -352,3 +351,13 @@
       }
   }
 }
+
+
+
+// MIDNIGHT
+.midnightHeader.light .burger-menu__line {
+    background-color: $white;
+}
+.midnightHeader.light .burger-menu__line {
+      background-color: $black;
+  }

@@ -23,6 +23,56 @@ var FlexiblesInit = function FlexiblesInit() {
 
 /***/ }),
 
+/***/ "./src/js/class/Device.js":
+/*!********************************!*\
+  !*** ./src/js/class/Device.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Device; }
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Device = /*#__PURE__*/function () {
+  function Device() {
+    _classCallCheck(this, Device);
+  }
+
+  _createClass(Device, null, [{
+    key: "isDesktop",
+    value: function isDesktop() {
+      return window.innerWidth >= 1024;
+    }
+  }, {
+    key: "isMobile",
+    value: function isMobile() {
+      return window.innerWidth < 768;
+    }
+  }, {
+    key: "isTablet",
+    value: function isTablet() {
+      return window.innerWidth < 1024;
+    }
+  }, {
+    key: "isTouchDevice",
+    value: function isTouchDevice() {
+      return window.DocumentTouch && document instanceof DocumentTouch;
+    }
+  }]);
+
+  return Device;
+}();
+
+
+
+/***/ }),
+
 /***/ "./src/js/class/Menu.js":
 /*!******************************!*\
   !*** ./src/js/class/Menu.js ***!
@@ -33,8 +83,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ Menu; }
 /* harmony export */ });
-/* harmony import */ var gsap_gsap_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/gsap-core */ "./node_modules/gsap/gsap-core.js");
+/* harmony import */ var gsap_gsap_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/gsap-core */ "./node_modules/gsap/gsap-core.js");
 /* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/functions */ "./src/js/utils/functions.js");
+/* harmony import */ var _Device__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Device */ "./src/js/class/Device.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -42,6 +93,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -57,7 +109,7 @@ var Menu = /*#__PURE__*/function () {
     _defineProperty(this, "minScrollPositionBeforeSticky", 0);
 
     _defineProperty(this, "stickyMenu", function () {
-      if (_this.header) {
+      if (_this.header && _Device__WEBPACK_IMPORTED_MODULE_1__.default.isDesktop()) {
         if (!_this.isAnimating()) {
           var isSticky = _this.isSticky();
 
@@ -103,7 +155,7 @@ var Menu = /*#__PURE__*/function () {
       if (this.isSticky()) return;
       this.animating = true;
       this.header.classList.add('sticky');
-      gsap_gsap_core__WEBPACK_IMPORTED_MODULE_1__.default.fromTo(this.header, {
+      gsap_gsap_core__WEBPACK_IMPORTED_MODULE_2__.default.fromTo(this.header, {
         y: '-100%'
       }, {
         y: 0,
@@ -119,7 +171,7 @@ var Menu = /*#__PURE__*/function () {
       var _this3 = this;
 
       this.animating = true;
-      gsap_gsap_core__WEBPACK_IMPORTED_MODULE_1__.default.fromTo(this.header, {
+      gsap_gsap_core__WEBPACK_IMPORTED_MODULE_2__.default.fromTo(this.header, {
         y: 0
       }, {
         y: '-100%',

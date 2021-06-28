@@ -507,9 +507,6 @@ a {
 
 /****************** MEDIA QUIERIES HEADER ************/
 @media screen and (max-width: 1024px) {
-  #site-header.sticky .site__burger-menu .burger-menu__wrapper .burger-menu__line {
-    background-color: #000;
-  }
   #site-header .header-content {
     left: 0;
     margin: 0;
@@ -608,6 +605,7 @@ a {
     display: block;
     position: relative;
     width: 80%;
+    height: 100px;
     margin: auto;
   }
   .header--mobile .return--link {
@@ -706,6 +704,14 @@ a {
     font-size: 22px;
   }
 }
+.midnightHeader.light .burger-menu__line {
+  background-color: #fff;
+}
+
+.midnightHeader.light .burger-menu__line {
+  background-color: #000;
+}
+
 /*
 #site-footer {
 

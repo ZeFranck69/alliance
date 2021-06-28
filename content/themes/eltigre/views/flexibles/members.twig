@@ -1,10 +1,10 @@
-<section id="{{ section.first_line_title.title|sanitize }}" class="members">
+<section id="{{ section.first_line_title.title|sanitize }}" class="members" data-midnight="dark">
     <div class="members__image" style="background-image:url('{{ section.background_image.url }}'); background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }};background-repeat:no-repeat">
 
         {% include 'partial/title.twig' %}
 
         <div class="main-wrapper members-wrapper">
-            <div class="members__block" style="background-color: {{ section.first_part.background_color }};">
+            <div class="members__block" style="background-color: {{ section.first_part.background_color }};" data-midnight="light">
                 {% if section.first_part.hook %}
                 <div class="hook">
                     {{ section.first_part.hook }}
