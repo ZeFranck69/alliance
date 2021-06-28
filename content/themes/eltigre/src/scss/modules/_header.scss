@@ -58,16 +58,18 @@
               max-width: 100%;
               width: 100%;
               li{
-                  letter-spacing: 1px;
                   position: relative;
                   a{
-                      font-size: 16px;
-                      font-family: "optima", sans-serif;
+                      font-family: "Montserra", sans-serif;
                       position: relative;
-                      color: $white;
-                      font-size: 16px;
+                      color: $grey;
+                      font-size: 12px;
+                      line-height: 14px;
+                      letter-spacing: 1.2px;
+                      transition: color .35s ease;
                       &:hover{
-                          color: blue;
+                          color: $moutarde;
+
                       }
                   }
                   &::after{

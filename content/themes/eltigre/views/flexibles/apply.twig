@@ -29,13 +29,13 @@
                 </div>
 
                 <div class="columns__column">
-                    {% if section.right_column.title %}
-                    <div class="column-title">
-                        <h3 style="color: {{ section.right_column.color }};">{{ section.right_column.title }}</h3>
-                    </div>
-                    {% endif %}
                     <div class="column__critera">
                         <div class="critera">
+                            {% if section.right_column.title %}
+                            <div class="column-title">
+                                <h3 style="color: {{ section.right_column.color }};">{{ section.right_column.title }}</h3>
+                            </div>
+                            {% endif %}
                             <div class="critera-description">
                                 {{ section.right_column.description }}
                             </div>
