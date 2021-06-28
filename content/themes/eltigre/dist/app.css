@@ -512,9 +512,6 @@ a {
   #site-header.sticky {
     height: 78px;
   }
-  #site-header.sticky .site__burger-menu .burger-menu__wrapper .burger-menu__line {
-    background-color: #000;
-  }
   #site-header .header-content {
     left: 0;
     margin: 0;
@@ -616,6 +613,7 @@ a {
     display: block;
     position: relative;
     width: 80%;
+    height: 100px;
     margin: auto;
   }
   .header--mobile .return--link {
@@ -714,6 +712,16 @@ a {
     font-size: 22px;
   }
 }
+.midnightHeader .midnightInner {
+  overflow: hidden !important;
+}
+.midnightHeader.dark .burger-menu__line {
+  background-color: #fff;
+}
+.midnightHeader.light .burger-menu__line {
+  background-color: #000;
+}
+
 /*
 #site-footer {
 
@@ -842,6 +850,69 @@ a {
 .social__picto {
   color: #D6D6D6;
   margin: 0 10px;
+}
+
+[data-popup] {
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 100vh;
+  width: 100vw;
+}
+.modal.active {
+  z-index: 9999;
+  left: 0;
+}
+.modal .modal-wrapper {
+  overflow: auto;
+  margin: 100px auto;
+  max-width: 1200px;
+}
+.modal .modal-content {
+  background-color: #fff;
+  padding: 45px;
+  position: relative;
+}
+.modal .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 30px;
+  cursor: pointer;
+}
+.modal .close:before, .modal .close:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  width: 50%;
+  background-color: #000;
+}
+.modal .close:before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modal .close:after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .splash {

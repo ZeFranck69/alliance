@@ -1,5 +1,6 @@
 import gsap from 'gsap/gsap-core';
 import { addTransition } from '../utils/functions';
+import Device from './Device';
 
 export default class Menu {
 	currentScrollPosition = 0;
@@ -20,7 +21,7 @@ export default class Menu {
 	}
 
 	stickyMenu = () => {
-		if (this.header) {
+		if (this.header && Device.isDesktop()) {
 			if (!this.isAnimating()) {
 				const isSticky = this.isSticky();
 				if (
