@@ -145,37 +145,21 @@
   padding-left: 30px;
   padding-right: 30px;
 }
-.xoo-wsc-basket{
-  display: none !important;
-}
 /****************** MEDIA QUIERIES HEADER ************/
-@media screen and (max-width: 1110px){
-  .menu-cart--mobile {
-      right: auto;
-      left: 0px;
-      top: 8px;
-      // display: none; // A enlever une fois l'eshop validé
-      .cart__item{
-          position: relative;
-      }
-      svg {
-          height: 29px;
-          width: 29px;
-          fill: currentColor;
-      }
-      .cart-items__count{
-          position: absolute;
-          top: 8px;
-          right: -2px;
-          font-size: 16px;
-          background-color: blue;
-          padding: 3px 6px;
-          border-radius: 50px;
-          color: white;
-      }
-  }
-  #site-header{
+@media screen and (max-width: 1024px){
+  
+  #site-header {
+        &.sticky{
+            .site__burger-menu{
+                .burger-menu__wrapper{
 
+                    .burger-menu__line{
+                        background-color: $black;
+                    }
+                } 
+
+            } 
+        }
       .header-content{
           left: 0;
           margin: 0;
@@ -183,7 +167,6 @@
           transition: opacity .4s ease;
           width: 100%;
           opacity: 0;
-          transform: translateX(-100%);
           align-items: center;
           justify-content: center;
           background-color: transparent;
@@ -197,9 +180,16 @@
               ul{
                   flex-flow: column wrap;
                   text-align: center;
+                  
                   li{
                       text-align: center;
-                      margin: 12px auto;
+                      margin: 0 auto;
+                      padding: 16px 0;
+                      border-bottom: 1px solid;
+                      max-width: 195px;
+                        width: 100%;
+                        margin: 0 auto;
+                        
                       a{
                           color: black;
                           font-size: 22px;
@@ -219,6 +209,11 @@
                       }
                   }
               }
+              .nav--right__links{
+                  li:last-child{
+                      border-bottom: 0;
+                  }
+              }
           }
           .main-logo{
               display: none;
@@ -229,21 +224,27 @@
           .header-content{
               display: flex;
               opacity: 1;
-              transform: translateX(0);
               height: 100%;
               padding-top: 100px;
-              transition: opacity 1s ease, transform 1s ease;
+              transition: opacity 1s ease, background-color 1s ease;
+              background-color: rgba(255, 255, 255, 0.9) ;
+              height: 100vh;
+          }
+          .socials{
+              display: none;
           }
       }
       &.disabled{
           .header-content{
               display: flex;
               opacity: 0;
-              transform: translateX(-100%);
-              height: 100%;
-              transition: opacity 1s ease, transform 1s ease;
+              height: 100vh;
+              transition: opacity 1s ease, background-color 1s ease;
               padding-top: 100px;
           }
+          .socials{
+            display: none;
+        }
       }
   }
   .header--mobile {
@@ -272,10 +273,10 @@
       right: -5%;
       .burger-menu__wrapper{
           position: relative;
-          top: 40px;
+          top: 18px;
           right: 0px;
-          width: 34px;
-          height: 20px;
+          width: 33px;
+          height: 27px;
           margin-left: 16px;
           transform: translateY(-50%);
           cursor: pointer;
@@ -286,28 +287,34 @@
               height: 3px;
               transition: all 0.2s ease;
               transform: translateY(-50%);
-              background-color: #316F84;
+              background-color: $white;
               border-radius: 50px ;
 
               &:first-child{
-                  top: 0%;
+                top: 0%;
               }
               &:nth-child(2){
-                  top: 50%;
+                top: 33%;
+              }
+              &:nth-child(3){
+                top: 67%;
               }
               &:last-child{
-                  top: 100%;
+                top: 100%;
               }
           }
           &.cross{
               .burger-menu__line{
-
+                background-color: $black;
                   &:first-child{
                       top: 45%;
                       transform: rotate(45deg);
                   }
                   &:nth-child(2){
                       display: none;
+                  }
+                  &:nth-child(3){
+                    display: none;
                   }
                   &:last-child{
                       top: 45%;
@@ -325,8 +332,9 @@
 }
 @media screen and (max-height: 770px){
   #site-header.active{
-
       .header-content {
+          background-color: $white;
+          opacity: .4;
           padding-top:100px;
           .header--menu-container{
               
