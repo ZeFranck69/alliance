@@ -16,5 +16,10 @@
 .cta--gold{
   border: 1px solid $moutarde;
   color: $moutarde;
-
+  transition: all .35s ease;
+  &:hover{
+    background-color: $moutarde;
+    color: $white;
+    
+  }
 }
