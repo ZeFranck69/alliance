@@ -134,11 +134,13 @@ var Menu = /*#__PURE__*/function () {
 
     this.header = document.getElementById('site-header');
     this.body = document.querySelector('body');
-    window.addEventListener('load', function () {
-      var toggleBtns = document.querySelectorAll('.burger-menu__wrapper');
-      toggleBtns.forEach(function (btn) {
-        return btn.addEventListener('click', _this.toggleMenu.bind(_this));
-      });
+    window.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        var toggleBtns = document.querySelectorAll('.burger-menu__wrapper');
+        toggleBtns.forEach(function (btn) {
+          return btn.addEventListener('click', _this.toggleMenu.bind(_this));
+        });
+      }, 100);
     });
     var splash = document.querySelector('.splash');
 

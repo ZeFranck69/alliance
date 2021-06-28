@@ -9,9 +9,11 @@ export default class Menu {
 		this.header = document.getElementById('site-header');
 		this.body = document.querySelector('body');
 
-		window.addEventListener('load', () => {
-			const toggleBtns = document.querySelectorAll('.burger-menu__wrapper');
-			toggleBtns.forEach((btn) => btn.addEventListener('click', this.toggleMenu.bind(this)));
+		window.addEventListener('DOMContentLoaded', () => {
+			setTimeout(() => {
+				const toggleBtns = document.querySelectorAll('.burger-menu__wrapper');
+				toggleBtns.forEach((btn) => btn.addEventListener('click', this.toggleMenu.bind(this)));
+			}, 100);
 		});
 		const splash = document.querySelector('.splash');
 		if (splash) {
