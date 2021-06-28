@@ -4,6 +4,11 @@
             {% include 'partial/menu.twig' with {'items': menu.header.left.get_items } %}
         </nav>
     </div>
+    <div class='main-logo'>
+        <a class='logo--link' href='{{ site.url }}'>
+            <img src="{{ options.logo_alternatif.url }}" alt="{{ options.logo_alternatif.alt }}">
+        </a>
+    </div>
     <div class='header--menu-container right'>
        
         <nav class='nav--right__links'>
