@@ -35,7 +35,7 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 100px;
+        height: 126px;
 
         background-color: $white;
 
@@ -44,13 +44,14 @@
         }
 
         .header-content {
-            height: 100px;
+            height: 126px;
+            .main-logo{
+                max-width: 95px;
+                width: 100%;
+                display: block;
+            }
         }
 
-        .main-logo{
-            max-width: 190px;
-            width: 100%;
-        }
   }
   .header-content {
       display: flex;
@@ -130,7 +131,8 @@
           }
       }
       .main-logo{
-          max-width: 240px;
+          display: none;
+          max-width: 100px;
           width: 100%;
           transition: all .2s ease-in;
           img{
@@ -150,6 +152,7 @@
   
   #site-header {
         &.sticky{
+            height: 78px;
             .site__burger-menu{
                 .burger-menu__wrapper{
 
@@ -226,9 +229,13 @@
               opacity: 1;
               height: 100%;
               padding-top: 100px;
-              transition: opacity 1s ease, background-color 1s ease;
+              transition: opacity .35s ease, background-color .35s ease;
               background-color: rgba(255, 255, 255, 0.9) ;
               height: 100vh;
+
+              .main-logo{
+                  display: none;
+              }
           }
           .socials{
               display: none;
@@ -239,7 +246,7 @@
               display: flex;
               opacity: 0;
               height: 100vh;
-              transition: opacity 1s ease, background-color 1s ease;
+              transition: opacity .35s ease, background-color .35s ease;
               padding-top: 100px;
           }
           .socials{

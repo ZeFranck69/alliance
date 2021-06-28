@@ -17,6 +17,7 @@
   border: 1px solid $moutarde;
   color: $moutarde;
   transition: all .35s ease;
+  background-color: transparent;
   &:hover{
     background-color: $moutarde;
     color: $white;
@@ -38,6 +39,7 @@
   text-align: center;
   cursor: pointer;
   transition: all .35s ease;
+  background-color: transparent;
   &:hover{
     color: $white;
     background-color: $moutarde;

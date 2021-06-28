@@ -1,4 +1,9 @@
-<div class='footer__content'>
+<div class='footer__content main-wrapper'>
+    <div class="footer__logo-wrapper footer__logo-wrapper--mobile">
+        <a href="{{ site.url }}">
+            <img src="{{ options.footer_logo.url }}" alt="{{ options.footer_logo.alt }}">
+        </a>
+    </div>
     <div class="footer__column">
         <nav class="footer-column__nav">
             {% include "partial/menu.twig" with {'items':menu.footer.left.get_items} %}
@@ -12,6 +17,11 @@
     <div class="footer__column">            
         <nav class="footer-column__nav">
             {% include "partial/menu.twig" with {'items':menu.footer.right.get_items} %}
+            {% include 'partial/socials.twig' %}
         </nav>
     </div>
+    <div class="dev">
+        {{ options.developp_by }} <a href="{{ options.dev_website.url }}" target="{{ options.dev_website.target }}">{{ options.dev_website.title }}</a>
+    </div>
+
 </div>

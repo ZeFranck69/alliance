@@ -18,6 +18,23 @@
                     {% endfor %}
                 </div>
             </div>
+            {% if section.display_members %}
+            <div class="members--second_part" style="background-color:{{ section.second_part.background_color }}">
+                {% for block in section.second_part.members %}
+                <div class="second-part__members-block">
+                    <div class="hook">
+                        {{ block.hook }}
+                    </div>
+                    <div class="members-block__logos">
+                        {% for logo in block.logos %}
+                        <div class="members-block__logo" style="background-image: url('{{ logo.logo.url }}'); background-position: center;background-size: cover;background-repeat: no-repeat;">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
 
     </div>
