@@ -4,42 +4,45 @@
 
     <div class="main-wrapper about-wrapper">
         <div class="about__columns">
-            <div class="first-column">
-                {% if section.first_column.description %}
-                <div class="first-column__description">
-                    {{ section.first_column.description }}
-                </div>
-                {% endif %}
-                <!-- Rajouter le bouton -->
-            </div>
-            <div class="second-column">
-                <div class="blocks">
-                    {% for block in section.second_column.blocks %}
-                    <div class="block" style="background-color:{{ block.background_color }}; background-image:url('{{ block.background_image.url }}'); color:{{ block.color }}">
-                        {% if block.title %}
-                        <div class="block__title">
-                            <h4>{{ block.title }}</h4>
-                        </div>
-                        {% endif %}
-                        {% if block.description %}
-                        <div class="block__description description--small">
-                            {{ block.description }}
-                        </div>
-                        {% endif %}
-                        <div class="block__stats">
-                            {% for stat in block.stats %}
-                                <div class="stat">
-                                    {{ stat.text }}
-                                </div>
-                            {% endfor %}
-                        </div> 
-                        {% if block.source %}
-                        <div class="block__source">
-                            {{ block.source }}
-                        </div>
-                        {% endif %}
+            <div class="text-and-2-columns__part">
+
+                <div class="first-column">
+                    {% if section.first_column.description %}
+                    <div class="first-column__description">
+                        {{ section.first_column.description }}
                     </div>
-                    {% endfor %}
+                    {% endif %}
+                    <!-- Rajouter le bouton -->
+                </div>
+                <div class="second-column">
+                    <div class="blocks">
+                        {% for block in section.second_column.blocks %}
+                        <div class="block" style="background-color:{{ block.background_color }}; background-image:url('{{ block.background_image.url }}'); color:{{ block.color }}">
+                            {% if block.title %}
+                            <div class="block__title">
+                                <h4>{{ block.title }}</h4>
+                            </div>
+                            {% endif %}
+                            {% if block.description %}
+                            <div class="block__description description--small">
+                                {{ block.description }}
+                            </div>
+                            {% endif %}
+                            <div class="block__stats">
+                                {% for stat in block.stats %}
+                                    <div class="stat">
+                                        {{ stat.text }}
+                                    </div>
+                                {% endfor %}
+                            </div> 
+                            {% if block.source %}
+                            <div class="block__source">
+                                {{ block.source }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
             <div class="third-column">

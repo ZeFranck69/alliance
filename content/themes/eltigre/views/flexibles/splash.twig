@@ -1,12 +1,14 @@
 <section id="splash" class="splash" style="height: {{ section.height }}vh;">
     <div class="splash-container">
         <div class="splash__image" style="background-image:url('{{ section.background_image.url }}');background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }}; ">
-            <div class="splash-content__logo">
-                <img src="{{ section.logo.url }}" alt="{{ section.logo.alt }}" class="logo">
-            </div>
-            <div class="splash-content description">
-                {{ section.description }}
-            </div>
+           <div class="main-wrapper">
+               <div class="splash-content__logo">
+                   <img src="{{ section.logo.url }}" alt="{{ section.logo.alt }}" class="logo">
+               </div>
+               <div class="splash-content description">
+                   {{ section.description }}
+               </div>
+           </div>
         </div>
     </div>
 </section>

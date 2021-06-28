@@ -1,4 +1,4 @@
-<div class='header-content container'>
+<div class='header-content main-wrapper'>
     <div class='header--menu-container left'>
         <nav class='nav--left__links'>
             {% include 'partial/menu.twig' with {'items': menu.header.left.get_items } %}
@@ -8,8 +8,10 @@
        
         <nav class='nav--right__links'>
             {% include 'partial/menu.twig' with {'items': menu.header.right.get_items} %}
-
+            {% include 'partial/socials.twig' %}
         </nav>
+        
+        
     </div>
 </div>
 <div class="header--mobile">

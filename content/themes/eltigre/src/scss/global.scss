@@ -39,7 +39,7 @@ html {
   }
 
   @include mobile {
-    padding: 0 15px;
+    padding: 0 40px;
   }
 
   @include tablet {
@@ -67,7 +67,6 @@ a {
   flex-flow: row wrap;
   align-items: center;
   position: relative;
-  left: -40px;
   width: 100%;
 }
 
@@ -76,6 +75,15 @@ a {
   font-size: 109px;
   line-height: 131px;
   letter-spacing: 10.9px;
+  position: relative;
+  left: -40px;
+}
+@media screen and (max-width:630px) {
+  .title__number{
+    font-size: 83px;
+    line-height: 100px;
+    letter-spacing: 8.3px;
+  }
 }
 .title--montserrat{
   font-family: "Montserrat",sans-serif;
@@ -124,6 +132,7 @@ a {
 @import 'modules/_header';
 @import 'modules/_footer';
 @import 'modules/_cta';
+@import 'modules/_socials';
 
 // FLEXIBLES
 

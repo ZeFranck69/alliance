@@ -93,7 +93,12 @@ if ( class_exists( 'Timber' ) ) {
 			// SWIPER
 			wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
 			wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js' );
-	
+			
+			//STYLES
+			wp_enqueue_style( 'all', get_template_directory_uri() . '/inc/vendor/css/all.min.css' );
+			wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/inc/vendor/css/fontawesome.min.css' );
+			wp_enqueue_style( 'fa-brands', get_template_directory_uri() . '/inc/vendor/css/brands.min.css' );
+
 			// CUSTOM
 			$files = scandir( dirname( __FILE__ ) . '/dist' );
 			foreach ( $files as $file ) {

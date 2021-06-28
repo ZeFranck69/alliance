@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-bottom: 226px;  
+    padding-bottom: 158px;  
 }
 .splash-content{
     max-width: 535px;
@@ -25,7 +25,7 @@
 .splash-content__logo{
     max-width: 204px;
     width: 100%;
-    margin-bottom: 94px;
+    margin: 0 auto 94px;
 }
 
 @media screen and (max-width:1024px) {

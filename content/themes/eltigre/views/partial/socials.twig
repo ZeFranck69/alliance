@@ -1,0 +1,7 @@
+<div class="socials"> 
+    {% for social in options.socials %}
+        <a class="social__link" href="{{ social.link }}" target="_blank">
+            <i class="fab fa-{{ social.fa_code }} social__picto" alt="Picto du réseau social {{ social.fa_code }}"></i>
+        </a>
+    {% endfor %}
+</div>
