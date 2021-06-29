@@ -123,12 +123,21 @@
             font-weight: normal;
             letter-spacing:0;
             line-height: 13px;
+            
             strong{
+                display: inline-flex;
+                align-items: center;
                 font-family: "Optima",sans-serif;
                 font-size: 53px;
                 font-weight: bold;
                 letter-spacing:0;
-                line-height: 64px;
+                line-height: 43px;
+                margin-top: 6px;
+                .percent{
+                    font-size: 30px;
+                    display: inline-block;
+                    padding-bottom: 12px;
+                }
             }
         }
         &:last-child{
@@ -138,10 +147,23 @@
             p{
                 max-width: 23px;
                 width: 100%;
-                margin-right: 20px;
+                text-align: center;
                 strong{
+                    display: inline-block;
                     font-size: 47px;
-                    line-height: 57px;
+                    line-height: 30px;
+                    .in{
+                        font-size: 18px;
+                        line-height: 22px;
+                        padding-bottom: 15px;
+                        display: inline-block;
+                    }
+                }
+                &:last-child{
+                    margin-left: 10px;
+                    width: 100%;
+                    max-width: 65px;
+                    text-align: left;
                 }
             }
         }
