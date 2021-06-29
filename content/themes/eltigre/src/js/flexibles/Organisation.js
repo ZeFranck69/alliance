@@ -24,7 +24,7 @@ class Section {
 		const blocks = this.section.querySelectorAll('.block');
 		const blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .content__paragraph');
 		const blocksCircles = this.section.querySelector('.blocks-circles');
-		const blockCircle = blocksCircles.querySelectorAll('.block-circle');
+		// const blockCircle = blocksCircles.querySelectorAll('.block-circle');
 
 		const animation = gsap
 			.timeline()

@@ -1004,8 +1004,8 @@ var Section = /*#__PURE__*/function () {
       var blocksWrapper = this.section.querySelector('.blocks');
       var blocks = this.section.querySelectorAll('.block');
       var blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .content__paragraph');
-      var blocksCircles = this.section.querySelector('.blocks-circles');
-      var blockCircle = blocksCircles.querySelectorAll('.block-circle');
+      var blocksCircles = this.section.querySelector('.blocks-circles'); // const blockCircle = blocksCircles.querySelectorAll('.block-circle');
+
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(blocks, {
         scale: 0.5,
         y: 50,
