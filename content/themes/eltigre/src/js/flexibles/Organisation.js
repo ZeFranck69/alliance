@@ -16,21 +16,9 @@ class Section {
 		this.blocks = section.querySelectorAll('.block-circle');
 
 		this.animate();
-		this.parallax();
 		this.addBlocksMouseOverAnimation();
 	}
 
-	parallax() {
-		const image = this.section.querySelector('.organisation__image');
-		const animation = gsap.fromTo(image, { backgroundPositionY: '40%' }, { backgroundPositionY: '0%', ease: 'linear' });
-		ScrollTrigger.create({
-			trigger: image,
-			start: 'top bottom-=10%',
-			end: 'bottom+=500 bottom-=10%',
-			scrub: true,
-			animation,
-		});
-	}
 	animate() {
 		const blocksWrapper = this.section.querySelector('.blocks');
 		const blocks = this.section.querySelectorAll('.block');

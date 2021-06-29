@@ -19,12 +19,14 @@
     letter-spacing: 1.8px;
     p{
         margin-bottom: 19px;
+        opacity: 0;
     }
 }
 .splash-content__logo{
     max-width: 204px;
     width: 100%;
     margin: 0 auto 94px;
+    opacity: 0;
 }
 
 @media screen and (max-width:1024px) {
