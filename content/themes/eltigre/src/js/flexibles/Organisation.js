@@ -23,8 +23,8 @@ class Section {
 		const blocksWrapper = this.section.querySelector('.blocks');
 		const blocks = this.section.querySelectorAll('.block');
 		const blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .content__paragraph');
-		// const blocksCircles = this.section.querySelector('.blocks-circles');
-		// const blockCircle = blocksCircles.querySelectorAll('.block-circle');
+		const blocksCircles = this.section.querySelector('.blocks-circles');
+		const blockCircle = blocksCircles.querySelectorAll('.block-circle');
 
 		const animation = gsap
 			.timeline()
@@ -33,7 +33,7 @@ class Section {
 				{ scale: 0.5, y: 50, autoAlpha: 0 },
 				{ scale: 1, y: 0, autoAlpha: 1, stagger: 0.1, duration: 0.6 }
 			)
-			// .fromTo(blocksCircles, { x: 100, autoAlpha: 0 }, { x: 0, autoAlpha: 1, stagger: 0.1, duration: 0.3 })
+			.fromTo(blocksCircles, { x: 100, autoAlpha: 0 }, { x: 0, autoAlpha: 1, stagger: 0.1, duration: 0.3 })
 			.fromTo(
 				blocksElements,
 				{ y: 20, autoAlpha: 0 },

@@ -863,6 +863,11 @@ a {
 .social__picto {
   color: #D6D6D6;
   margin: 0 10px;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+.social__picto:hover {
+  color: #E1B920;
 }
 
 [data-popup] {
@@ -1813,7 +1818,7 @@ a {
     max-width: 65.4%;
   }
 }
-@media screen and (max-width: 1027px) {
+@media screen and (max-width: 1047px) {
   .organisation .organisation__first-part .blocks .block {
     max-width: 307px;
     margin: 0 auto;
