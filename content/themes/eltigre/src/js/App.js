@@ -11,6 +11,7 @@ export default class App {
 		this.anchorManager();
 		this.modalManager();
 		this.titleAnimationManager();
+		this.parallaxManager();
 
 		this.menu = new Menu();
 
@@ -136,7 +137,6 @@ export default class App {
 			ScrollTrigger.create({
 				trigger: wrapper,
 				start: 'top bottom-=10%',
-				markers: true,
 				onEnter: () => {
 					wrapper.classList.add('animate');
 				},
@@ -144,6 +144,24 @@ export default class App {
 					wrapper.classList.remove('animate');
 				},
 				toggleActions: 'play none none reverse',
+			});
+		});
+	}
+
+	parallaxManager() {
+		const images = document.querySelectorAll('.organisation__image, .members__image');
+		images.forEach((image) => {
+			const animation = gsap.fromTo(
+				image,
+				{ backgroundPositionY: '50%' },
+				{ backgroundPositionY: '0%', ease: 'linear' }
+			);
+			ScrollTrigger.create({
+				trigger: image,
+				start: 'top bottom-=10%',
+				end: 'bottom+=500 bottom-=10%',
+				scrub: 0.1,
+				animation,
 			});
 		});
 	}

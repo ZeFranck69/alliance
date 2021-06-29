@@ -14,11 +14,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _flexibles_Contact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flexibles/Contact */ "./src/js/flexibles/Contact.js");
 /* harmony import */ var _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Organisation */ "./src/js/flexibles/Organisation.js");
+/* harmony import */ var _flexibles_Splash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flexibles/Splash */ "./src/js/flexibles/Splash.js");
+
 
 
 var SECTIONS = {
   contact: _flexibles_Contact__WEBPACK_IMPORTED_MODULE_0__.default,
-  organisation: _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__.default
+  organisation: _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__.default,
+  splash: _flexibles_Splash__WEBPACK_IMPORTED_MODULE_2__.default
 };
 function FlexiblesInit() {
   for (var className in SECTIONS) {
@@ -629,29 +632,10 @@ var Section = /*#__PURE__*/function () {
     this.section = section;
     this.blocks = section.querySelectorAll('.block-circle');
     this.animate();
-    this.parallax();
     this.addBlocksMouseOverAnimation();
   }
 
   _createClass(Section, [{
-    key: "parallax",
-    value: function parallax() {
-      var image = this.section.querySelector('.organisation__image');
-      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.fromTo(image, {
-        backgroundPositionY: '40%'
-      }, {
-        backgroundPositionY: '0%',
-        ease: 'linear'
-      });
-      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
-        trigger: image,
-        start: 'top bottom-=10%',
-        end: 'bottom+=500 bottom-=10%',
-        scrub: true,
-        animation: animation
-      });
-    }
-  }, {
     key: "animate",
     value: function animate() {
       var blocksWrapper = this.section.querySelector('.blocks');
@@ -719,6 +703,68 @@ var Section = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (Organisation);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Splash.js":
+/*!************************************!*\
+  !*** ./src/js/flexibles/Splash.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var Splash = function Splash(className) {
+  _classCallCheck(this, Splash);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+};
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var image = document.querySelector('.splash__image');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.fromTo(image, {
+        backgroundPositionY: '0'
+      }, {
+        backgroundPositionY: '30vh',
+        ease: 'linear'
+      });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
+        trigger: image,
+        start: 'bottom-=10% bottom-=10%',
+        end: 'bottom+=100% bottom-=10%',
+        scrub: 0.1,
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Splash);
 
 /***/ }),
 
@@ -8524,6 +8570,7 @@ var App = /*#__PURE__*/function () {
     this.anchorManager();
     this.modalManager();
     this.titleAnimationManager();
+    this.parallaxManager();
     this.menu = new _class_Menu__WEBPACK_IMPORTED_MODULE_4__.default();
     (0,_Flexibles__WEBPACK_IMPORTED_MODULE_3__.default)();
   }
@@ -8666,7 +8713,6 @@ var App = /*#__PURE__*/function () {
         gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
           trigger: wrapper,
           start: 'top bottom-=10%',
-          markers: true,
           onEnter: function onEnter() {
             wrapper.classList.add('animate');
           },
@@ -8674,6 +8720,26 @@ var App = /*#__PURE__*/function () {
             wrapper.classList.remove('animate');
           },
           toggleActions: 'play none none reverse'
+        });
+      });
+    }
+  }, {
+    key: "parallaxManager",
+    value: function parallaxManager() {
+      var images = document.querySelectorAll('.organisation__image, .members__image');
+      images.forEach(function (image) {
+        var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.fromTo(image, {
+          backgroundPositionY: '50%'
+        }, {
+          backgroundPositionY: '0%',
+          ease: 'linear'
+        });
+        gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+          trigger: image,
+          start: 'top bottom-=10%',
+          end: 'bottom+=500 bottom-=10%',
+          scrub: 0.1,
+          animation: animation
         });
       });
     }
