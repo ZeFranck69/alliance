@@ -91,6 +91,7 @@ if ( class_exists( 'Timber' ) ) {
 	
 		public function enqueue() {
 			// SWIPER
+			wp_enqueue_script( 'barbaPolyfill', 'https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CNodeList.prototype.forEach%2CNumber.isNaN', array(), false, false );
 			wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
 			wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js' );
 

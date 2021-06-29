@@ -175,6 +175,8 @@
                     // top: 0;
                     // left: 0;
                     opacity: 1;
+                    
+                
                 &::after{
                     position: absolute;
                     content: '';
@@ -193,6 +195,11 @@
                     width: 46px;
                     top: -23px;
                     left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            @media all and (-ms-high-contrast:none){
+                .block-circle__title{
                     transform: translateX(-50%);
                 }
             }
