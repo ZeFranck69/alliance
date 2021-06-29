@@ -20,7 +20,7 @@
                 <div class="second-column">
                     <div class="blocks">
                         {% for block in section.second_column.blocks %}
-                        <div class="block" style="background-color:{{ block.background_color }}; background-image:url('{{ block.background_image.url }}'); color:{{ block.color }}">
+                        <div class="block block-{{ loop.index }}" style="background-color:{{ block.background_color }}; background-image:url('{{ block.background_image.url }}'); color:{{ block.color }}; border-color: {{ block.border_color }}; {% if block.border_color %}border: 1px solid;{% endif %}">
                             {% if block.title %}
                             <div class="block__title">
                                 <h4>{{ block.title }}</h4>
@@ -66,7 +66,7 @@
                     </div>
                     {% endif %}
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 </section>
