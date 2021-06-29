@@ -744,7 +744,30 @@ var Section = /*#__PURE__*/function () {
   _createClass(Section, [{
     key: "animate",
     value: function animate() {
-      var image = document.querySelector('.splash__image');
+      var logo = this.section.querySelector('.splash-content__logo');
+      var text = this.section.querySelectorAll('.description > *');
+      gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(logo, {
+        autoAlpha: 0,
+        scale: 0.1
+      }, {
+        autoAlpha: 1,
+        scale: 1,
+        duration: 0.4,
+        delay: 0.5,
+        ease: 'back.out'
+      }).fromTo(text, {
+        y: 30,
+        autoAlpha: 0,
+        scale: 0.2
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        scale: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: 'power2.out'
+      });
+      var image = this.section.querySelector('.splash__image');
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.fromTo(image, {
         backgroundPositionY: '0'
       }, {

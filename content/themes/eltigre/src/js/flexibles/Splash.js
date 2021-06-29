@@ -17,7 +17,23 @@ class Section {
 	}
 
 	animate() {
-		const image = document.querySelector('.splash__image');
+		const logo = this.section.querySelector('.splash-content__logo');
+		const text = this.section.querySelectorAll('.description > *');
+
+		gsap
+			.timeline()
+			.fromTo(
+				logo,
+				{ autoAlpha: 0, scale: 0.1 },
+				{ autoAlpha: 1, scale: 1, duration: 0.4, delay: 0.5, ease: 'back.out' }
+			)
+			.fromTo(
+				text,
+				{ y: 30, autoAlpha: 0, scale: 0.2 },
+				{ y: 0, autoAlpha: 1, scale: 1, duration: 0.5, stagger: 0.2, ease: 'power2.out' }
+			);
+
+		const image = this.section.querySelector('.splash__image');
 		const animation = gsap.fromTo(image, { backgroundPositionY: '0' }, { backgroundPositionY: '30vh', ease: 'linear' });
 		ScrollTrigger.create({
 			trigger: image,
