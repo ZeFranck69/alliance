@@ -130,6 +130,14 @@ a {
     font-weight: bold;
   }
 }
+@media screen and (max-width:630px) {
+  .description--small, 
+  .description--small p{
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.7px;
+  }
+}
 
 // Modules
 
