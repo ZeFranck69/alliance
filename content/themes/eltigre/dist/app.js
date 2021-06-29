@@ -14,10 +14,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _flexibles_Contact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flexibles/Contact */ "./src/js/flexibles/Contact.js");
 /* harmony import */ var _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Organisation */ "./src/js/flexibles/Organisation.js");
+/* harmony import */ var _flexibles_About__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flexibles/About */ "./src/js/flexibles/About.js");
+/* harmony import */ var _flexibles_Apply__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flexibles/Apply */ "./src/js/flexibles/Apply.js");
+
+
 
 
 var SECTIONS = {
   contact: _flexibles_Contact__WEBPACK_IMPORTED_MODULE_0__.default,
+  about: _flexibles_About__WEBPACK_IMPORTED_MODULE_2__.default,
+  apply: _flexibles_Apply__WEBPACK_IMPORTED_MODULE_3__.default,
   organisation: _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__.default
 };
 function FlexiblesInit() {
@@ -529,6 +535,195 @@ var Menu = /*#__PURE__*/function () {
 }();
 
 
+
+/***/ }),
+
+/***/ "./src/js/flexibles/About.js":
+/*!***********************************!*\
+  !*** ./src/js/flexibles/About.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var About = function About(className) {
+  _classCallCheck(this, About);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+};
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.blocks = section.querySelectorAll('.about');
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var blocksWrapper = this.section.querySelector('.blocks');
+      var firstColumnDescription = this.section.querySelector('.first-column__description');
+      var button = this.section.querySelectorAll('.first-column__cta-wrapper');
+      var blocks = this.section.querySelectorAll('.block');
+      var blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .block__description, block__stats, block__source');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(button, {
+        scale: 0.8,
+        x: -100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        x: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.5
+      }).fromTo(firstColumnDescription, {
+        scale: 0.8,
+        y: -100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.5
+      }).fromTo(blocks, {
+        scale: 0.8,
+        y: 75,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.35
+      }).fromTo(blocksElements, {
+        y: 20,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.5,
+        ease: 'power2.out'
+      });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
+        trigger: blocksWrapper,
+        start: 'top bottom-=10%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (About);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Apply.js":
+/*!***********************************!*\
+  !*** ./src/js/flexibles/Apply.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var Apply = function Apply(className) {
+  _classCallCheck(this, Apply);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+};
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.block = section.querySelector('.apply-content');
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var blocksWrapper = this.section.querySelector('.apply-content');
+      var subtitle = this.section.querySelector('.apply-content__subtitle');
+      var columns = this.section.querySelectorAll('.columns__column');
+      var columnsElements = blocksWrapper.querySelectorAll('.column-title, .column__events, .critera');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(subtitle, {
+        scale: 0.8,
+        y: 50,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.3
+      }).fromTo(columns, {
+        scale: 0.8,
+        y: 50,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.35
+      }).fromTo(columnsElements, {
+        y: 20,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.5,
+        ease: 'power2.out'
+      });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
+        trigger: blocksWrapper,
+        start: 'top bottom-=10%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Apply);
 
 /***/ }),
 
