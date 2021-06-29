@@ -808,7 +808,6 @@ var Section = /*#__PURE__*/function () {
       var inputs = blocksWrapper.querySelectorAll('.contact__input-wrapper');
       var textArea = blocksWrapper.querySelectorAll('.textarea-wrapper');
       var cta = blocksWrapper.querySelectorAll('.button__wrapper');
-      console.log(inputs);
       var animation = gsap__WEBPACK_IMPORTED_MODULE_2__.default.timeline().fromTo(inputs, {
         scale: 0.4,
         y: 50,
@@ -979,9 +978,9 @@ var Section = /*#__PURE__*/function () {
     value: function animate() {
       var blocksWrapper = this.section.querySelector('.blocks');
       var blocks = this.section.querySelectorAll('.block');
-      var blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .content__paragraph');
-      var blocksCircles = this.section.querySelector('.blocks-circles');
-      var blockCircle = blocksCircles.querySelectorAll('.block-circle');
+      var blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .content__paragraph'); // const blocksCircles = this.section.querySelector('.blocks-circles');
+      // const blockCircle = blocksCircles.querySelectorAll('.block-circle');
+
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(blocks, {
         scale: 0.5,
         y: 50,
@@ -992,15 +991,8 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.1,
         duration: 0.6
-      }).fromTo(blockCircle, {
-        x: 100,
-        autoAlpha: 0
-      }, {
-        x: 0,
-        autoAlpha: 1,
-        stagger: 0.1,
-        duration: 0.3
-      }).fromTo(blocksElements, {
+      }) // .fromTo(blocksCircles, { x: 100, autoAlpha: 0 }, { x: 0, autoAlpha: 1, stagger: 0.1, duration: 0.3 })
+      .fromTo(blocksElements, {
         y: 20,
         autoAlpha: 0
       }, {

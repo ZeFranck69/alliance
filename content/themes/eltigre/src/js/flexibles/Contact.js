@@ -48,7 +48,6 @@ class Section {
 		const inputs = blocksWrapper.querySelectorAll('.contact__input-wrapper');
 		const textArea = blocksWrapper.querySelectorAll('.textarea-wrapper');
 		const cta = blocksWrapper.querySelectorAll('.button__wrapper');
-		console.log(inputs);
 
 		const animation = gsap
 			.timeline()

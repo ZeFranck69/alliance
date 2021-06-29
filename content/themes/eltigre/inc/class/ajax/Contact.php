@@ -30,9 +30,7 @@ class Contact {
     
     
             // Set E-Mail recipients
-            $recipients = array(
-                'jullian@eltigre.fr'
-            );
+            $recipients = get_bloginfo( 'admin_email' );
     
     
             // Build email headers
