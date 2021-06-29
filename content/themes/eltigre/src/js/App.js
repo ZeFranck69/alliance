@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import { ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 
-gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 import FlexiblesInit from './Flexibles';
 import Menu from './class/Menu';
@@ -10,6 +10,7 @@ export default class App {
 		this.revealManager();
 		this.anchorManager();
 		this.modalManager();
+		this.titleAnimationManager();
 
 		this.menu = new Menu();
 
@@ -17,16 +18,17 @@ export default class App {
 	}
 
 	revealManager() {
-		document.querySelectorAll('[gsap-reveal]').forEach((el) => {
+		document.querySelectorAll('[gsap-reveal]').forEach((elt, index) => {
 			const animation = gsap.fromTo(
 				elt,
 				{ y: 30, autoAlpha: 0 },
 				{ y: 0, autoAlpha: 1, duration: 0.35, ease: 'power2.out' }
 			);
+
 			ScrollTrigger.create({
 				trigger: elt,
 				animation,
-				start: 'top-=10% bottom-=10%',
+				start: 'top-=10% bottom-=5%',
 			});
 		});
 	}
@@ -97,6 +99,33 @@ export default class App {
 
 			document.body.addEventListener('keydown', (ev) => {
 				if (ev.key === 'Escape') closeModal();
+			});
+		});
+	}
+
+	titleAnimationManager() {
+		const titles = document.querySelectorAll('.title__wrapper');
+		titles.forEach((title) => {
+			const number = title.querySelector('.title__number');
+			const firstLine = title.querySelector('.title__first-line');
+			const secondLine = title.querySelector('.title__second-line');
+
+			const animation = gsap.timeline();
+
+			if (number)
+				animation.fromTo(
+					number,
+					{ scale: 0.5, autoAlpha: 0 },
+					{ scale: 1, autoAlpha: 1, duration: 0.2, ease: 'back.out' }
+				);
+			if (firstLine) animation.fromTo(firstLine, { y: -30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.2 });
+			if (secondLine) animation.fromTo(secondLine, { y: 30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.2 });
+
+			ScrollTrigger.create({
+				trigger: title,
+				start: 'top bottom-=10%',
+				animation,
+				toggleActions: 'play none none reverse',
 			});
 		});
 	}
