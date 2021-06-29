@@ -1558,13 +1558,18 @@ a {
   text-align: center;
   position: relative;
 }
+.organisation .organisation__subtitle.animate::before {
+  width: 100%;
+}
 .organisation .organisation__subtitle::before {
   content: "";
   position: absolute;
   height: 2px;
   background-color: #fff;
   max-width: 43.9%;
-  width: 100%;
+  -webkit-transition: width 2s ease;
+  transition: width 2s ease;
+  width: 0%;
   left: 0;
   top: 50%;
 }
@@ -1654,6 +1659,9 @@ a {
   text-align: left;
   position: relative;
 }
+.organisation .organisation__second-part .organisation__subtitle.animate::after {
+  width: 100%;
+}
 .organisation .organisation__second-part .organisation__subtitle::before {
   content: none;
 }
@@ -1663,7 +1671,9 @@ a {
   height: 2px;
   background-color: #000;
   max-width: 75.4%;
-  width: 100%;
+  width: 0%;
+  -webkit-transition: width 2s ease;
+  transition: width 2s ease;
   right: 0;
   top: 50%;
 }

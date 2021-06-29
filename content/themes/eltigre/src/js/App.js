@@ -128,6 +128,24 @@ export default class App {
 				toggleActions: 'play none none reverse',
 			});
 		});
+
+		const subtitles = document.querySelectorAll('.subtitle');
+		subtitles.forEach((subtitle) => {
+			const wrapper = subtitle.parentElement;
+
+			ScrollTrigger.create({
+				trigger: wrapper,
+				start: 'top bottom-=10%',
+				markers: true,
+				onEnter: () => {
+					wrapper.classList.add('animate');
+				},
+				onLeaveBack: () => {
+					wrapper.classList.remove('animate');
+				},
+				toggleActions: 'play none none reverse',
+			});
+		});
 	}
 }
 

@@ -8660,6 +8660,22 @@ var App = /*#__PURE__*/function () {
           toggleActions: 'play none none reverse'
         });
       });
+      var subtitles = document.querySelectorAll('.subtitle');
+      subtitles.forEach(function (subtitle) {
+        var wrapper = subtitle.parentElement;
+        gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+          trigger: wrapper,
+          start: 'top bottom-=10%',
+          markers: true,
+          onEnter: function onEnter() {
+            wrapper.classList.add('animate');
+          },
+          onLeaveBack: function onLeaveBack() {
+            wrapper.classList.remove('animate');
+          },
+          toggleActions: 'play none none reverse'
+        });
+      });
     }
   }]);
 

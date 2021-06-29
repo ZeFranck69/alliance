@@ -30,13 +30,19 @@
         margin: 18px 0;
         text-align: center;
         position: relative;
+
+        &.animate::before {
+            width: 100%;
+        }
+
         &::before{
             content: "";
             position: absolute;
             height: 2px;
             background-color: $white;
             max-width: 43.9%;
-            width: 100%;
+            transition: width 2s ease;
+            width: 0%;
             left: 0;
             top: 50%;
         }
@@ -122,6 +128,11 @@
             margin: 18px 0;
             text-align: left;
             position: relative;
+            
+            &.animate::after {
+                width: 100%;
+            }
+
             &::before{
                 content: none;
             }
@@ -131,7 +142,8 @@
                 height: 2px;
                 background-color: $black;
                 max-width: 75.4%;
-                width: 100%;
+                width: 0%;
+                transition: width 2s ease;
                 right: 0;
                 top: 50%;
             }
