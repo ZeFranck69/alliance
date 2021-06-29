@@ -10,13 +10,14 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, .2);
   z-index: -9999;
-  
+  font-family: "Optima", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   max-height: 100vh;
   width: 100vw;
-
+  transform: translateX(-61%);
+  
   &.active {
     z-index: 9999;
     left: 0;
@@ -32,6 +33,7 @@
     background-color: $white;
     padding: 45px;
     position: relative;
+
   }
 
   .close {
@@ -58,5 +60,33 @@
     &:after {
       transform: translate(-50%, -50%) rotate(45deg);
     }
+  }
+}
+.apply-content__columns .column__critera .event__cta-wrapper .modal-content a:after{
+  content: none;
+}
+@media screen and (max-width:1024px) {
+  .modal{
+    transform: translateX(-55%);
+  }
+}
+@media screen and (max-width:768px) {
+  .modal{
+    transform: translateX(-50%);
+  }
+}
+@media screen and (max-width:695px) {
+  .modal{
+    transform: translateX(-8%);
+  }
+}
+@media screen and (max-width:679px) {
+  .modal{
+    transform: translateX(-27%);
+  }
+}
+@media screen and (max-width:450px) {
+  .modal{
+    transform: translateX(-15%);
   }
 }

@@ -887,6 +887,7 @@ a {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: -9999;
+  font-family: "Optima", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -898,6 +899,8 @@ a {
           justify-content: center;
   max-height: 100vh;
   width: 100vw;
+  -webkit-transform: translateX(-61%);
+          transform: translateX(-61%);
 }
 .modal.active {
   z-index: 9999;
@@ -938,6 +941,40 @@ a {
           transform: translate(-50%, -50%) rotate(45deg);
 }
 
+.apply-content__columns .column__critera .event__cta-wrapper .modal-content a:after {
+  content: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    -webkit-transform: translateX(-55%);
+            transform: translateX(-55%);
+  }
+}
+@media screen and (max-width: 768px) {
+  .modal {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 695px) {
+  .modal {
+    -webkit-transform: translateX(-8%);
+            transform: translateX(-8%);
+  }
+}
+@media screen and (max-width: 679px) {
+  .modal {
+    -webkit-transform: translateX(-27%);
+            transform: translateX(-27%);
+  }
+}
+@media screen and (max-width: 450px) {
+  .modal {
+    -webkit-transform: translateX(-15%);
+            transform: translateX(-15%);
+  }
+}
 .splash {
   max-width: 100%;
   width: 100%;
@@ -2353,6 +2390,10 @@ a {
 
 .textarea-wrapper .contact__label {
   max-width: 100%;
+}
+
+.form__errors {
+  font-family: "Optima", sans-serif;
 }
 
 @media screen and (max-width: 1024px) {
