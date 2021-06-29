@@ -1246,8 +1246,8 @@ a {
     max-width: 100%;
   }
   .about .about-wrapper .about__columns .text-and-2-columns__part .second-column .blocks .block:last-child {
-    -webkit-transform: translateY(73%);
-            transform: translateY(73%);
+    -webkit-transform: translateY(88%);
+            transform: translateY(88%);
   }
   .about .about-wrapper .about__columns .third-column {
     max-width: 100%;
