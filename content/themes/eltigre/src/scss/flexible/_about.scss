@@ -45,6 +45,11 @@
     .cta--join-us{
         background-color: $white;
         padding: 65px 18px;
+        transition: background-color .35s ease;
+        &:hover{
+            background-color: $moutarde;
+            color: $white;
+        }
     }
 }
 

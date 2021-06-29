@@ -405,6 +405,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ Menu; }
 /* harmony export */ });
 /* harmony import */ var gsap_gsap_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/gsap-core */ "./node_modules/gsap/gsap-core.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var _Device__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Device */ "./src/js/class/Device.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -413,6 +414,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -526,6 +528,7 @@ var Menu = /*#__PURE__*/function () {
       if (this.header.classList.contains('disabled')) {
         this.header.classList.remove('disabled');
         this.header.classList.add('active');
+        this.animation();
       } else {
         this.header.classList.add('disabled');
         this.header.classList.remove('active');
@@ -533,6 +536,28 @@ var Menu = /*#__PURE__*/function () {
 
       document.querySelectorAll('.burger-menu__wrapper').forEach(function (btn) {
         return btn.classList.toggle('cross');
+      });
+    }
+  }, {
+    key: "animation",
+    value: function animation() {
+      var menuItems = this.header.querySelectorAll('.menu-item');
+      var animation = gsap_gsap_core__WEBPACK_IMPORTED_MODULE_1__.default.timeline().fromTo(menuItems, {
+        scale: 0.8,
+        y: 50,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.5
+      });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.default.create({
+        trigger: menuItems,
+        start: 'top bottom-=10%',
+        toggleActions: 'play none none reverse',
+        animation: animation
       });
     }
   }]);

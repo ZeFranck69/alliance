@@ -226,6 +226,7 @@
               display: flex;
               opacity: 1;
               height: 100%;
+              transform:translateX(0%); 
             //   padding-top: 100px;
               transition: opacity .35s ease, background-color .35s ease;
               background-color: rgba(255, 255, 255, 0.9) ;
@@ -244,6 +245,7 @@
               display: flex;
               opacity: 0;
               height: 100vh;
+              transform:translateX(-100%); 
               transition: opacity .35s ease, background-color .35s ease;
             //   padding-top: 100px;
           }

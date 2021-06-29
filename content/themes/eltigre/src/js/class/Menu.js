@@ -1,4 +1,5 @@
 import gsap from 'gsap/gsap-core';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import Device from './Device';
 
 export default class Menu {
@@ -103,10 +104,29 @@ export default class Menu {
 		if (this.header.classList.contains('disabled')) {
 			this.header.classList.remove('disabled');
 			this.header.classList.add('active');
+			this.animation();
 		} else {
 			this.header.classList.add('disabled');
 			this.header.classList.remove('active');
 		}
 		document.querySelectorAll('.burger-menu__wrapper').forEach((btn) => btn.classList.toggle('cross'));
+	}
+
+	animation() {
+		const menuItems = this.header.querySelectorAll('.menu-item');
+		const animation = gsap
+			.timeline()
+			.fromTo(
+				menuItems,
+				{ scale: 0.8, y: 50, autoAlpha: 0 },
+				{ scale: 1, y: 0, autoAlpha: 1, stagger: 0.1, duration: 0.5 }
+			);
+
+		ScrollTrigger.create({
+			trigger: menuItems,
+			start: 'top bottom-=10%',
+			toggleActions: 'play none none reverse',
+			animation,
+		});
 	}
 }
