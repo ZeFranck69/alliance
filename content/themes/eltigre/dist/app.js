@@ -13,10 +13,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ FlexiblesInit; }
 /* harmony export */ });
 /* harmony import */ var _flexibles_Contact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flexibles/Contact */ "./src/js/flexibles/Contact.js");
-/* harmony import */ var _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Organisation */ "./src/js/flexibles/Organisation.js");
-/* harmony import */ var _flexibles_About__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flexibles/About */ "./src/js/flexibles/About.js");
-/* harmony import */ var _flexibles_Apply__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flexibles/Apply */ "./src/js/flexibles/Apply.js");
-/* harmony import */ var _flexibles_Splash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./flexibles/Splash */ "./src/js/flexibles/Splash.js");
+/* harmony import */ var _flexibles_Splash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Splash */ "./src/js/flexibles/Splash.js");
+/* harmony import */ var _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flexibles/Organisation */ "./src/js/flexibles/Organisation.js");
+/* harmony import */ var _flexibles_About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flexibles/About */ "./src/js/flexibles/About.js");
+/* harmony import */ var _flexibles_Apply__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./flexibles/Apply */ "./src/js/flexibles/Apply.js");
+/* harmony import */ var _flexibles_Members__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./flexibles/Members */ "./src/js/flexibles/Members.js");
+
 
 
 
@@ -24,10 +26,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var SECTIONS = {
   contact: _flexibles_Contact__WEBPACK_IMPORTED_MODULE_0__.default,
-  about: _flexibles_About__WEBPACK_IMPORTED_MODULE_2__.default,
-  apply: _flexibles_Apply__WEBPACK_IMPORTED_MODULE_3__.default,
-  organisation: _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__.default,
-  splash: _flexibles_Splash__WEBPACK_IMPORTED_MODULE_4__.default
+  about: _flexibles_About__WEBPACK_IMPORTED_MODULE_3__.default,
+  apply: _flexibles_Apply__WEBPACK_IMPORTED_MODULE_4__.default,
+  organisation: _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_2__.default,
+  splash: _flexibles_Splash__WEBPACK_IMPORTED_MODULE_1__.default,
+  members: _flexibles_Members__WEBPACK_IMPORTED_MODULE_5__.default
 };
 function FlexiblesInit() {
   for (var className in SECTIONS) {
@@ -573,7 +576,6 @@ var Section = /*#__PURE__*/function () {
     _classCallCheck(this, Section);
 
     this.section = section;
-    this.blocks = section.querySelectorAll('.about');
     this.animate();
   }
 
@@ -596,8 +598,8 @@ var Section = /*#__PURE__*/function () {
         stagger: 0.1,
         duration: 0.5
       }).fromTo(firstColumnDescription, {
-        scale: 0.8,
-        y: -100,
+        scale: 0.4,
+        y: 50,
         autoAlpha: 0
       }, {
         scale: 1,
@@ -738,10 +740,18 @@ var Section = /*#__PURE__*/function () {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _class_Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../class/Form */ "./src/js/class/Form.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/functions */ "./src/js/utils/functions.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
 
 
 
@@ -755,41 +765,175 @@ var Contact = function Contact(className) {
   });
 };
 
-var Section = function Section(section) {
-  var _this = this;
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    var _this = this;
 
-  _classCallCheck(this, Section);
+    _classCallCheck(this, Section);
 
-  _defineProperty(this, "onSubmit", function () {
-    (0,_utils_functions__WEBPACK_IMPORTED_MODULE_1__.post)({
-      form: _this.form.el,
-      action: 'submit_contact_form'
-    }, _this.onSubmitResponse, true);
-  });
+    _defineProperty(this, "onSubmit", function () {
+      (0,_utils_functions__WEBPACK_IMPORTED_MODULE_1__.post)({
+        form: _this.form.el,
+        action: 'submit_contact_form'
+      }, _this.onSubmitResponse, true);
+    });
 
-  _defineProperty(this, "onSubmitResponse", function (res) {
-    var parsedRes = JSON.parse(res);
+    _defineProperty(this, "onSubmitResponse", function (res) {
+      var parsedRes = JSON.parse(res);
 
-    if (parsedRes.success) {
-      _this.form.submitButton.success(site.translations.contact.message_sent);
+      if (parsedRes.success) {
+        _this.form.submitButton.success(site.translations.contact.message_sent);
 
-      _this.form.disabled = true;
-    } else {
-      _this.form.displayErrors([site.translations.contact.error]);
+        _this.form.disabled = true;
+      } else {
+        _this.form.displayErrors([site.translations.contact.error]);
 
-      _this.form.submitButton.reset();
+        _this.form.submitButton.reset();
 
-      _this.form.disabled = false;
+        _this.form.disabled = false;
+      }
+    });
+
+    this.section = section;
+    this.form = new _class_Form__WEBPACK_IMPORTED_MODULE_0__.default(section.querySelector('form'), {
+      onSubmit: this.onSubmit
+    });
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var blocksWrapper = this.section.querySelector('.contact__form');
+      var inputs = blocksWrapper.querySelectorAll('.contact__input-wrapper');
+      var textArea = blocksWrapper.querySelectorAll('.textarea-wrapper');
+      var cta = blocksWrapper.querySelectorAll('.button__wrapper');
+      console.log(inputs);
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_2__.default.timeline().fromTo(inputs, {
+        scale: 0.4,
+        y: 50,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        duration: 0.6
+      }).fromTo(textArea, {
+        scale: 0.4,
+        y: 50,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        duration: 0.3
+      }).fromTo(cta, {
+        x: 50,
+        autoAlpha: 0
+      }, {
+        x: 0,
+        autoAlpha: 1,
+        duration: 0.3
+      });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.default.create({
+        trigger: blocksWrapper,
+        start: 'top bottom-=10%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
     }
-  });
+  }]);
 
-  this.section = section;
-  this.form = new _class_Form__WEBPACK_IMPORTED_MODULE_0__.default(section.querySelector('form'), {
-    onSubmit: this.onSubmit
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Contact);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Members.js":
+/*!*************************************!*\
+  !*** ./src/js/flexibles/Members.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var Members = function Members(className) {
+  _classCallCheck(this, Members);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
   });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Contact);
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var blocksWrapper = this.section.querySelector('.members__block');
+      var hook = blocksWrapper.querySelectorAll('.hook');
+      var logos = blocksWrapper.querySelectorAll('.logo');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(blocksWrapper, {
+        scale: 0.8,
+        y: 50,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.42
+      }).fromTo(hook, {
+        scale: 0.8,
+        y: 50,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.5
+      }).fromTo(logos, {
+        y: 20,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.6
+      });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
+        trigger: blocksWrapper,
+        start: 'top bottom-=10%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Members);
 
 /***/ }),
 
@@ -836,8 +980,10 @@ var Section = /*#__PURE__*/function () {
       var blocksWrapper = this.section.querySelector('.blocks');
       var blocks = this.section.querySelectorAll('.block');
       var blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .content__paragraph');
+      var blocksCircles = this.section.querySelector('.blocks-circles');
+      var blockCircle = blocksCircles.querySelectorAll('.block-circle');
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(blocks, {
-        scale: 0.8,
+        scale: 0.5,
         y: 50,
         autoAlpha: 0
       }, {
@@ -845,8 +991,15 @@ var Section = /*#__PURE__*/function () {
         y: 0,
         autoAlpha: 1,
         stagger: 0.1,
-        ease: 'back.out',
-        duration: 0.25
+        duration: 0.6
+      }).fromTo(blockCircle, {
+        x: 100,
+        autoAlpha: 0
+      }, {
+        x: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.3
       }).fromTo(blocksElements, {
         y: 20,
         autoAlpha: 0
@@ -854,7 +1007,7 @@ var Section = /*#__PURE__*/function () {
         y: 0,
         autoAlpha: 1,
         stagger: 0.1,
-        duration: 0.15,
+        duration: 0.25,
         ease: 'power2.out'
       });
       gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
@@ -947,9 +1100,8 @@ var Section = /*#__PURE__*/function () {
       }, {
         autoAlpha: 1,
         scale: 1,
-        duration: 0.4,
-        delay: 0.5,
-        ease: 'back.out'
+        duration: 0.7,
+        delay: 0.5
       }).fromTo(text, {
         y: 30,
         autoAlpha: 0,
@@ -958,7 +1110,7 @@ var Section = /*#__PURE__*/function () {
         y: 0,
         autoAlpha: 1,
         scale: 1,
-        duration: 0.5,
+        duration: 0.7,
         stagger: 0.2,
         ease: 'power2.out'
       });
@@ -8899,8 +9051,7 @@ var App = /*#__PURE__*/function () {
         }, {
           scale: 1,
           autoAlpha: 1,
-          duration: 0.2,
-          ease: 'back.out'
+          duration: 0.45
         });
         if (firstLine) animation.fromTo(firstLine, {
           y: -30,
@@ -8908,7 +9059,7 @@ var App = /*#__PURE__*/function () {
         }, {
           y: 0,
           autoAlpha: 1,
-          duration: 0.2
+          duration: 0.5
         });
         if (secondLine) animation.fromTo(secondLine, {
           y: 30,
@@ -8916,7 +9067,7 @@ var App = /*#__PURE__*/function () {
         }, {
           y: 0,
           autoAlpha: 1,
-          duration: 0.2
+          duration: 0.5
         });
         gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
           trigger: title,

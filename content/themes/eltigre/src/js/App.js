@@ -113,14 +113,9 @@ export default class App {
 
 			const animation = gsap.timeline();
 
-			if (number)
-				animation.fromTo(
-					number,
-					{ scale: 0.5, autoAlpha: 0 },
-					{ scale: 1, autoAlpha: 1, duration: 0.2, ease: 'back.out' }
-				);
-			if (firstLine) animation.fromTo(firstLine, { y: -30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.2 });
-			if (secondLine) animation.fromTo(secondLine, { y: 30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.2 });
+			if (number) animation.fromTo(number, { scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.45 });
+			if (firstLine) animation.fromTo(firstLine, { y: -30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5 });
+			if (secondLine) animation.fromTo(secondLine, { y: 30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5 });
 
 			ScrollTrigger.create({
 				trigger: title,

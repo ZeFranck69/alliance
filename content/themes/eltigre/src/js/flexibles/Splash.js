@@ -22,15 +22,11 @@ class Section {
 
 		gsap
 			.timeline()
-			.fromTo(
-				logo,
-				{ autoAlpha: 0, scale: 0.1 },
-				{ autoAlpha: 1, scale: 1, duration: 0.4, delay: 0.5, ease: 'back.out' }
-			)
+			.fromTo(logo, { autoAlpha: 0, scale: 0.1 }, { autoAlpha: 1, scale: 1, duration: 0.7, delay: 0.5 })
 			.fromTo(
 				text,
 				{ y: 30, autoAlpha: 0, scale: 0.2 },
-				{ y: 0, autoAlpha: 1, scale: 1, duration: 0.5, stagger: 0.2, ease: 'power2.out' }
+				{ y: 0, autoAlpha: 1, scale: 1, duration: 0.7, stagger: 0.2, ease: 'power2.out' }
 			);
 
 		const image = this.section.querySelector('.splash__image');

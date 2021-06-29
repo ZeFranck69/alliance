@@ -13,8 +13,6 @@ class About {
 class Section {
 	constructor(section) {
 		this.section = section;
-		this.blocks = section.querySelectorAll('.about');
-
 		this.animate();
 	}
 
@@ -35,7 +33,7 @@ class Section {
 			)
 			.fromTo(
 				firstColumnDescription,
-				{ scale: 0.8, y: -100, autoAlpha: 0 },
+				{ scale: 0.4, y: 50, autoAlpha: 0 },
 				{ scale: 1, y: 0, autoAlpha: 1, stagger: 0.1, duration: 0.5 }
 			)
 			.fromTo(

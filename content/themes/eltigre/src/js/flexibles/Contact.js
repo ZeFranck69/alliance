@@ -1,4 +1,6 @@
 import Form from '../class/Form';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { post } from '../utils/functions';
 
 class Contact {
@@ -16,6 +18,7 @@ class Section {
 		this.form = new Form(section.querySelector('form'), {
 			onSubmit: this.onSubmit,
 		});
+		this.animate();
 	}
 
 	onSubmit = () => {
@@ -40,6 +43,26 @@ class Section {
 			this.form.disabled = false;
 		}
 	};
+	animate() {
+		const blocksWrapper = this.section.querySelector('.contact__form');
+		const inputs = blocksWrapper.querySelectorAll('.contact__input-wrapper');
+		const textArea = blocksWrapper.querySelectorAll('.textarea-wrapper');
+		const cta = blocksWrapper.querySelectorAll('.button__wrapper');
+		console.log(inputs);
+
+		const animation = gsap
+			.timeline()
+			.fromTo(inputs, { scale: 0.4, y: 50, autoAlpha: 0 }, { scale: 1, y: 0, autoAlpha: 1, duration: 0.6 })
+			.fromTo(textArea, { scale: 0.4, y: 50, autoAlpha: 0 }, { scale: 1, y: 0, autoAlpha: 1, duration: 0.3 })
+			.fromTo(cta, { x: 50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.3 });
+
+		ScrollTrigger.create({
+			trigger: blocksWrapper,
+			start: 'top bottom-=10%',
+			toggleActions: 'play none none reverse',
+			animation,
+		});
+	}
 }
 
 export default Contact;
