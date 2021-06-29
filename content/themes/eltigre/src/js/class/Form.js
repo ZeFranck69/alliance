@@ -5,7 +5,10 @@ import Loader from './Loader';
 export default class Form {
 	constructor(form, params = {}) {
 		this.el = form;
-		this.params = { ...this.getDefaultParams(), ...params };
+		this.params = {
+			...this.getDefaultParams(),
+			...params,
+		};
 
 		this.fields = form.querySelectorAll('input, textarea');
 		this.submitButton = new Loader(form.querySelector(this.params.submitSelector));
@@ -19,8 +22,9 @@ export default class Form {
 			if (this.params.preventSubmit) {
 				ev.preventDefault();
 			}
-			if (this.validate()) {
+			if (this.validate() && !this.disabled) {
 				this.submitButton.load();
+				this.disabled = true;
 
 				if (typeof this.params.onSubmit === 'function') {
 					this.params.onSubmit();
@@ -33,6 +37,7 @@ export default class Form {
 		return {
 			submitSelector: 'input[type="button"], input[type="submit"], button',
 			preventSubmit: true,
+			disabledAfterSubmit: true,
 			onSubmit: () => {},
 			customValidation: () => {},
 		};

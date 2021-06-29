@@ -146,8 +146,10 @@ var Form = /*#__PURE__*/function () {
           ev.preventDefault();
         }
 
-        if (_this.validate()) {
+        if (_this.validate() && !_this.disabled) {
           _this.submitButton.load();
+
+          _this.disabled = true;
 
           if (typeof _this.params.onSubmit === 'function') {
             _this.params.onSubmit();
@@ -161,6 +163,7 @@ var Form = /*#__PURE__*/function () {
       return {
         submitSelector: 'input[type="button"], input[type="submit"], button',
         preventSubmit: true,
+        disabledAfterSubmit: true,
         onSubmit: function onSubmit() {},
         customValidation: function customValidation() {}
       };
@@ -571,10 +574,14 @@ var Section = function Section(section) {
 
     if (parsedRes.success) {
       _this.form.submitButton.success(site.translations.contact.message_sent);
+
+      _this.form.disabled = true;
     } else {
       _this.form.displayErrors([site.translations.contact.error]);
 
       _this.form.submitButton.reset();
+
+      _this.form.disabled = false;
     }
   });
 

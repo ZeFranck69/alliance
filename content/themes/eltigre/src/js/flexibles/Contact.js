@@ -33,9 +33,11 @@ class Section {
 		const parsedRes = JSON.parse(res);
 		if (parsedRes.success) {
 			this.form.submitButton.success(site.translations.contact.message_sent);
+			this.form.disabled = true;
 		} else {
 			this.form.displayErrors([site.translations.contact.error]);
 			this.form.submitButton.reset();
+			this.form.disabled = false;
 		}
 	};
 }
