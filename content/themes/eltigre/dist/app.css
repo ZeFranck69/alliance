@@ -450,7 +450,8 @@ a {
 #site-header .header-content .header--menu-container ul li a {
   cursor: pointer;
   font-size: 16px;
-  font-family: "Montserra", sans-serif;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
   position: relative;
   color: #D6D6D6;
   font-size: 12px;

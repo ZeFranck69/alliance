@@ -71,19 +71,19 @@
               li{
                   position: relative;
                   a{
-                      cursor: pointer;
-                      font-size: 16px;
-                    //   font-family: "optima", sans-serif;
-                      font-family: "Montserra", sans-serif;
-                      position: relative;
-                      color: $grey;
-                      font-size: 12px;
-                      line-height: 14px;
-                      letter-spacing: 1.2px;
-                      transition: color .35s ease;
+                        cursor: pointer;
+                        font-size: 16px;
+                    //  font-family: "optima", sans-serif;
+                        font-weight: 300;
+                        font-family: "Montserrat", sans-serif;
+                        position: relative;
+                        color: $grey;
+                        font-size: 12px;
+                        line-height: 14px;
+                        letter-spacing: 1.2px;
+                        transition: color .35s ease;
                       &:hover{
                           color: $moutarde;
-
                       }
                   }
                   &::after{
