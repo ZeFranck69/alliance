@@ -46,9 +46,11 @@ html {
     padding: 0 24px;
   }
 }
-.about-wrapper{
-  @include mobile {
-    padding: 0;
+.about{
+  .main-wrapper{
+    @include mobile {
+      padding: 0;
+    }
   }
 }
 
