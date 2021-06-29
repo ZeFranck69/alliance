@@ -5,12 +5,12 @@ namespace Eltigre\Ajax;
 class Contact {
     
     public function __construct() {
-        add_action('wp_ajax_send_contact_mail', array( $this, 'send_contact_mail' ) );
-        add_action('wp_ajax_nopriv_send_contact_mail', array( $this, 'send_contact_mail' ) );
+        add_action('wp_ajax_submit_contact_form', array( $this, 'submit_contact_form' ) );
+        add_action('wp_ajax_nopriv_submit_contact_form', array( $this, 'submit_contact_form' ) );
     }
 
 
-    public function send_contact_mail() {
+    public function submit_contact_form() {
         
         // Retrieve form fields
         $fields = $this->get_fields();
@@ -26,7 +26,7 @@ class Contact {
 
     
             // Set E-Mail subject
-            $subject = 'E-Mail Subject';
+            $subject = get_bloginfo( 'name' ) . ' - Contact Form';
     
     
             // Set E-Mail recipients
@@ -57,19 +57,19 @@ class Contact {
 
     private function get_fields() {
         return array(
-            'firstname' => array(
-                'value' => isset( $_POST['firstname'] ) ? sanitize_text_field( $_POST['firstname'] ) : null,
-                'label' => __( 'Prénom', 'eltigre' ),
-                'required' => true
-            ),
             'lastname' => array(
                 'value' => isset( $_POST['lastname'] ) ? sanitize_text_field( $_POST['lastname'] ) : null,
-                'label' => __( 'Nom', 'eltigre' ),
+                'label' => __( 'Name', 'eltigre' ),
+                'required' => true
+            ),
+            'entreprise' => array(
+                'value' => isset( $_POST['entreprise'] ) ? sanitize_text_field( $_POST['entreprise'] ) : null,
+                'label' => __( 'Company', 'eltigre' ),
                 'required' => true
             ),
             'email' => array(
-                'value' => isset( T['email'] ) ? sanitize_email( $_POST['email'] ) : null,
-                'label' => __( 'Prénom', 'eltigre' ),
+                'value' => isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : null,
+                'label' => __( 'Email', 'eltigre' ),
                 'required' => true
             )
         );

@@ -43,7 +43,7 @@ export default class App {
 						ev.preventDefault();
 						gsap.to(window, {
 							scrollTo: anchor,
-							duration: 0.5,
+							duration: 0.7,
 							ease: 'power2.out',
 						});
 					});

@@ -1679,6 +1679,7 @@ a {
           align-items: center;
   margin: 8px;
   cursor: default;
+  position: relative;
   overflow: hidden;
 }
 .organisation .organisation__second-part .block-circle .block-circle__title {
@@ -1692,14 +1693,8 @@ a {
   max-width: 142px;
   width: 100%;
   text-align: center;
-  position: relative;
+  position: absolute;
   opacity: 1;
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
-  -webkit-transition: -webkit-transform 0.2s ease opacity 0.2s ease;
-  transition: -webkit-transform 0.2s ease opacity 0.2s ease;
-  transition: transform 0.2s ease opacity 0.2s ease;
-  transition: transform 0.2s ease opacity 0.2s ease, -webkit-transform 0.2s ease opacity 0.2s ease;
 }
 .organisation .organisation__second-part .block-circle .block-circle__title::after {
   position: absolute;
@@ -1725,12 +1720,6 @@ a {
 }
 .organisation .organisation__second-part .block-circle .block-circle__content {
   opacity: 0;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
-  transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   font-weight: normal;
   font-size: 15px;
   line-height: 17px;
@@ -1741,6 +1730,11 @@ a {
   width: 100%;
   text-align: center;
   position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
 }
 .organisation .organisation__second-part .block-circle .block-circle__content::after {
   position: absolute;
@@ -1752,18 +1746,6 @@ a {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-}
-.organisation .organisation__second-part .block-circle:hover .block-circle__title {
-  display: none;
-}
-.organisation .organisation__second-part .block-circle:hover .block-circle__content {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: opacity 0.35s ease, -webkit-transform 0.35s ease;
-  transition: opacity 0.35s ease, -webkit-transform 0.35s ease;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-  transition: transform 0.35s ease, opacity 0.35s ease, -webkit-transform 0.35s ease;
 }
 
 @media screen and (max-width: 1120px) {
@@ -2286,10 +2268,17 @@ a {
   float: right;
 }
 
+.textarea-wrapper textarea,
+.contact__input-wrapper input {
+  font-family: "Optima", sans-serif;
+}
+
 .textarea-wrapper textarea {
   height: 222px;
   border: 0;
   outline: none;
+  resize: none;
+  padding: 10px 15px;
 }
 
 .textarea-wrapper .contact__label {

@@ -157,7 +157,9 @@
             align-items: center;
             margin: 8px;
             cursor: default;
+            position: relative;
             overflow: hidden;
+
                 .block-circle__title{
                     font-weight: normal;
                     font-size: 16px;
@@ -169,10 +171,10 @@
                     max-width: 142px;
                     width: 100%; 
                     text-align: center;
-                    position: relative;
+                    position: absolute;
+                    // top: 0;
+                    // left: 0;
                     opacity: 1;
-                    transform: translateX(50%);
-                    transition: transform .2s ease opacity .2s ease;
                 &::after{
                     position: absolute;
                     content: '';
@@ -196,8 +198,8 @@
             }
             .block-circle__content{
                 opacity: 0;
-                transform: translateX(100%);
-                transition: transform .2s ease;
+                // transform: translateX(100%);
+                // transition: transform .2s ease;
                 font-weight: normal;
                 font-size: 15px;
                 line-height: 17px;
@@ -208,6 +210,10 @@
                 width: 100%; 
                 text-align: center;
                 position: relative;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
                 &::after{
                     position: absolute;
                     content: '';
@@ -219,16 +225,16 @@
                     transform: translateX(-50%);
                 }
             }
-            &:hover{
-                .block-circle__title{
-                    display: none;
-                }
-                .block-circle__content{
-                    opacity: 1;
-                    transform: translateX(0);
-                    transition: transform .35s ease, opacity .35s ease;
-                }
-            }
+            // &:hover{
+            //     .block-circle__title{
+            //         display: none;
+            //     }
+            //     .block-circle__content{
+            //         opacity: 1;
+            //         transform: translateX(0);
+            //         transition: transform .35s ease, opacity .35s ease;
+            //     }
+            // }
         }
     }
 }

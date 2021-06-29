@@ -47,7 +47,7 @@
                                 </a> 
                             {% elseif section.right_column.type == 'popup' %}
                                 <a data-popup=":scope .modal">
-                                    POPUP
+                                     {{ section.right_column.button.title }}
                                 </a>
 
                                 {% include 'partial/modal.twig' with { content: section.right_column.modal_text } %}
