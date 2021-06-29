@@ -31,13 +31,13 @@ class Contact {
     
             // Set E-Mail recipients
             $recipients = array(
-                get_bloginfo( 'admin_email' )
+                'jullian@eltigre.fr'
             );
     
     
             // Build email headers
             $headers = array();
-            $headers[] = 'Content-Type: text/html; charset=UTF-8';
+            $headers[] = 'Content-Type: text/plain; charset=UTF-8';
             $headers[] = 'From: ' . get_bloginfo( 'name' ) . ' <site@wordpress.com>';
             $headers[] = 'Reply-To: ' . $fields['firstname']['value'] . ' ' . $fields['lastname']['value'] . ' <' . $fields['email']['value'] . '>';
     
