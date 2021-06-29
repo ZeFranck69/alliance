@@ -66,6 +66,7 @@ class Section {
 				.fromTo(content, { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.2, ease: 'power2.out' });
 			animation.pause(0);
 
+			
 			block.addEventListener('mouseenter', () => animation.play());
 			block.addEventListener('mouseleave', () => animation.reverse());
 		});
