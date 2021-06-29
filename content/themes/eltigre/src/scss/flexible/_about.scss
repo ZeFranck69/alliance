@@ -208,14 +208,14 @@
 
                     .block:last-child{
                         position: relative;
-                        transform: translateY(97%);
+                        transform: translateY(97%) !important;
                     }
                 }
             }
         }
         .third-column{
             position: relative;
-            transform: translateY(-95%);
+            transform: translateY(-95%) !important;
         }
     }
 }
@@ -263,14 +263,14 @@
                         .blocks{
         
                             .block:last-child{
-                                transform: translateY(88%);
+                                transform: translateY(88%) !important;
                             }
                         }
                     }
                 }
                 .third-column{
                     max-width: 100%;
-                    transform: translateY(-101%);
+                    transform: translateY(-101%) !important;
                     .block{
                         border: 0;
                     }
