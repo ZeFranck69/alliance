@@ -1,126 +1,117 @@
-import { checkMail, checkPhoneNumber } from "../utils/functions";
+import { checkMail, checkPhoneNumber } from '../utils/functions';
 import { TimelineLite } from 'gsap';
-import Loader from "./Loader";
+import Loader from './Loader';
 
 export default class Form {
-  constructor(form, params = {}) {
-    this.el = form;
-    this.params = { ...this.getDefaultParams(), ...params };
+	constructor(form, params = {}) {
+		this.el = form;
+		this.params = { ...this.getDefaultParams(), ...params };
 
-    this.fields = form.querySelectorAll('input, textarea');
-    this.submitButton = new Loader(form.querySelector(this.params.submitSelector));
-    this.tlForm = new TimelineLite();
+		this.fields = form.querySelectorAll('input, textarea');
+		this.submitButton = new Loader(form.querySelector(this.params.submitSelector));
+		this.tlForm = new TimelineLite();
+		this.init();
+	}
 
-    this.init();
-  }
+	init() {
+		this.addFocusListeners();
+		this.el.addEventListener('submit', (ev) => {
+			if (this.params.preventSubmit) {
+				ev.preventDefault();
+			}
+			if (this.validate()) {
+				this.submitButton.load();
 
+				if (typeof this.params.onSubmit === 'function') {
+					this.params.onSubmit();
+				}
+			}
+		});
+	}
 
-  init() {
-    this.addFocusListeners();
-    this.el.addEventListener('submit', ev => {
-      if (this.params.preventSubmit) {
-        ev.preventDefault();
-      }
-      if (this.validate()) {
-        this.submitButton.load();
+	getDefaultParams() {
+		return {
+			submitSelector: 'input[type="button"], input[type="submit"], button',
+			preventSubmit: true,
+			onSubmit: () => {},
+			customValidation: () => {},
+		};
+	}
 
-        if (typeof this.params.onSubmit === 'function') {
-          this.params.onSubmit();
-        }
-      }
-    });
-  }
+	addFocusListeners() {
+		this.fields.forEach((field) => {
+			// Removes error class on focus
+			field.addEventListener('focus', function (e) {
+				this.classList.remove('error');
+			});
 
-  getDefaultParams() {
-    return {
-      submitSelector: 'input[type="button"], input[type="submit"], button',
-      preventSubmit: true,
-      onSubmit: () => { },
-      customValidation: () => { }
-    }
-  }
+			// Checks if the field is empty on blur
+			field.addEventListener('blur', function (e) {
+				if (this.value != '') this.classList.add('not-empty');
+				else this.classList.remove('not-empty');
+			});
+		});
+	}
 
+	validate() {
+		let emptyFields = 0;
+		let errors = [];
 
-  addFocusListeners() {
-    this.fields.forEach((field) => {
-      // Removes error class on focus
-      field.addEventListener('focus', function (e) {
-        this.classList.remove('error');
-      });
+		this.fields.forEach((field) => {
+			if (field.classList.contains('required') && field.value === '') {
+				emptyFields++;
+				field.classList.add('error');
+			}
 
-      // Checks if the field is empty on blur
-      field.addEventListener('blur', function (e) {
-        if (this.value != '')
-          this.classList.add('not-empty');
-        else
-          this.classList.remove('not-empty');
-      })
-    });
-  }
+			if (field.type === 'email' && !checkMail(field.value)) {
+				errors.push('Veuillez entrer une adresse E-Mail valide');
+				field.classList.add('error');
+			}
 
+			if (field.type === 'tel' && !checkPhoneNumber(field.value)) {
+				errors.push('Veuillez entrer un numéro de téléphone valide');
+				field.classList.add('error');
+			}
+		});
 
-  validate() {
-    let emptyFields = 0;
-    let errors = [];
+		if (emptyFields > 0) {
+			errors.push(`${emptyFields} ${emptyFields > 1 ? 'champs' : 'champ'} requis vide`);
+		}
 
+		if (typeof this.params.customValidation === 'function') {
+			const customValidationError = this.params.customValidation();
+			if (customValidationError) {
+				errors = Array.isArray(customValidationError)
+					? [...errors, ...customValidationError]
+					: [...errors, customValidationError];
+			}
+		}
 
-    this.fields.forEach((field) => {
-      if (field.classList.contains('required') && field.value === '') {
-        emptyFields++;
-        field.classList.add('error');
-      }
+		this.displayErrors(errors);
 
-      if (field.type === 'email' && !checkMail(field.value)) {
-        errors.push('Veuillez entrer une adresse E-Mail valide');
-        field.classList.add('error');
-      }
+		return errors.length == 0;
+	}
 
-      if (field.type === 'tel' && !checkPhoneNumber(field.value)) {
-        errors.push('Veuillez entrer un numéro de téléphone valide');
-        field.classList.add('error');
-      }
-    });
+	displayErrors(errors) {
+		let errorsContainer = this.el.querySelector('.form__errors') || this.createErrorsContainer();
 
-    if (emptyFields > 0) {
-      errors.push(`${emptyFields} ${emptyFields > 1 ? 'champs' : 'champ'} requis vide`)
-    }
+		errorsContainer.innerHTML = '';
 
-    if (typeof this.params.customValidation === 'function') {
-      const customValidationError = this.params.customValidation();
-      if (customValidationError) {
-        errors = Array.isArray(customValidationError)
-          ? [...errors, ...customValidationError]
-          : [...errors, customValidationError];
-      }
-    }
+		for (let i = 0; i < errors.length; i++) {
+			let error = document.createElement('p');
+			error.innerHTML = errors[i];
+			errorsContainer.appendChild(error);
+		}
 
-    this.displayErrors(errors);
+		this.tlForm.fromTo(errorsContainer, 1, { left: -100, opacity: 0 }, { left: 0, opacity: 1 });
+	}
 
-    return errors.length == 0;
-  }
+	createErrorsContainer() {
+		let errorsContainer = document.createElement('div');
+		errorsContainer.classList.add('form__errors');
 
+		this.el.appendChild(errorsContainer);
 
-  displayErrors(errors) {
-    let errorsContainer = this.el.querySelector('.form__errors') || this.createErrorsContainer();
-
-    errorsContainer.innerHTML = '';
-
-    for (let i = 0; i < errors.length; i++) {
-      let error = document.createElement('p');
-      error.innerHTML = errors[i];
-      errorsContainer.appendChild(error);
-    }
-
-    this.tlForm.fromTo(errorsContainer, 1, { left: -100, opacity: 0 }, { left: 0, opacity: 1 })
-  }
-
-
-  createErrorsContainer() {
-    let errorsContainer = document.createElement('div');
-    errorsContainer.classList.add('form__errors');
-
-    this.el.appendChild(errorsContainer);
-
-    return errorsContainer;
-  }
+		return errorsContainer;
+	}
 }

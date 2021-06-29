@@ -63,11 +63,17 @@
 .contact__form--right .cta{
     float: right;
 }
+.textarea-wrapper textarea,
+.contact__input-wrapper input {
+    font-family: 'Optima', sans-serif;
+}
 .textarea-wrapper textarea{
     height: 222px;
     border: 0;
     outline: none;
-}
+    resize: none;
+    padding: 10px 15px;
+    }
 .textarea-wrapper .contact__label{
     max-width: 100%;
 }
