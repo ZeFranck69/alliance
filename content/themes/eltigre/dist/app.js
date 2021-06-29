@@ -1,4 +1,5 @@
 /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/Flexibles.js":
@@ -7,7 +8,6 @@
   \*****************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ FlexiblesInit; }
@@ -17,7 +17,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _flexibles_About__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flexibles/About */ "./src/js/flexibles/About.js");
 /* harmony import */ var _flexibles_Apply__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flexibles/Apply */ "./src/js/flexibles/Apply.js");
 /* harmony import */ var _flexibles_Splash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./flexibles/Splash */ "./src/js/flexibles/Splash.js");
-/* harmony import */ var _flexibles_Splash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_flexibles_Splash__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -28,7 +27,7 @@ var SECTIONS = {
   about: _flexibles_About__WEBPACK_IMPORTED_MODULE_2__.default,
   apply: _flexibles_Apply__WEBPACK_IMPORTED_MODULE_3__.default,
   organisation: _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__.default,
-  splash: (_flexibles_Splash__WEBPACK_IMPORTED_MODULE_4___default())
+  splash: _flexibles_Splash__WEBPACK_IMPORTED_MODULE_4__.default
 };
 function FlexiblesInit() {
   for (var className in SECTIONS) {
@@ -46,7 +45,6 @@ function FlexiblesInit() {
   \********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ Device; }
@@ -97,7 +95,6 @@ var Device = /*#__PURE__*/function () {
   \******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ Form; }
@@ -274,7 +271,6 @@ var Form = /*#__PURE__*/function () {
   \********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ Loader; }
@@ -401,7 +397,6 @@ var Loader = /*#__PURE__*/function () {
   \******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ Menu; }
@@ -552,7 +547,6 @@ var Menu = /*#__PURE__*/function () {
   \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
@@ -653,7 +647,6 @@ var Section = /*#__PURE__*/function () {
   \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
@@ -743,7 +736,6 @@ var Section = /*#__PURE__*/function () {
   \*************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _class_Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../class/Form */ "./src/js/class/Form.js");
 /* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/functions */ "./src/js/utils/functions.js");
@@ -807,7 +799,6 @@ var Section = function Section(section) {
   \******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
@@ -914,9 +905,84 @@ var Section = /*#__PURE__*/function () {
 /*!************************************!*\
   !*** ./src/js/flexibles/Splash.js ***!
   \************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\src\\js\\flexibles\\Splash.js: Unexpected token (4:0)\n\n\u001b[0m \u001b[90m 2 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mScrollTrigger\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'gsap/ScrollTrigger'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 5 |\u001b[39m \u001b[36mclass\u001b[39m \u001b[33mOrganisation\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 6 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 |\u001b[39m \u001b[36mclass\u001b[39m \u001b[33mSplash\u001b[39m {\u001b[0m\n    at Parser._raise (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:816:17)\n    at Parser.raiseWithData (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:809:17)\n    at Parser.raise (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:770:17)\n    at Parser.unexpected (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:9893:16)\n    at Parser.parseExprAtom (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:11307:20)\n    at Parser.parseExprSubscripts (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:10881:23)\n    at Parser.parseUpdate (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:10861:21)\n    at Parser.parseMaybeUnary (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:10839:23)\n    at Parser.parseExprOps (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:10696:23)\n    at Parser.parseMaybeConditional (C:\\wamp64\\www\\alliance\\content\\themes\\eltigre\\node_modules\\@babel\\parser\\lib\\index.js:10670:23)");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var Splash = function Splash(className) {
+  _classCallCheck(this, Splash);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+};
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var logo = this.section.querySelector('.splash-content__logo');
+      var text = this.section.querySelectorAll('.description > *');
+      gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(logo, {
+        autoAlpha: 0,
+        scale: 0.1
+      }, {
+        autoAlpha: 1,
+        scale: 1,
+        duration: 0.4,
+        delay: 0.5,
+        ease: 'back.out'
+      }).fromTo(text, {
+        y: 30,
+        autoAlpha: 0,
+        scale: 0.2
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        scale: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: 'power2.out'
+      });
+      var image = this.section.querySelector('.splash__image');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.fromTo(image, {
+        backgroundPositionY: '0'
+      }, {
+        backgroundPositionY: '30vh',
+        ease: 'linear'
+      });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
+        trigger: image,
+        start: 'bottom-=10% bottom-=10%',
+        end: 'bottom+=100% bottom-=10%',
+        scrub: 0.1,
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Splash);
 
 /***/ }),
 
@@ -926,7 +992,6 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
   \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "initSwipers": function() { return /* binding */ initSwipers; },
@@ -1173,7 +1238,6 @@ function checkDate(date) {
   \****************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CSSPlugin": function() { return /* binding */ CSSPlugin; },
@@ -2608,7 +2672,6 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
   \*********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ScrollToPlugin": function() { return /* binding */ ScrollToPlugin; },
@@ -2886,7 +2949,6 @@ _getGSAP() && gsap.registerPlugin(ScrollToPlugin);
   \********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ScrollTrigger": function() { return /* binding */ ScrollTrigger; },
@@ -4611,7 +4673,6 @@ _getGSAP() && gsap.registerPlugin(ScrollTrigger);
   \****************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GSCache": function() { return /* binding */ GSCache; },
@@ -8596,7 +8657,6 @@ var Power0 = _easeMap.Power0,
   \************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "gsap": function() { return /* binding */ gsapWithCSS; },
@@ -8663,18 +8723,6 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -8705,9 +8753,8 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 !function() {
-"use strict";
 var __webpack_exports__ = {};
 /*!***********************!*\
   !*** ./src/js/App.js ***!
@@ -8924,9 +8971,8 @@ document.addEventListener('DOMContentLoaded', function (ev) {
   new App();
 });
 }();
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 !function() {
-"use strict";
 /*!******************************!*\
   !*** ./src/scss/global.scss ***!
   \******************************/
