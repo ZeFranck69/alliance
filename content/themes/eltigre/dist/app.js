@@ -13,9 +13,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ FlexiblesInit; }
 /* harmony export */ });
 /* harmony import */ var _flexibles_Contact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flexibles/Contact */ "./src/js/flexibles/Contact.js");
+/* harmony import */ var _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Organisation */ "./src/js/flexibles/Organisation.js");
+
 
 var SECTIONS = {
-  contact: _flexibles_Contact__WEBPACK_IMPORTED_MODULE_0__.default
+  contact: _flexibles_Contact__WEBPACK_IMPORTED_MODULE_0__.default,
+  organisation: _flexibles_Organisation__WEBPACK_IMPORTED_MODULE_1__.default
 };
 function FlexiblesInit() {
   for (var className in SECTIONS) {
@@ -567,11 +570,11 @@ var Section = function Section(section) {
     var parsedRes = JSON.parse(res);
 
     if (parsedRes.success) {
-      _this.subject.form.submitButton.success(site.translation.contact.message_sent);
+      _this.form.submitButton.success(site.translations.contact.message_sent);
     } else {
-      _this.subject.form.displayErrors([site.translation.contact.error]);
+      _this.form.displayErrors([site.translations.contact.error]);
 
-      _this.subject.form.submitButton.reset();
+      _this.form.submitButton.reset();
     }
   });
 
@@ -582,6 +585,77 @@ var Section = function Section(section) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Contact);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Organisation.js":
+/*!******************************************!*\
+  !*** ./src/js/flexibles/Organisation.js ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+var Organisation = function Organisation(className) {
+  _classCallCheck(this, Organisation);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+};
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.blocks = section.querySelectorAll('.block-circle');
+    this.addMouseOverAnimation();
+  }
+
+  _createClass(Section, [{
+    key: "addMouseOverAnimation",
+    value: function addMouseOverAnimation() {
+      this.blocks.forEach(function (block) {
+        var title = block.querySelector('.block-circle__title');
+        var content = block.querySelector('.block-circle__content');
+        var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().to(title, {
+          autoAlpha: 0,
+          duration: 0.2,
+          ease: 'power2.out'
+        }).fromTo(content, {
+          autoAlpha: 0,
+          scale: 0.5
+        }, {
+          autoAlpha: 1,
+          scale: 1,
+          duration: 0.2,
+          ease: 'power2.out'
+        });
+        animation.pause(0);
+        block.addEventListener('mouseenter', function () {
+          return animation.play();
+        });
+        block.addEventListener('mouseleave', function () {
+          return animation.reverse();
+        });
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Organisation);
 
 /***/ }),
 

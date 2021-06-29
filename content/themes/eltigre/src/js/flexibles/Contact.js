@@ -32,10 +32,10 @@ class Section {
 	onSubmitResponse = (res) => {
 		const parsedRes = JSON.parse(res);
 		if (parsedRes.success) {
-			this.subject.form.submitButton.success(site.translation.contact.message_sent);
+			this.form.submitButton.success(site.translations.contact.message_sent);
 		} else {
-			this.subject.form.displayErrors([site.translation.contact.error]);
-			this.subject.form.submitButton.reset();
+			this.form.displayErrors([site.translations.contact.error]);
+			this.form.submitButton.reset();
 		}
 	};
 }

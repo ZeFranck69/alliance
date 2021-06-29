@@ -115,8 +115,8 @@ if ( class_exists( 'Timber' ) ) {
 						'theme_url' => get_template_directory_uri(),
 						'translations' => array(
 							'contact' => array(
-								'message_sent' => __( 'Message envoyé !', 'eltigre' ),
-								'error' => __( 'Une erreur est survenue.', 'eltigre' )
+								'message_sent' => __( 'Sent', 'eltigre' ),
+								'error' => __( 'An error occured. Please try again later.', 'eltigre' )
 							)
 						)
 					));
