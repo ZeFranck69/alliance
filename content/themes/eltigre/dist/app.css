@@ -715,7 +715,7 @@ a {
 @media screen and (max-height: 770px) {
   #site-header.active .header-content {
     background-color: #fff;
-    opacity: 0.4;
+    opacity: 0.9;
   }
   #site-header.active .header-content .header--menu-container ul li {
     margin: 12px auto;
@@ -1240,7 +1240,7 @@ a {
 }
 @media screen and (max-width: 520px) {
   .about .about-wrapper {
-    padding: 0;
+    padding: 0 !important;
   }
   .about .about-wrapper .about__columns .text-and-2-columns__part .second-column {
     max-width: 100%;
