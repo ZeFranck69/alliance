@@ -603,11 +603,13 @@ var Section = function Section(section) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 
 
@@ -626,12 +628,66 @@ var Section = /*#__PURE__*/function () {
 
     this.section = section;
     this.blocks = section.querySelectorAll('.block-circle');
-    this.addMouseOverAnimation();
+    this.animate();
+    this.parallax();
+    this.addBlocksMouseOverAnimation();
   }
 
   _createClass(Section, [{
-    key: "addMouseOverAnimation",
-    value: function addMouseOverAnimation() {
+    key: "parallax",
+    value: function parallax() {
+      var image = this.section.querySelector('.organisation__image');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.fromTo(image, {
+        backgroundPositionY: '40%'
+      }, {
+        backgroundPositionY: '0%',
+        ease: 'linear'
+      });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
+        trigger: image,
+        start: 'top bottom-=10%',
+        end: 'bottom+=500 bottom-=10%',
+        scrub: true,
+        animation: animation
+      });
+    }
+  }, {
+    key: "animate",
+    value: function animate() {
+      var blocksWrapper = this.section.querySelector('.blocks');
+      var blocks = this.section.querySelectorAll('.block');
+      var blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .content__paragraph');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(blocks, {
+        scale: 0.8,
+        y: 50,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        ease: 'back.out',
+        duration: 0.25
+      }).fromTo(blocksElements, {
+        y: 20,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.15,
+        ease: 'power2.out'
+      });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
+        trigger: blocksWrapper,
+        start: 'top bottom-=10%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }, {
+    key: "addBlocksMouseOverAnimation",
+    value: function addBlocksMouseOverAnimation() {
       this.blocks.forEach(function (block) {
         var title = block.querySelector('.block-circle__title');
         var content = block.querySelector('.block-circle__content');
@@ -8445,9 +8501,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
-/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
-/* harmony import */ var _Flexibles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Flexibles */ "./src/js/Flexibles.js");
-/* harmony import */ var _class_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./class/Menu */ "./src/js/class/Menu.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _Flexibles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Flexibles */ "./src/js/Flexibles.js");
+/* harmony import */ var _class_Menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./class/Menu */ "./src/js/class/Menu.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -8456,7 +8512,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
-gsap__WEBPACK_IMPORTED_MODULE_0__.default.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin);
+gsap__WEBPACK_IMPORTED_MODULE_0__.default.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
 
 
 
@@ -8467,14 +8523,15 @@ var App = /*#__PURE__*/function () {
     this.revealManager();
     this.anchorManager();
     this.modalManager();
-    this.menu = new _class_Menu__WEBPACK_IMPORTED_MODULE_3__.default();
-    (0,_Flexibles__WEBPACK_IMPORTED_MODULE_2__.default)();
+    this.titleAnimationManager();
+    this.menu = new _class_Menu__WEBPACK_IMPORTED_MODULE_4__.default();
+    (0,_Flexibles__WEBPACK_IMPORTED_MODULE_3__.default)();
   }
 
   _createClass(App, [{
     key: "revealManager",
     value: function revealManager() {
-      document.querySelectorAll('[gsap-reveal]').forEach(function (el) {
+      document.querySelectorAll('[gsap-reveal]').forEach(function (elt, index) {
         var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.fromTo(elt, {
           y: 30,
           autoAlpha: 0
@@ -8484,10 +8541,10 @@ var App = /*#__PURE__*/function () {
           duration: 0.35,
           ease: 'power2.out'
         });
-        gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
+        gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
           trigger: elt,
           animation: animation,
-          start: 'top-=10% bottom-=10%'
+          start: 'top-=10% bottom-=5%'
         });
       });
     }
@@ -8559,6 +8616,48 @@ var App = /*#__PURE__*/function () {
         });
         document.body.addEventListener('keydown', function (ev) {
           if (ev.key === 'Escape') closeModal();
+        });
+      });
+    }
+  }, {
+    key: "titleAnimationManager",
+    value: function titleAnimationManager() {
+      var titles = document.querySelectorAll('.title__wrapper');
+      titles.forEach(function (title) {
+        var number = title.querySelector('.title__number');
+        var firstLine = title.querySelector('.title__first-line');
+        var secondLine = title.querySelector('.title__second-line');
+        var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline();
+        if (number) animation.fromTo(number, {
+          scale: 0.5,
+          autoAlpha: 0
+        }, {
+          scale: 1,
+          autoAlpha: 1,
+          duration: 0.2,
+          ease: 'back.out'
+        });
+        if (firstLine) animation.fromTo(firstLine, {
+          y: -30,
+          autoAlpha: 0
+        }, {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.2
+        });
+        if (secondLine) animation.fromTo(secondLine, {
+          y: 30,
+          autoAlpha: 0
+        }, {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.2
+        });
+        gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+          trigger: title,
+          start: 'top bottom-=10%',
+          animation: animation,
+          toggleActions: 'play none none reverse'
         });
       });
     }

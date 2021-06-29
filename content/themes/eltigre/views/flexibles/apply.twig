@@ -18,10 +18,10 @@
                     <div class="column__events">
                         {% for event in section.left_column.events %}
                         <div class="event">
-                            <div class="event-title">
+                            <div class="event-title" gsap-reveal>
                                 {{ event.title }}
                             </div>
-                            <div class="event-date">
+                            <div class="event-date" gsap-reveal>
                                 {{ event.date }}
                             </div>
                         </div>
