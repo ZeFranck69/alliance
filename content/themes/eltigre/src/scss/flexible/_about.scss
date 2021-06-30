@@ -104,6 +104,9 @@
                 transition: color .35s ease;
             }
         }
+        .block-3{
+            display: none;
+        }
     }
     .third-column{
         max-width: 392px;
@@ -156,6 +159,7 @@
         &:last-child{
             display: flex;
             flex-direction: row;
+            align-items:center;
 
             p{
                 max-width: 23px;
@@ -218,17 +222,26 @@
                 margin-right: 0;
 
                 .blocks{
-
+                    display: flex;
+                    flex-flow: column wrap;
                     .block:last-child{
                         position: relative;
-                        transform: translateY(100%) !important;
+                    }
+                    .block-1{
+                        order: 1;   
+                    }
+                    .block-2{
+                        order: 3;
+                    }
+                    .block-3{
+                        display: block;
+                        order: 2;
                     }
                 }
             }
         }
         .third-column{
-            position: relative;
-            transform: translateY(-85%) !important;
+            display: none;
         }
     }
 }
@@ -275,20 +288,15 @@
                         max-width: 100%;
                         .blocks{
         
-                            .block:last-child{
-                                transform: translateY(88%) !important;
+                            .block{
+                               margin-bottom: 0;
+                            }
+                            .block-3{
+                                border: 0px solid !important;
                             }
                         }
                     }
                 }
-                .third-column{
-                    max-width: 100%;
-                    transform: translateY(-93%) !important;
-                    .block{
-                        border: 0;
-                    }
-                }
-
             } 
         }
     }
@@ -327,14 +335,13 @@
                         .blocks{
         
                             .block:last-child{
-                                transform: translateY(99%) !important;
+                            
                             }
                         }
                     }
                 }
                 .third-column{
                     max-width: 100%;
-                    transform: translateY(-85%) !important;
                     .block{
                         border: 0;
                     }
