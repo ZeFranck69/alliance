@@ -1131,7 +1131,6 @@ var Section = /*#__PURE__*/function () {
         ease: 'power2.out'
       });
       var image = this.section.querySelector('.splash__image');
-      console.log(this.section.clientHeight / 3);
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.fromTo(image, {
         backgroundPositionY: '0'
       }, {

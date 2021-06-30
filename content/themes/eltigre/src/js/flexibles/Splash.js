@@ -30,7 +30,6 @@ class Section {
 			);
 
 		const image = this.section.querySelector('.splash__image');
-		console.log(this.section.clientHeight / 3);
 		const animation = gsap.fromTo(
 			image,
 			{ backgroundPositionY: '0' },
