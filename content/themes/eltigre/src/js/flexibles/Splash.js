@@ -30,12 +30,17 @@ class Section {
 			);
 
 		const image = this.section.querySelector('.splash__image');
-		const animation = gsap.fromTo(image, { backgroundPositionY: '0' }, { backgroundPositionY: '30vh', ease: 'linear' });
+		console.log(this.section.clientHeight / 3);
+		const animation = gsap.fromTo(
+			image,
+			{ backgroundPositionY: '0' },
+			{ backgroundPositionY: `${this.section.clientHeight / 3}px`, ease: 'linear' }
+		);
 		ScrollTrigger.create({
 			trigger: image,
-			start: 'bottom-=10% bottom-=10%',
+			start: 'top top',
 			end: 'bottom+=100% bottom-=10%',
-			scrub: 0.1,
+			scrub: 0,
 			animation,
 		});
 	}

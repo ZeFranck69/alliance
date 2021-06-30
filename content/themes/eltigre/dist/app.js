@@ -1131,17 +1131,18 @@ var Section = /*#__PURE__*/function () {
         ease: 'power2.out'
       });
       var image = this.section.querySelector('.splash__image');
+      console.log(this.section.clientHeight / 3);
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.fromTo(image, {
         backgroundPositionY: '0'
       }, {
-        backgroundPositionY: '30vh',
+        backgroundPositionY: "".concat(this.section.clientHeight / 3, "px"),
         ease: 'linear'
       });
       gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.default.create({
         trigger: image,
-        start: 'bottom-=10% bottom-=10%',
+        start: 'top top',
         end: 'bottom+=100% bottom-=10%',
-        scrub: 0.1,
+        scrub: 0,
         animation: animation
       });
     }
