@@ -311,7 +311,6 @@
                 max-width: 260px;
 
                     .block-circle__title{
-                        transform: translateX(0%);
                         font-size: 16px;
                         line-height: 17px;
                         letter-spacing: 0px;
@@ -329,7 +328,6 @@
                 }
                 .block-circle__content{
                     opacity: 1;
-                    transform: translateX(0);
                     font-size: 14px;
                     line-height: 15px;
                     letter-spacing: 0.7px;
@@ -346,7 +344,6 @@
                     }
                     .block-circle__content{
                         opacity: 1;
-                        transform: translateX(0);
                         transition: none;
                     }
                 }

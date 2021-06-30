@@ -1941,8 +1941,6 @@ a {
     max-width: 260px;
   }
   .organisation .organisation__second-part .block-circle .block-circle__title {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
     font-size: 16px;
     line-height: 17px;
     letter-spacing: 0px;
@@ -1961,8 +1959,6 @@ a {
   }
   .organisation .organisation__second-part .block-circle .block-circle__content {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
     font-size: 14px;
     line-height: 15px;
     letter-spacing: 0.7px;
@@ -1979,8 +1975,6 @@ a {
   }
   .organisation .organisation__second-part .block-circle:hover .block-circle__content {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
     -webkit-transition: none;
     transition: none;
   }
