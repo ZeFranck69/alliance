@@ -405,7 +405,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ Menu; }
 /* harmony export */ });
 /* harmony import */ var gsap_gsap_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/gsap-core */ "./node_modules/gsap/gsap-core.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var _Device__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Device */ "./src/js/class/Device.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -542,7 +541,7 @@ var Menu = /*#__PURE__*/function () {
     key: "animation",
     value: function animation() {
       var menuItems = this.header.querySelectorAll('.menu-item');
-      var animation = gsap_gsap_core__WEBPACK_IMPORTED_MODULE_1__.default.timeline().fromTo(menuItems, {
+      gsap_gsap_core__WEBPACK_IMPORTED_MODULE_1__.default.timeline().fromTo(menuItems, {
         scale: 0.8,
         y: 50,
         autoAlpha: 0
@@ -552,12 +551,6 @@ var Menu = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.1,
         duration: 0.5
-      });
-      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.default.create({
-        trigger: menuItems,
-        start: 'top bottom-=10%',
-        toggleActions: 'play none none reverse',
-        animation: animation
       });
     }
   }]);
@@ -8991,6 +8984,8 @@ var App = /*#__PURE__*/function () {
   }, {
     key: "anchorManager",
     value: function anchorManager(ev) {
+      // Clean up URL
+      window.history.replaceState(null, null, window.location.pathname);
       var links = document.querySelectorAll('a');
       links.forEach(function (link) {
         var anchor = link.href.replace(window.location.href, '');
