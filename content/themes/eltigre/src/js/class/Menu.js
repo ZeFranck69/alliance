@@ -104,7 +104,7 @@ export default class Menu {
 		if (this.header.classList.contains('disabled')) {
 			this.header.classList.remove('disabled');
 			this.header.classList.add('active');
-			// this.animation();
+			this.animation();
 		} else {
 			this.header.classList.add('disabled');
 			this.header.classList.remove('active');
