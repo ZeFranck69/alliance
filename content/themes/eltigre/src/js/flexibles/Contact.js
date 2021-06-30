@@ -18,7 +18,7 @@ class Section {
 		this.form = new Form(section.querySelector('form'), {
 			onSubmit: this.onSubmit,
 		});
-		this.animate();
+		// this.animate();
 	}
 
 	onSubmit = () => {

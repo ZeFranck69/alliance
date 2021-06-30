@@ -12,7 +12,7 @@
         <div class="main-wrapper organisation__first-part">
             <div class="blocks">
                 {% for block in section.first_part.blocks %}
-                    <div class="block" style="background-color: {{ block.background_color }}; color:{{ block.text_color }};">
+                    <div class="block" style="background-color: {{ block.background_color }}; color:{{ block.text_color }};background-image:url('{{ block.background_image.url }}');">
                         {% if block.block_title %}
                         <div class="block__title">
                             <h4 class="title">{{ block.block_title }}</h4>

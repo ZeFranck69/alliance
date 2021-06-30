@@ -822,8 +822,7 @@ var Section = /*#__PURE__*/function () {
     this.section = section;
     this.form = new _class_Form__WEBPACK_IMPORTED_MODULE_0__.default(section.querySelector('form'), {
       onSubmit: this.onSubmit
-    });
-    this.animate();
+    }); // this.animate();
   }
 
   _createClass(Section, [{

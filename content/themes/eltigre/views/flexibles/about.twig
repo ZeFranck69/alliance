@@ -45,7 +45,9 @@
                             {% endif %}
                             {% if block.source %}
                             <div class="block__source">
-                                {{ block.source }}
+                                <a href="{{ block.source_link.url }}" target="{{ block.source_link.target }}"> 
+                                    {{ block.source }}
+                                </a>
                             </div>
                             {% endif %}
                         </div>
