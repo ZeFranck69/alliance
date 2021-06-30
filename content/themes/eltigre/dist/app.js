@@ -996,8 +996,7 @@ var Section = /*#__PURE__*/function () {
       var blocksWrapper = this.section.querySelector('.blocks');
       var blocks = this.section.querySelectorAll('.block');
       var blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .content__paragraph');
-      var blocksCircles = this.section.querySelector('.blocks-circles'); // const blockCircle = blocksCircles.querySelectorAll('.block-circle');
-
+      var blocksCircles = this.section.querySelector('.blocks-circles');
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().fromTo(blocks, {
         scale: 0.5,
         y: 50,
@@ -1041,7 +1040,8 @@ var Section = /*#__PURE__*/function () {
         var content = block.querySelector('.block-circle__content');
         var animation = gsap__WEBPACK_IMPORTED_MODULE_0__.default.timeline().to(title, {
           autoAlpha: 0,
-          duration: 0.2,
+          scale: 0.5,
+          duration: 0.15,
           ease: 'power2.out'
         }).fromTo(content, {
           autoAlpha: 0,
@@ -1049,7 +1049,7 @@ var Section = /*#__PURE__*/function () {
         }, {
           autoAlpha: 1,
           scale: 1,
-          duration: 0.2,
+          duration: 0.15,
           ease: 'power2.out'
         });
         animation.pause(0);

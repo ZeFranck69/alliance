@@ -24,7 +24,6 @@ class Section {
 		const blocks = this.section.querySelectorAll('.block');
 		const blocksElements = blocksWrapper.querySelectorAll('.block__title, .block__picto, .content__paragraph');
 		const blocksCircles = this.section.querySelector('.blocks-circles');
-		// const blockCircle = blocksCircles.querySelectorAll('.block-circle');
 
 		const animation = gsap
 			.timeline()
@@ -54,8 +53,8 @@ class Section {
 			const content = block.querySelector('.block-circle__content');
 			const animation = gsap
 				.timeline()
-				.to(title, { autoAlpha: 0, duration: 0.2, ease: 'power2.out' })
-				.fromTo(content, { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.2, ease: 'power2.out' });
+				.to(title, { autoAlpha: 0, scale: 0.5, duration: 0.15, ease: 'power2.out' })
+				.fromTo(content, { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.15, ease: 'power2.out' });
 			animation.pause(0);
 
 			block.addEventListener('mouseenter', () => animation.play());

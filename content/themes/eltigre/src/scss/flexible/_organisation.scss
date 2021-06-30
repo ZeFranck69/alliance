@@ -245,14 +245,14 @@
                 }
             }
             &:hover{
-                .block-circle__title{
-                    display: none;
-                }
-                .block-circle__content{
-                    opacity: 1;
-                    transform: translateY(-50%) translateX(-50%);
-                    transition: transform .35s ease, opacity .35s ease;
-                }
+                // .block-circle__title{
+                //     display: none;
+                // }
+                // .block-circle__content{
+                //     opacity: 1;
+                //     transform: translateY(-50%) translateX(-50%);
+                //     transition: transform .35s ease, opacity .35s ease;
+                // }
             }
         }
     }
@@ -339,13 +339,13 @@
                     }
                 }
                 &:hover{
-                    .block-circle__title{
-                        display: block;
-                    }
-                    .block-circle__content{
-                        opacity: 1;
-                        transition: none;
-                    }
+                    // .block-circle__title{
+                    //     display: block;
+                    // }
+                    // .block-circle__content{
+                    //     opacity: 1;
+                    //     transition: none;
+                    // }
                 }
             }
         }

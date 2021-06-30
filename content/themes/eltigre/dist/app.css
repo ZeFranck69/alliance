@@ -1879,19 +1879,6 @@ a {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-.organisation .organisation__second-part .block-circle:hover .block-circle__title {
-  display: none;
-}
-.organisation .organisation__second-part .block-circle:hover .block-circle__content {
-  opacity: 1;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
-  -webkit-transition: opacity 0.35s ease, -webkit-transform 0.35s ease;
-  transition: opacity 0.35s ease, -webkit-transform 0.35s ease;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-  transition: transform 0.35s ease, opacity 0.35s ease, -webkit-transform 0.35s ease;
-}
-
 @media screen and (max-width: 1120px) {
   .organisation .organisation__subtitle::before {
     max-width: 40.9%;
@@ -1969,14 +1956,6 @@ a {
   }
   .organisation .organisation__second-part .block-circle .block-circle__content::after {
     content: none;
-  }
-  .organisation .organisation__second-part .block-circle:hover .block-circle__title {
-    display: block;
-  }
-  .organisation .organisation__second-part .block-circle:hover .block-circle__content {
-    opacity: 1;
-    -webkit-transition: none;
-    transition: none;
   }
 }
 @media screen and (max-width: 754px) {
