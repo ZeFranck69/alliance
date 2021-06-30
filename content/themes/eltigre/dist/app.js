@@ -526,8 +526,7 @@ var Menu = /*#__PURE__*/function () {
 
       if (this.header.classList.contains('disabled')) {
         this.header.classList.remove('disabled');
-        this.header.classList.add('active');
-        this.animation();
+        this.header.classList.add('active'); // this.animation();
       } else {
         this.header.classList.add('disabled');
         this.header.classList.remove('active');
