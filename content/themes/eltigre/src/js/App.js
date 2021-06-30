@@ -35,6 +35,9 @@ export default class App {
 	}
 
 	anchorManager(ev) {
+		// Clean up URL
+		window.history.replaceState(null, null, window.location.pathname);
+
 		const links = document.querySelectorAll('a');
 		links.forEach((link) => {
 			const anchor = link.href.replace(window.location.href, '');
