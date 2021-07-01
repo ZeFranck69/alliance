@@ -30,7 +30,22 @@ class Contact {
     
     
             // Set E-Mail recipients
-            $recipients = get_bloginfo( 'admin_email' );
+            $referer_post_ID = url_to_postid( $_SERVER['HTTP_REFERER'] );
+            $recipients = array();
+            $sections = get_field( 'sections', $referer_post_ID );
+            if ( !empty( $sections ) ) {
+                foreach ( $sections as $section ) {
+                    if ( $section['acf_fc_layout'] === 'contact_form' ) {
+                        $recipients = array( $section[ 'recipient' ] );
+                        break;
+                    }
+                }
+            }
+
+            if ( empty( $recipients ) ) {
+                $recipients = array( get_bloginfo( 'admin_email' ) );
+            }
+                
     
     
             // Build email headers
