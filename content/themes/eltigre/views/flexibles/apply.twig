@@ -49,8 +49,10 @@
                                 <a data-popup=":scope .modal">
                                      {{ section.right_column.button.title }}
                                 </a>
-
-                                
+                            {% elseif section.right_column.type == 'file' %}    
+                                <a href="{{ section.right_column.file }}" target="_blank">
+                                    {{ section.right_column.button.title }}
+                                </a> 
                             {% endif %}
                             </div>
                         </div>
