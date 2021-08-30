@@ -5,9 +5,18 @@
                <div class="splash-content__logo">
                    <img src="{{ section.logo.url }}" alt="{{ section.logo.alt }}" class="logo">
                </div>
+               {% if section.description %}
                <div class="splash-content description">
                    {{ section.description }}
                </div>
+               {% endif %}
+               {% if section.button.title %}
+               <div class="splash-content__button">
+                    <a href="{{ section.button.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">
+                        {{ section.button.title }}
+                    </a>
+               </div>
+               {% endif %}
            </div>
         </div>
     </div>
