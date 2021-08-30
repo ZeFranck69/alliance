@@ -19,6 +19,7 @@ class Section {
 	animate() {
 		const logo = this.section.querySelector('.splash-content__logo');
 		const text = this.section.querySelectorAll('.description > *');
+		const button = this.section.querySelector('.splash-content__button');
 
 		gsap
 			.timeline()
@@ -27,6 +28,11 @@ class Section {
 				text,
 				{ y: 30, autoAlpha: 0, scale: 0.2 },
 				{ y: 0, autoAlpha: 1, scale: 1, duration: 0.7, stagger: 0.2, ease: 'power2.out' }
+			)
+			.fromTo(
+				button,
+				{ y: 30, autoAlpha: 0, scale: 0.2 },
+				{ y: 0, autoAlpha: 1, scale: 1, duration: 0.35, stagger: 0.2, ease: 'power2.out' }
 			);
 
 		const image = this.section.querySelector('.splash__image');
