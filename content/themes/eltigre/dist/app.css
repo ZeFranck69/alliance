@@ -2349,16 +2349,19 @@ a {
   font-family: "Optima", sans-serif;
   margin-bottom: 15px;
   font-weight: bold;
+  font-size: 35px;
 }
 .simple__wrapper h3 {
   font-family: "Optima", sans-serif;
   margin-bottom: 15px;
   font-weight: bold;
+  font-size: 30px;
 }
 .simple__wrapper h4 {
   font-family: "Optima", sans-serif;
   margin-bottom: 15px;
   font-weight: bold;
+  font-size: 25px;
 }
 
 .contact {
