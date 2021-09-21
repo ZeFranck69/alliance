@@ -74,6 +74,35 @@
             letter-spacing: 0.24px;
             font-family: "Optima", sans-serif;
             font-weight: bold;
+        
+            .event__cta-wrapper{
+                margin-top: 15px;
+                a{
+                    font-size: 12px;
+                    line-height: 16px;
+                    letter-spacing: 0.6px;
+                    font-family: "Optima", sans-serif;
+                    font-weight: bold;
+                    position: relative;
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        background-image: url('../../src/images/arrow-view-more.svg');
+                        width: 14px;
+                        height: 14px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: -22px;
+                        transition: right 0.35s ease;
+                    }
+                    &:hover{
+                        &::after{
+                            transition: right .35s ease;
+                            right: -30px;
+                        }       
+                    }
+                }
+            }
         }
     }
     .second-column{

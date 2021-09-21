@@ -94,7 +94,7 @@
                 top: 0;
                 left: 0;
                 bottom: 0;
-                background-image: url("../images/apply.jpg");;
+                background-image: url("../images/apply.jpg");
                 background-position: center;
                 width: 5px;
                 background-repeat: no-repeat;
@@ -116,7 +116,11 @@
             max-width: 276px;
         }
         .event__cta-wrapper{
-
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            max-width: 200px;
+            width: 100%;
             a{
                 font-size: 12px;
                 line-height: 16px;

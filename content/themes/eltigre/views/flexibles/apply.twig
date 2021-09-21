@@ -54,6 +54,11 @@
                                     {{ section.right_column.button.title }}     
                                 </a> 
                             {% endif %}
+                            {% if section.right_column.cta_faq %}
+                                <a href="{{ section.right_column.cta_faq.url }}" target="{{ section.right_column.button.target }}">
+                                    {{ section.right_column.cta_faq.title }}
+                                </a> 
+                            {% endif %}
                             </div>
                         </div>
                         {% if section.link.title %}

@@ -24,7 +24,7 @@ if ( ! class_exists( 'Eltigre\Admin\Support' ) ) {
           __( 'Support', 'eltigre' ), 
           'edit_pages', 
           'eltigre-support', 
-          array( $this, 'display_form' ), 
+          array( __CLASS__, 'display_form' ), 
           'dashicons-superhero',
           99 
         );

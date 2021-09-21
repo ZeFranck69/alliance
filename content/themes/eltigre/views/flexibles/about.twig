@@ -10,6 +10,23 @@
                     {% if section.first_column.description %}
                     <div class="first-column__description">
                         {{ section.first_column.description }}
+                        <div class="event__cta-wrapper">
+                            {% if section.first_column.type == 'link' %}
+                                <a href="{{ section.first_column.button.url }}" target="{{ section.first_column.button.target }}">
+                                    {{ section.first_column.button.title }}
+                                </a> 
+                            {% elseif section.first_column.type == 'popup' %}
+                                <a data-popup=":scope .modal">
+                                     {{ section.first_column.button.title }}
+                                </a>
+                            {% elseif section.first_column.type == 'file' %}  
+                                <a href="{{ section.first_column.file.url }}" target="_blank" download>
+                                    {{ section.first_column.label_file }}     
+                                </a> 
+                            {% endif %}
+                            
+
+                        </div>
                     </div>
                     {% endif %}
                     <!-- Rajouter le bouton -->
