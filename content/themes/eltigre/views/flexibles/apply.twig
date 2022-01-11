@@ -1,3 +1,13 @@
+<!-- MODAL -->
+<div class="modal closed">
+    <div class="modal-wrapper container">
+      <div class="modal-content" >
+        <div class="close"></div>
+      </div>
+    </div>
+</div>
+<!-- END MODAL -->
+
 <section id="{{ section.first_line_title.title|sanitize }}" class="apply" style="background-color: {{ section.background_color }};" data-midnight="light">
     {% include 'partial/title.twig' %}
     <div class="main-wrapper apply-content__wrapper">
@@ -39,8 +49,8 @@
                                     {{ section.left_column.button.title }}
                                 </a> 
                             {% elseif section.left_column.type == 'popup' %}
-                                <a data-popup=":scope .modal">
-                                     {{ section.left_column.button.title }}
+                                <a data-popup=".modal" data-content="{{ section.left_column.modal_text|sanitize }}" data-btn='{{ section.left_column.type }}'>
+                                     {{ section.left_column.label }}
                                 </a>
                             {% elseif section.left_column.type == 'file' %}  
                                 <a href="{{ section.left_column.file.url }}" target="_blank" download>
@@ -72,7 +82,7 @@
                                     {{ section.right_column.button.title }}
                                 </a> 
                             {% elseif section.right_column.type == 'popup' %}
-                                <a data-popup=":scope .modal">
+                                <a data-popup=":scope .modal" data-content="{{ section.right_column.modal_text|sanitize }}" data-btn='{{ section.right_column.type }}'>
                                      {{ section.right_column.button.title }}
                                 </a>
                             {% elseif section.right_column.type == 'file' %}  
@@ -101,7 +111,7 @@
                         {% elseif section.type_button == "popup" %}
                             {% if section.label %}
                             <div class="cta-wrapper">
-                                <a data-popup=":scope .modal" class="cta cta--gold cta--small">{{ section.label }}</a>
+                                <a data-popup=":scope .modal" class="cta cta--gold cta--small" data-btn='{{ section.type_button }}'  data-content="{{ section.modal_text|sanitize }}">{{ section.label }}</a>
                             </div>
                             {% endif %}
                         {% endif %}
@@ -112,4 +122,5 @@
         </div>
     </div>
     <!-- {% include 'partial/modal.twig' with { content: section.right_column.modal_text } %} -->
+    <!-- {% include 'partial/modal.twig' %} -->
 </section>

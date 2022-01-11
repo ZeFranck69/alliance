@@ -58,51 +58,94 @@ export default class App {
 		});
 	}
 
+	// modalManager() {
+	// 	const modalTriggers = document.querySelectorAll('[data-popup]');
+	// 	const modalContent = document.querySelectorAll('[data-content]');
+	// 	const modalWrapper = document.querySelectorAll('.modal-content');
+	// 	const modalBtn = document.querySelectorAll('[data-btn="popup"]');
+	// 	const modalPopup = document.querySelector('.modal');
+	// 	modalBtn.forEach((button) => {
+	// 		button.addEventListener('click', function () {
+	// 			const { popup, content } = this.dataset;
+	// 			modalPopup.classList.add('active');
+	// 			const el = document.createElement('div');
+	// 			el.textContent = content;
+	// 			modal.querySelector('.modal-content').appendChild(el);
+	// 			document.body.addEventListener('click', closeModal);
+	// 		});
+	// 	});
+	// 	// modalTriggers.forEach((trigger) => {
+	// 	// 	const { popup } = trigger.dataset;
+	// 	// 	try {
+	// 	// 		console.log(modalContent);
+	// 	// 		trigger.addEventListener('click', function (ev) {
+	// 	// 			ev.stopPropagation();
+	// 	// 			document.querySelector(popup).classList.add('active');
+	// 	// 			document.body.addEventListener('click', closeModal);
+	// 	// 		});
+	// 	// 	} catch (error) {}
+	// 	// });
+
+	// 	const modals = document.querySelectorAll('.modal');
+	// 	modals.forEach((modal) => {
+	// 		let clickedInsideModal = false;
+
+	// 		function closeModal() {
+	// 			modal.classList.remove('active');
+	// 		}
+
+	// 		const closeButton = modal.querySelector('.close');
+	// 		const wrapper = modal.querySelector('.modal-wrapper');
+
+	// 		if (wrapper) {
+	// 			wrapper.addEventListener('click', (ev) => {
+	// 				ev.stopPropagation();
+	// 				clickedInsideModal = true;
+	// 			});
+	// 		}
+
+	// 		// CLOSE EVENTS
+	// 		if (closeButton) {
+	// 			closeButton.addEventListener('click', closeModal);
+	// 		}
+
+	// 		document.body.addEventListener('click', () => {
+	// 			if (!clickedInsideModal) closeModal();
+
+	// 			clickedInsideModal = false;
+	// 		});
+
+	// 		document.body.addEventListener('keydown', (ev) => {
+	// 			if (ev.key === 'Escape') closeModal();
+	// 		});
+	// 	});
+	// }
 	modalManager() {
-		const modalTriggers = document.querySelectorAll('[data-popup]');
-
-		modalTriggers.forEach((trigger) => {
-			const { popup } = trigger.dataset;
-			try {
-				trigger.addEventListener('click', function (ev) {
-					ev.stopPropagation();
-					document.querySelector(popup).classList.add('active');
-					document.body.addEventListener('click', closeModal);
-				});
-			} catch (error) {}
-		});
-
-		const modals = document.querySelectorAll('.modal');
-		modals.forEach((modal) => {
-			let clickedInsideModal = false;
-
-			function closeModal() {
-				modal.classList.remove('active');
-			}
-
-			const closeButton = modal.querySelector('.close');
-			const wrapper = modal.querySelector('.modal-wrapper');
-
-			if (wrapper) {
-				wrapper.addEventListener('click', (ev) => {
-					ev.stopPropagation();
-					clickedInsideModal = true;
-				});
-			}
-
-			// CLOSE EVENTS
-			if (closeButton) {
-				closeButton.addEventListener('click', closeModal);
-			}
-
-			document.body.addEventListener('click', () => {
-				if (!clickedInsideModal) closeModal();
-
-				clickedInsideModal = false;
+		const modal = document.querySelector('.modal');
+		const modalBtn = document.querySelectorAll('[data-btn="popup"]');
+		const closeBtn = document.querySelector('.close');
+		modalBtn.forEach((button) => {
+			button.addEventListener('click', function () {
+				const { popup, content } = this.dataset;
+				modal.classList.add('open');
+				const el = document.createElement('div');
+				el.textContent = content;
+				modal.querySelector('.modal-content').appendChild(el);
+				el.classList.add('content_modal');
+				if (modal.classList.contains('closed')) {
+					modal.classList.remove('closed');
+					modal.classList.add('open');
+				} else if (modal.classList.contains('open')) {
+					modal.classList.remove('open');
+					modal.classList.add('closed');
+					modal.querySelector('.modal-content').removeChild(el);
+				}
 			});
 
-			document.body.addEventListener('keydown', (ev) => {
-				if (ev.key === 'Escape') closeModal();
+			closeBtn.addEventListener('click', function () {
+				modal.classList.remove('open');
+				modal.classList.add('closed');
+				modal.querySelector('.content_modal').remove();
 			});
 		});
 	}
