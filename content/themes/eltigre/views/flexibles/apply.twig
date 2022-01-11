@@ -1,4 +1,3 @@
-
 <section id="{{ section.first_line_title.title|sanitize }}" class="apply" style="background-color: {{ section.background_color }};" data-midnight="light">
     {% include 'partial/title.twig' %}
     <div class="main-wrapper apply-content__wrapper">
@@ -15,6 +14,7 @@
                         <h3 style="color: {{ section.left_column.color }};">{{ section.left_column.title }}</h3>
                     </div>
                     {% endif %}
+                    {% if section.left_column.content_type == "event" %}
                     <div class="column__events">
                         {% for event in section.left_column.events %}
                         <div class="event">
@@ -27,6 +27,32 @@
                         </div>
                         {% endfor %}
                     </div>
+                    {% else %}
+                    <div class="column__critera">
+                        <div class="critera">
+                            <div class="critera-description">
+                                {{ section.left_column.description }}
+                            </div>
+                            <div class="event__cta-wrapper">
+                            {% if section.left_column.type == 'link' %}
+                                <a href="{{ section.left_column.button.url }}" target="{{ section.left_column.button.target }}">
+                                    {{ section.left_column.button.title }}
+                                </a> 
+                            {% elseif section.left_column.type == 'popup' %}
+                                <a data-popup=":scope .modal">
+                                     {{ section.left_column.button.title }}
+                                </a>
+                            {% elseif section.left_column.type == 'file' %}  
+                                <a href="{{ section.left_column.file.url }}" target="_blank" download>
+                                    {{ section.left_column.button.title }}     
+                                </a> 
+                            {% endif %}
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    {% endif %}
                 </div>
 
                 <div class="columns__column">
@@ -61,10 +87,23 @@
                             {% endif %}
                             </div>
                         </div>
-                        {% if section.link.title %}
+                        <!-- {% if section.link.title %}
                         <div class="cta-wrapper">
                             <a href="{{ section.link.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">{{ section.link.title }}</a>
                         </div>
+                        {% endif %} -->
+                        {% if section.type_button == "link" %}
+                            {% if section.link.title %}
+                            <div class="cta-wrapper">
+                                <a href="{{ section.link.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">{{ section.link.title }}</a>
+                            </div>
+                            {% endif %}
+                        {% elseif section.type_button == "popup" %}
+                            {% if section.label %}
+                            <div class="cta-wrapper">
+                                <a data-popup=":scope .modal" class="cta cta--gold cta--small">{{ section.label }}</a>
+                            </div>
+                            {% endif %}
                         {% endif %}
                     </div>
 
@@ -72,5 +111,5 @@
             </div>
         </div>
     </div>
-    {% include 'partial/modal.twig' with { content: section.right_column.modal_text } %}
+    <!-- {% include 'partial/modal.twig' with { content: section.right_column.modal_text } %} -->
 </section>

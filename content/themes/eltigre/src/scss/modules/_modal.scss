@@ -70,3 +70,54 @@
 .apply-content__columns .column__critera .event__cta-wrapper .modal-content a:after{
   content: none;
 }
+
+.splash__modal {
+  position: absolute;
+  width: 80%;
+  max-width: 700px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: #fff;
+  overflow: scroll;
+  height:auto;
+  max-height: 100%;
+}
+
+.modal__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background: #9c271e;
+  cursor: pointer;
+}
+
+.modal__btn:before, .modal__btn:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 15px;
+  height: 60%;
+  width: 2px;
+  background-color: #fff;
+}
+
+.modal__btn:before {
+  transform: rotate(45deg);
+}
+
+.modal__btn:after {
+  transform: rotate(-45deg);
+}
+
+.open {
+  z-index: 12;
+  visibility: visible;
+}
+
+.closed {
+  z-index: -12;
+  visibility: hidden;
+}
