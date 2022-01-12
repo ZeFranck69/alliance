@@ -24,10 +24,10 @@ if ( class_exists( 'Timber' ) ) {
 			add_action( 'init', array( $this, 'register_post_types' ) );
 			add_action( 'init', array( $this, 'register_taxonomies' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ));
-			add_action('content_save_pre', array( $this, 'remove_empty_lines' ));
+			add_action( 'content_save_pre', array( $this, 'remove_empty_lines' ));
 	
 			add_filter( 'timber/context', array( $this, 'add_to_context' ) );
-			add_filter('acf/load_value/type=wysiwyg', array( $this, 'my_acf_load_value' ), 10, 3);
+			// add_filter('acf/load_value/type=wysiwyg', array( $this, 'my_acf_load_value' ), 10, 3);
 	
 			parent::__construct();
 		}
@@ -35,6 +35,7 @@ if ( class_exists( 'Timber' ) ) {
 		public function remove_empty_lines( $content ){
 			$content = str_replace( "&nbsp;", "<br />", $content );
 			echo nl2br( $content );
+			var_dump('ici');
 		}
 
 		public function update_stylesheet_directory( $stylesheet_dir_uri, $theme_name ) {
