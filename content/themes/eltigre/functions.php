@@ -33,8 +33,9 @@ if ( class_exists( 'Timber' ) ) {
 		}
 
 		public function remove_empty_lines( $content ){
-			$content = preg_replace("/&nbsp;/", "<br/>", $content);
-		  return $content;
+			$content = str_replace( "/&nbsp;/", "<br/>", $content );
+			
+		  	return $content;
 		}
 
 		public function update_stylesheet_directory( $stylesheet_dir_uri, $theme_name ) {
