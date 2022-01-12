@@ -97,11 +97,11 @@
                             {% endif %}
                             </div>
                         </div>
-                        <!-- {% if section.link.title %}
-                        <div class="cta-wrapper">
+                        {# {% if section.link.title %} #}
+                        <!-- <div class="cta-wrapper">
                             <a href="{{ section.link.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">{{ section.link.title }}</a>
-                        </div>
-                        {% endif %} -->
+                        </div> -->
+                        {# {% endif %} #}
                         {% if section.type_button == "link" %}
                             {% if section.link.title %}
                             <div class="cta-wrapper">
@@ -121,6 +121,4 @@
             </div>
         </div>
     </div>
-    <!-- {% include 'partial/modal.twig' with { content: section.right_column.modal_text } %} -->
-    <!-- {% include 'partial/modal.twig' %} -->
 </section>

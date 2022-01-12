@@ -26,6 +26,7 @@ if ( class_exists( 'Timber' ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ));
 	
 			add_filter( 'timber/context', array( $this, 'add_to_context' ) );
+			add_filter('acf/load_value/type=wysiwyg', array( $this, 'my_acf_load_value' ), 10, 3);
 	
 			parent::__construct();
 		}
@@ -76,6 +77,15 @@ if ( class_exists( 'Timber' ) ) {
 			// Global site
 			$context['site']  = $this;
 			return $context;
+		}
+		public function my_acf_load_value( $value, $post_id, $field ) {
+
+			$content = apply_filters('the_content',$value);
+			$content = force_balance_tags( $content );
+			$content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+			$content = preg_replace( '~\s?<p>(\s| )+</p>\s?~', '', $content );
+		   
+			return $content;
 		}
 	
 	

@@ -13,6 +13,19 @@
 }
 @font-face {
     font-family: 'Optima';
+    src: url('../fonts/Optima-Regular.eot');
+    src: url('../fonts/Optima-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Optima-Regular.woff2') format('woff2'),
+         url('../fonts/Optima-Regular.woff') format('woff'),
+         url('../fonts/Optima-Regular.ttf') format('truetype'),
+         url('../fonts/Optima-Regular.svg#Optima-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Optima';
     src: url('../fonts/OptimaLTPro-Bold.eot');
     src: url('../fonts/OptimaLTPro-Bold.eot?#iefix') format('embedded-opentype'),
          url('../fonts/OptimaLTPro-Bold.woff2') format('woff2'),
