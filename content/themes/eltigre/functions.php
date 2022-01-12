@@ -24,7 +24,7 @@ if ( class_exists( 'Timber' ) ) {
 			add_action( 'init', array( $this, 'register_post_types' ) );
 			add_action( 'init', array( $this, 'register_taxonomies' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
-			add_action( 'content_save_pre', array( $this, 'remove_empty_lines' ) );
+			add_action( 'content_save_pre', 'remove_empty_lines' );
 	
 			add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 	
