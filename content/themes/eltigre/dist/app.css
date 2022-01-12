@@ -141,14 +141,6 @@ a {
 /*** OPTIMA ***/
 @font-face {
   font-family: "Optima";
-  src: url(fonts/3739729ca6fd370c82fc.eot);
-  src: url(fonts/3739729ca6fd370c82fc.eot?#iefix) format("embedded-opentype"), url(fonts/12ccc024b04559b76d9e.woff2) format("woff2"), url(fonts/1ba27329999bd882cee3.woff) format("woff"), url(fonts/37f142cf7e21a853a7a4.ttf) format("truetype"), url(icons/93c6365adec9b3443fea.svg#Optima) format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Optima";
   src: url(fonts/88026ddd351d7e2304cf.eot);
   src: url(fonts/88026ddd351d7e2304cf.eot?#iefix) format("embedded-opentype"), url(fonts/85e90d90b45825ec1894.woff2) format("woff2"), url(fonts/5c5e64274dbb59a5964a.woff) format("woff"), url(fonts/ef4ec2e71c725589237c.ttf) format("truetype"), url(icons/3f31c41df17119f18d3e.svg#Optima-Regular) format("svg");
   font-weight: normal;
