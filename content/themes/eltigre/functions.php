@@ -15,7 +15,6 @@ if ( class_exists( 'Timber' ) ) {
    
 		public function __construct() {
 			$this->load_extras();
-			$this->remove_empty_lines( $content );
 
 			require 'inc/class/Eltigre.php';
 			
@@ -25,14 +24,17 @@ if ( class_exists( 'Timber' ) ) {
 			add_action( 'init', array( $this, 'register_post_types' ) );
 			add_action( 'init', array( $this, 'register_taxonomies' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
-			// add_action( 'content_save_pre', array( $this, 'remove_empty_lines' ) );
+			add_action( 'content_save_pre', array( $this, 'remove_empty_lines' ) );
 	
 			add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 	
 			parent::__construct();
 		}
 
-		
+		public function remove_empty_lines( $content ){
+			$content = str_replace( "&nbsp;", "<br>", $content );
+			return ( $content );
+		}
 
 		public function update_stylesheet_directory( $stylesheet_dir_uri, $theme_name ) {
 			return $stylesheet_dir_uri . '/dist/';
@@ -174,10 +176,6 @@ if ( class_exists( 'Timber' ) ) {
 		private function load_extras() {
 			include_once 'inc/helper-functions.php';
 			include_once 'inc/constants/colors.php';
-		}
-		private function remove_empty_lines( $content ){
-			$content = str_replace( "&nbsp;", "<br>", $content );
-			echo nl2br( $content );
 		}
 	}
    
