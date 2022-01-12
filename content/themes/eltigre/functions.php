@@ -33,7 +33,7 @@ if ( class_exists( 'Timber' ) ) {
 		}
 
 		public function remove_empty_lines( $content ){
-			$content = str_replace( "/&nbsp;/", "<br/>", $content );
+			$content = str_replace("&nbsp;", "<br />", $content);;
 			
 		  	return $content;
 		}
