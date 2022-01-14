@@ -66,57 +66,71 @@
                 </div>
 
                 <div class="columns__column">
-                    <div class="column__critera">
-                        <div class="critera">
-                            {% if section.right_column.title %}
-                            <div class="column-title">
-                                <h3 style="color: {{ section.right_column.color }};">{{ section.right_column.title }}</h3>
+                    {% if section.right_column.content_type == "event" %}
+                        <div class="column__events">
+                            {% for event in section.right_column.events %}
+                            <div class="event">
+                                <div class="event-title" gsap-reveal>
+                                    {{ event.title }}
+                                </div>
+                                <div class="event-date" gsap-reveal>
+                                    {{ event.date }}
+                                </div>
                             </div>
-                            {% endif %}
-                            <div class="critera-description">
-                                {{ section.right_column.description }}
-                            </div>
-                            <div class="event__cta-wrapper">
-                            {% if section.right_column.type == 'link' %}
-                                <a href="{{ section.right_column.button.url }}" target="{{ section.right_column.button.target }}">
-                                    {{ section.right_column.button.title }}
-                                </a> 
-                            {% elseif section.right_column.type == 'popup' %}
-                                <a data-popup=":scope .modal" data-content="{{ section.right_column.modal_text|sanitize }}" data-btn='{{ section.right_column.type }}'>
-                                     {{ section.right_column.button.title }}
-                                </a>
-                            {% elseif section.right_column.type == 'file' %}  
-                                <a href="{{ section.right_column.file.url }}" target="_blank" download>
-                                    {{ section.right_column.button.title }}     
-                                </a> 
-                            {% endif %}
-                            {% if section.right_column.cta_faq %}
-                                <a href="{{ section.right_column.cta_faq.url }}" target="{{ section.right_column.button.target }}">
-                                    {{ section.right_column.cta_faq.title }}
-                                </a> 
-                            {% endif %}
-                            </div>
+                            {% endfor %}
                         </div>
-                        {# {% if section.link.title %} #}
-                        <!-- <div class="cta-wrapper">
-                            <a href="{{ section.link.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">{{ section.link.title }}</a>
-                        </div> -->
-                        {# {% endif %} #}
-                        {% if section.type_button == "link" %}
-                            {% if section.link.title %}
-                            <div class="cta-wrapper">
+                    {% else %}
+                        <div class="column__critera">
+                            <div class="critera">
+                                {% if section.right_column.title %}
+                                <div class="column-title">
+                                    <h3 style="color: {{ section.right_column.color }};">{{ section.right_column.title }}</h3>
+                                </div>
+                                {% endif %}
+                                <div class="critera-description">
+                                    {{ section.right_column.description }}
+                                </div>
+                                <div class="event__cta-wrapper">
+                                {% if section.right_column.type == 'link' and section.right_column.button.title %}
+                                    <a href="{{ section.right_column.button.url }}" target="{{ section.right_column.button.target }}">
+                                        {{ section.right_column.button.title }}
+                                    </a> 
+                                {% elseif section.right_column.type == 'popup' and section.right_column.label %}
+                                    <a data-popup=":scope .modal" data-content="{{ section.right_column.modal_text|sanitize }}" data-btn='{{ section.right_column.type }}'>
+                                        {{ section.right_column.label }}
+                                    </a>
+                                {% elseif section.right_column.type == 'file' and section.right_column.file_label %}  
+                                    <a href="{{ section.right_column.file.url }}" target="_blank" download>
+                                        {{ section.right_column.file_label }}     
+                                    </a> 
+                                {% endif %}
+                                {% if section.right_column.cta_faq %}
+                                    <a href="{{ section.right_column.cta_faq.url }}" target="{{ section.right_column.button.target }}">
+                                        {{ section.right_column.cta_faq.title }}
+                                    </a> 
+                                {% endif %}
+                                </div>
+                            </div>
+                            {# {% if section.link.title %} #}
+                            <!-- <div class="cta-wrapper">
                                 <a href="{{ section.link.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">{{ section.link.title }}</a>
-                            </div>
+                            </div> -->
+                            {# {% endif %} #}
+                            {% if section.type_button == "link" %}
+                                {% if section.link.title %}
+                                <div class="cta-wrapper">
+                                    <a href="{{ section.link.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">{{ section.link.title }}</a>
+                                </div>
+                                {% endif %}
+                            {% elseif section.type_button == "popup" %}
+                                {% if section.label %}
+                                <div class="cta-wrapper">
+                                    <a data-popup=":scope .modal" class="cta cta--gold cta--small" data-btn='{{ section.type_button }}'  data-content="{{ section.modal_text|sanitize }}">{{ section.label }}</a>
+                                </div>
+                                {% endif %}
                             {% endif %}
-                        {% elseif section.type_button == "popup" %}
-                            {% if section.label %}
-                            <div class="cta-wrapper">
-                                <a data-popup=":scope .modal" class="cta cta--gold cta--small" data-btn='{{ section.type_button }}'  data-content="{{ section.modal_text|sanitize }}">{{ section.label }}</a>
-                            </div>
-                            {% endif %}
-                        {% endif %}
-                    </div>
-
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
