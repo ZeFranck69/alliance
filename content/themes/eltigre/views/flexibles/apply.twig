@@ -44,17 +44,17 @@
                                 {{ section.left_column.description }}
                             </div>
                             <div class="event__cta-wrapper">
-                            {% if section.left_column.type == 'link' %}
+                            {% if section.left_column.type == 'link' and section.left_column.button.title %}
                                 <a href="{{ section.left_column.button.url }}" target="{{ section.left_column.button.target }}">
                                     {{ section.left_column.button.title }}
                                 </a> 
-                            {% elseif section.left_column.type == 'popup' %}
+                            {% elseif section.left_column.type == 'popup' and section.left_column.label %}
                                 <a data-popup=".modal" data-content="{{ section.left_column.modal_text|sanitize }}" data-btn='{{ section.left_column.type }}'>
                                      {{ section.left_column.label }}
                                 </a>
-                            {% elseif section.left_column.type == 'file' %}  
+                            {% elseif section.left_column.type == 'file' and section.left_column.file_label %}  
                                 <a href="{{ section.left_column.file.url }}" target="_blank" download>
-                                    {{ section.left_column.button.title }}     
+                                    {{ section.left_column.file_label }}     
                                 </a> 
                             {% endif %}
                             </div>
