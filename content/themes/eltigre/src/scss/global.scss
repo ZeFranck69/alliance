@@ -29,20 +29,21 @@ html {
 .main-wrapper {
   max-width: $gridSize;
   margin: 0 auto;
+  padding: 0 20px;
 
   @include desktop-large {
     max-width: $gridSizeLarge;
   }
 
   @include laptop {
-    padding: 0 30px;
+    padding: 0 20px;
   }
   @include mobile {
-    padding: 0 40px;
+    padding: 0 20px;
   }
 
   @include tablet {
-    padding: 0 24px;
+    padding: 0 20px;
   }
 }
 .about{
@@ -78,8 +79,10 @@ a {
 
 .title__number{
   font-family: "Misto", sans-serif;
-  font-size: 109px;
-  line-height: 131px;
+  
+  font-size: 159px;
+  line-height: 1;
+
   letter-spacing: 10.9px;
   position: relative;
   left: -40px;
@@ -151,12 +154,16 @@ a {
 @import 'modules/_footer';
 @import 'modules/_cta';
 @import 'modules/_socials';
+@import 'modules/_title';
 @import 'modules/_modal';
 
 // FLEXIBLES
 
 @import 'flexible/_splash';
 @import 'flexible/_about';
+@import 'flexible/_about_short';
+@import 'flexible/_our_activities_short';
+@import 'flexible/_grantee_short';
 @import 'flexible/_apply';
 @import 'flexible/_organisation';
 @import 'flexible/_members';

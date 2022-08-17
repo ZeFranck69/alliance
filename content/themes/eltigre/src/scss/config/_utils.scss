@@ -1,19 +1,16 @@
 @mixin vertical-align {
   top: 50%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
 @mixin horizontal-align {
   left: 50%;
-  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
 @mixin centered-align {
   top: 50%;
   left: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
 }
 
@@ -55,31 +52,20 @@ $ease: (
 }
 
 @mixin mobile {
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 590px) {
     @content;
   }
 }
 
-@mixin not-mobile {
-  @media only screen and (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin mobile-landscape {
-  @media only screen and (max-width: 768px) and (orientation: landscape) {
-    @content;
-  }
-}
 
 @mixin tablet {
-  @media only screen and (min-width: 768px) and (max-width: 1020px) {
+  @media only screen and (max-width: 768px){
     @content;
   }
 }
 
 @mixin laptop {
-  @media only screen and (min-width: 1020px) and (max-width: 1300px) {
+  @media only screen and (max-width: 1024px){
     @content;
   }
 }

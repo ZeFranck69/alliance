@@ -1,0 +1,152 @@
+.our-activities-short{
+    .our-activities__image{
+        .main-wrapper{
+            padding-top: 52px;
+            padding-bottom: 160px;
+           
+        }
+    }
+    .main-wrapper{
+        position: relative;
+        padding-bottom: 78px;
+        .cta-wrapper{
+            position: absolute;
+            right: 20px;
+            bottom: -20px;
+        }
+    }
+    .our-activities-short__image{
+        height: 702px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 95px 0 0;
+    }
+}
+
+.our-activities-short-wrapper{
+    .two-blocks__part{
+        margin-top: -97px;
+        .two-blocks__wrapper{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 25px;
+            grid-row-gap: 0px;
+            .two-blocks__block{
+                padding: 40px;
+                font-size: 16px;
+                line-height: 1.4;
+                letter-spacing: .8px;
+                font-family: Optima,sans-serif;
+                font-weight: 400;
+
+                .block-content__simple{
+
+                    p{
+                        margin-bottom: 27px;
+                        strong{
+                            font-weight: 700;
+                        }
+                    }
+                    h3,h4{
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        margin-bottom: 27px;
+                    }
+
+                }
+                .block-content__list{
+                    p{
+                        margin-bottom: 27px;
+                        strong{
+                            font-weight: 700;
+                        }
+                    }
+                    h3,h4{
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        margin-bottom: 27px;
+                    }
+                    .list-picto-text__container{
+                        .picto-text{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .picto-part{
+
+                            }
+                            .text-part{
+                                max-width: 380px;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .three-blocks__part{
+        margin-top: 64px;
+
+        .three-blocks__title{
+            font-size: 20px;
+            line-height: 1.4;
+            letter-spacing: .8px;
+            font-family: Optima,sans-serif;
+            font-weight: 400;
+            margin-bottom: 46px;
+            position: relative;
+            left: 17%;
+            &::before{
+                position: absolute;
+                content: "";
+                max-width: 173px;
+                width: 100%;
+                height: 1px;
+                left: -17%;
+                top: 50%;
+                background-color: $black;
+            }
+        }
+        .three-blocks__description{
+            max-width: 675px;
+            width: 100%;
+            font-size: 16px;
+            line-height: 1.4;
+            letter-spacing: 0.8px;
+            font-family: Optima, sans-serif;
+            font-weight: 400;
+
+            p{
+
+                strong{
+                    font-weight: 700;
+                }
+            }
+        }
+        .three-blocks__wrapper{
+            margin-top: 56px;
+            margin-bottom: 23px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 24px;
+            grid-row-gap: 0px;
+            .three-blocks__block{
+                padding: 30px 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                text-transform: uppercase;
+                .block-title{
+                    font-size: 16px;
+                    line-height: 1.4;
+                    letter-spacing: .8px;
+                    font-family: Optima,sans-serif;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

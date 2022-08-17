@@ -1,8 +1,83 @@
-<section id="{{ section.first_line_title.title|sanitize }}" class="about-short" data-midnight="light">
-    
-    {% include 'partial/title.twig' %}
-
-    <div class="main-wrapper about-short-wrapper">
-        
+<section id="{{ section.first_line_title.title|sanitize }}" class="our-activities-short" data-midnight="light" style="background-color: {{ section.background_color }};">
+    <div class="our-activities__image" style="background-image:url('{{ section.background_image.url }}'); background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }};" data-midnight="dark">
+        <div class="main-wrapper">
+            {% include 'partial/title.twig' %}
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div class="our-activities-short-wrapper">
+            <div class="two-blocks__part">
+                {% if section.two_blocks_part.two_blocks_title %}
+                    <div class="two-blocks__title">
+                        {{ section.two_blocks_part.two_blocks_title }}
+                    </div>
+                {% endif %}
+                {% if section.two_blocks_part.description %}
+                    <div class="two-blocks__title">
+                        {{ section.two_blocks_part.description }}
+                    </div>
+                {% endif %}
+                <div class="two-blocks__wrapper">
+                    {% for block in section.two_blocks_part.blocks %}
+                    <div class="two-blocks__block" style="background-color: {{ block.background_color }};">
+                        {% if block.block_title %}
+                        <div class="block-title">
+                            {{ block.block_title }}
+                        </div>
+                        {% endif %}
+                        {% if block.type_content == "text" %}
+                        <div class="block-content__simple">
+                            {{ block.simple_content }}
+                        </div>
+                        {% elseif block.type_content == "list" %}
+                        <div class="block-content__list">
+                            {{ block.description_picto }}
+                            <div class="list-picto-text__container">
+                                {% for list in block.content_picto %}
+                                <div class="picto-text">
+                                    <div class="picto-part">
+                                        <img src="{{ list.picto.url }}" alt="{{ list.picto.alt }}">
+                                    </div>
+                                    <div class="text-part">
+                                        {{ list.text }}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="three-blocks__part">
+                {% if section.three_blocks_part.three_blocks_title %}
+                <div class="three-blocks__title">
+                    {{ section.three_blocks_part.three_blocks_title }}
+                </div>
+                {% endif %}
+                {% if section.three_blocks_part.description %}
+                <div class="three-blocks__description">
+                    {{ section.three_blocks_part.description }}
+                </div>
+                {% endif %}
+                <div class="three-blocks__wrapper">
+                    {% for activity in section.three_blocks_part.blocks %}
+                    <div class="three-blocks__block" style="background-color: {{ activity.background_color }};">
+                        {% if activity.block_title %}
+                        <div class="block-title">
+                            {{ activity.block_title }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% if section.cta.title %}
+        <div class="cta-wrapper">
+            <a href="{{ section.cta.url }}" class="cta cta--black">{{ section.cta.title }}</a>
+        </div>
+        {% endif %}
     </div>
 </section>

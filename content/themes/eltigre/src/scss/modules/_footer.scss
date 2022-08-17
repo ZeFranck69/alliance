@@ -1,14 +1,14 @@
-/*
-#site-footer {
 
+#site-footer {
+    // background-color: $lightgrey;
 }
-*/
 .footer__content{
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
     padding: 26px 0 0;
+    border-top: 1px solid $black;
 }
 .footer__logo-wrapper--mobile{
     display: none;

@@ -12,6 +12,8 @@ class Admin {
         'B6AC9A' => array( 'name' => 'lightgrey' ),
         'E1B920' => array( 'name' => 'moutarde' ),
         'A38A41' => array( 'name' => 'gold' ),
+        'CBA08C' => array( 'name' => 'brown' ),
+        'A84C76' => array( 'name' => 'violet' ),
 
 	);
 

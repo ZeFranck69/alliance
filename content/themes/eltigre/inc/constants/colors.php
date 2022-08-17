@@ -11,6 +11,14 @@ define( 'COLORS', array(
         'name' => 'Gold',
         'classname' => 'gold'
     ),
+    'CBA08C' => array(
+        'name' => 'Brown',
+        'classname' => 'brown'
+    ),
+    'A84C76' => array(
+        'name' => 'Violet',
+        'classname' => 'violet'
+    ),
     'B6AC9A' => array(
         'name' => 'Light grey',
         'classname' => 'lightgrey'
