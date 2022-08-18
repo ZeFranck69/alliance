@@ -9,8 +9,11 @@
 <!-- END MODAL -->
 
 <section id="{{ section.first_line_title.title|sanitize }}" class="apply" style="background-color: {{ section.background_color }};" data-midnight="light">
-    {% include 'partial/title.twig' %}
-    <div class="main-wrapper apply-content__wrapper">
+    <div class="main-wrapper">
+        {% include 'partial/title.twig' %}
+
+    </div>
+    <div class="apply-content__wrapper">
         <div class="apply-content">
             {% if section.subtitle %}
             <div class="apply-content__subtitle">

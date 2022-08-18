@@ -27,6 +27,10 @@ define( 'COLORS', array(
         'name' => 'Grey',
         'classname' => 'grey'
     ),
+    '5C504B' => array(
+        'name' => 'Text',
+        'classname' => 'text'
+    ),
     'FFFFFF' => array(
         'name' => 'White',
         'classname' => 'white'

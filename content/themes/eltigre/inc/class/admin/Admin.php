@@ -8,6 +8,7 @@ class Admin {
 
         '000000' => array( 'name' => 'black' ),
         'ffffff' => array( 'name' => 'white' ),
+        '5C504B' => array( 'name' => 'text' ),
         'D6D6D6' => array( 'name' => 'grey' ),
         'B6AC9A' => array( 'name' => 'lightgrey' ),
         'E1B920' => array( 'name' => 'moutarde' ),

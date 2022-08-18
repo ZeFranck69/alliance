@@ -32,7 +32,7 @@ html {
   padding: 0 20px;
 
   @include desktop-large {
-    max-width: $gridSizeLarge;
+    max-width: $gridSize;
   }
 
   @include laptop {

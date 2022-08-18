@@ -24,7 +24,7 @@
     </div>
     {% endif %}
     {% if section.subtitle %}
-    <div class="sutitle-part">
+    <div class="sutitle-part sutitle__number--{{ section.second_line_title.title|sanitize }}">
         <div class="sutitle__container" style="color:{{ section.subtitle_color }}">
            {{ section.subtitle }}
         </div>
@@ -39,7 +39,7 @@
         -webkit-text-stroke: 1px {{ section.number_color }};
     }
 
-    .sutitle-part:before{
+    .sutitle__number--{{ section.second_line_title.title|sanitize }}.sutitle-part:before{
         background-color: {{ section.number_color }};
 
     }

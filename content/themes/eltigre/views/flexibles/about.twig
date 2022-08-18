@@ -1,91 +1,50 @@
 <section id="{{ section.first_line_title.title|sanitize }}" class="about" data-midnight="light">
-    
-    {% include 'partial/title.twig' %}
-
-    <div class="main-wrapper about-wrapper">
-        <div class="about__columns">
-            <div class="text-and-2-columns__part">
-
-                <div class="first-column">
-                    {% if section.first_column.description %}
-                    <div class="first-column__description">
-                        {{ section.first_column.description }}
-                        <div class="event__cta-wrapper">
-                            {% if section.first_column.type == 'link' %}
-                                <a href="{{ section.first_column.button.url }}" target="{{ section.first_column.button.target }}">
-                                    {{ section.first_column.button.title }}
-                                </a> 
-                            {% elseif section.first_column.type == 'popup' %}
-                                <a data-popup=":scope .modal">
-                                     {{ section.first_column.button.title }}
-                                </a>
-                            {% elseif section.first_column.type == 'file' %}  
-                                <a href="{{ section.first_column.file.url }}" target="_blank" download>
-                                    {{ section.first_column.label_file }}     
-                                </a> 
-                            {% endif %}
-                            
-
-                        </div>
-                    </div>
-                    {% endif %}
-                    <!-- Rajouter le bouton -->
-                    <div class="first-column__cta-wrapper ">
-                        <a href="{{ section.first_column.link.url }}" class="cta--join-us">{{ section.first_column.link.title }}</a>
-                    </div>
+    <div class="main-wrapper">
+        <div class="about-wrapper">
+        {% include 'partial/title.twig' %}
+        
+        {% for block in section.blocks %}
+            <div class="about-block about-block--{{ loop.index }}" 
+            style="{% if block.background_type == 'color' %}background-color:{{ block.background_color }}{% elseif block.background_type == 'image' %}background-image:url('{{ block.background_image.url }}'){% endif %}; border-color:{% if block.border_color is not empty %}{{ block.border_color }}{% else %}transparent{% endif %};">
+                <div class="about-block__title">
+                    {{ block.title }}
                 </div>
-                <div class="second-column">
-                    <div class="blocks">
-                        {% for block in section.second_column.blocks %}
-                        <div class="block block-{{ loop.index }}" style="background-color:{{ block.background_color }}; background-image:url('{{ block.background_image.url }}'); color:{{ block.color }}; border-color: {{ block.border_color }}; {% if block.border_color %}border: 1px solid;{% endif %}">
-                            {% if block.title %}
-                            <div class="block__title">
-                                <h4>{{ block.title }}</h4>
-                            </div>
-                            {% endif %}
-                            {% if block.description %}
-                            <div class="block__description description--small">
-                                {{ block.description }}
-                            </div>
-                            {% endif %}
-                            <div class="block__stats">
-                                {% for stat in block.stats %}
-                                    <div class="stat">
-                                        {{ stat.text }}
-                                    </div>
-                                {% endfor %}
-                            </div> 
-                            {% if block.add_cta_mobile %}
-                            <div class="second-column__cta-wrapper">
-                                <a href="{{ section.first_column.link.url }}" class="cta--join-us">{{ section.first_column.link.title }}</a>
-                            </div>
-                            {% endif %}
-                            {% if block.source %}
-                            <div class="block__source">
-                                <a href="{{ block.source_link.url }}" target="{{ block.source_link.target }}"> 
-                                    {{ block.source }}
-                                </a>
-                            </div>
-                            {% endif %}
+                <div class="about-block__description">
+                    {{ block.description }}
+                </div>
+                {% if block.stats is not empty %}
+                    <div class="stats-wrapper">
+                        {% for stat in block.stats %}
+                        <div class="stat">
+                            {{ stat.text }}
                         </div>
                         {% endfor %}
                     </div>
+                {% endif %}
+                <div class="event__cta-wrapper">
+                    {% if block.type == 'link' %}
+                        <a href="{{ block.button.url }}" target="{{block.button.target }}">
+                            {{ block.button.title }}
+                        </a> 
+                    {% elseif block.type == 'popup' %}
+                        <a data-popup=":scope .modal">
+                             {{ block.button.title }}
+                        </a>
+                    {% elseif block.type == 'file' %}  
+                        <a href="{{ block.file.url }}" target="_blank" download>
+                            {{ block.label_file }}     
+                        </a> 
+                    {% endif %}
                 </div>
             </div>
-            <div class="third-column">
-                <div class="block" style="background-color:{{ section.third_column.background_color }}; color:{{ section.third_column.text_color }}; border-color: {{ section.third_column.border_color}} ;">
-                    {% if section.third_column.title %}
-                    <div class="block__title">
-                        <h4>{{ section.third_column.title }}</h4>
-                    </div>
-                    {% endif %}
-                    {% if section.third_column.description %}
-                    <div class="block__description description--small">
-                        {{ section.third_column.description }}
-                    </div>
-                    {% endif %}
-                </div>
-            </div> 
+        {% endfor %}
         </div>
+        {% if section.cta.title %}
+        <div class="splash-content__button">
+            <a href="{{ section.button.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">
+                {{ section.cta.title }}
+            </a>
+        </div>
+        {% endif %}
     </div>
 </section>
