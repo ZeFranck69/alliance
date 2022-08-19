@@ -433,7 +433,7 @@ a {
   position: relative;
 }
 #site-header .header-content .header--menu-container {
-  max-width: 430px;
+  max-width: 100%;
   width: 100%;
 }
 #site-header .header-content .header--menu-container ul {
@@ -567,7 +567,7 @@ a {
     margin: 0 auto;
     padding: 16px 0;
     border-bottom: 1px solid;
-    max-width: 195px;
+    max-width: 370px;
     width: 100%;
     margin: 0 auto;
   }
@@ -1137,6 +1137,9 @@ a {
   padding-bottom: 158px;
   background-repeat: no-repeat;
 }
+.splash__image.no-margin {
+  padding-bottom: 0;
+}
 
 .splash-content {
   max-width: 535px;
@@ -1154,6 +1157,9 @@ a {
   width: 100%;
   margin: 0 auto 94px;
   opacity: 1;
+}
+.splash-content__logo.no-margin {
+  margin-bottom: 0;
 }
 
 .splash-content__button {
@@ -1507,6 +1513,74 @@ a {
   text-transform: uppercase;
 }
 
+.our-grants .main-wrapper {
+  position: relative;
+  padding-top: 52px;
+  padding-bottom: 60px;
+}
+
+.our-grants-wrapper {
+  margin-top: 32px;
+}
+.our-grants-wrapper .our-grants__title {
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+  font-family: Optima, sans-serif;
+  font-weight: 400;
+  margin-top: 62px;
+  margin-bottom: 46px;
+  position: relative;
+  text-transform: uppercase;
+  left: 17%;
+}
+.our-grants-wrapper .our-grants__title::before {
+  position: absolute;
+  content: "";
+  max-width: 173px;
+  width: 100%;
+  height: 1px;
+  left: -17%;
+  top: 50%;
+  background-color: #292929;
+}
+.our-grants-wrapper .our-grants-columns__wrapper {
+  background-color: #fff;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.our-grants-wrapper .our-grants-columns__wrapper .column-left, .our-grants-wrapper .our-grants-columns__wrapper .column-right {
+  max-width: 470px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+  font-family: Optima, sans-serif;
+  font-weight: 400;
+}
+.our-grants-wrapper .our-grants-columns__wrapper .column-left p, .our-grants-wrapper .our-grants-columns__wrapper .column-right p {
+  margin-bottom: 19px;
+}
+.our-grants-wrapper .our-grants-columns__wrapper .column-left p strong, .our-grants-wrapper .our-grants-columns__wrapper .column-right p strong {
+  font-weight: 700;
+}
+.our-grants-wrapper .our-grants-columns__wrapper .column-left h3, .our-grants-wrapper .our-grants-columns__wrapper .column-left h4, .our-grants-wrapper .our-grants-columns__wrapper .column-right h3, .our-grants-wrapper .our-grants-columns__wrapper .column-right h4 {
+  margin-bottom: 19px;
+  text-transform: uppercase;
+}
+.our-grants-wrapper .our-grants-columns__wrapper .column-right .cta-wrapper {
+  text-align: right;
+  margin-top: 20px;
+}
+.our-grants-wrapper .our-grants-columns__wrapper .column-right .cta-wrapper a {
+  font-weight: 700;
+}
+
 .apply {
   padding: 145px 0;
   margin-top: -50px;
@@ -1742,6 +1816,138 @@ a {
     letter-spacing: 2.52px;
   }
 }
+.governance .main-wrapper {
+  position: relative;
+  padding-top: 52px;
+  padding-bottom: 60px;
+}
+.governance .main-wrapper .cta-wrapper {
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+}
+
+.governance-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.governance-wrapper .governance-content {
+  border: 1px solid;
+  padding: 30px;
+  margin: 20px 0;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.2;
+  font-family: "Optima", sans-serif;
+}
+.governance-wrapper .governance-content.width-full {
+  max-width: 100%;
+  width: 100%;
+}
+.governance-wrapper .governance-content.width-demi {
+  max-width: 560px;
+  width: 100%;
+}
+.governance-wrapper .governance-content .content-logo__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+.governance-wrapper .governance-content .content-logo__container .logo {
+  max-width: 110px;
+  width: 100%;
+  margin: 10px;
+}
+.governance-wrapper .governance-content .content-title {
+  margin-bottom: 30px;
+  position: relative;
+}
+.governance-wrapper .governance-content .content-title:after {
+  content: "";
+  height: 1px;
+  width: 60px;
+  background-color: #e1b920;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.grantee-short .main-wrapper {
+  position: relative;
+  padding-top: 52px;
+  padding-bottom: 160px;
+}
+.grantee-short .main-wrapper .cta-wrapper {
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+}
+
+.grantee-short-wrapper .grantee-short__title {
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+  font-family: Optima, sans-serif;
+  font-weight: 400;
+  margin-bottom: 46px;
+  position: relative;
+  text-transform: uppercase;
+  left: 17%;
+}
+.grantee-short-wrapper .grantee-short__title::before {
+  position: absolute;
+  content: "";
+  max-width: 173px;
+  width: 100%;
+  height: 1px;
+  left: -17%;
+  top: 50%;
+  background-color: #292929;
+}
+.grantee-short-wrapper .grantee-short-columns__wrapper {
+  background-color: #fff;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.grantee-short-wrapper .grantee-short-columns__wrapper .column-left, .grantee-short-wrapper .grantee-short-columns__wrapper .column-right {
+  max-width: 470px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+  font-family: Optima, sans-serif;
+  font-weight: 400;
+}
+.grantee-short-wrapper .grantee-short-columns__wrapper .column-left p, .grantee-short-wrapper .grantee-short-columns__wrapper .column-right p {
+  margin-bottom: 19px;
+}
+.grantee-short-wrapper .grantee-short-columns__wrapper .column-left p strong, .grantee-short-wrapper .grantee-short-columns__wrapper .column-right p strong {
+  font-weight: 700;
+}
+.grantee-short-wrapper .grantee-short-columns__wrapper .column-left h3, .grantee-short-wrapper .grantee-short-columns__wrapper .column-left h4, .grantee-short-wrapper .grantee-short-columns__wrapper .column-right h3, .grantee-short-wrapper .grantee-short-columns__wrapper .column-right h4 {
+  margin-bottom: 19px;
+  text-transform: uppercase;
+}
+
 .organisation .organisation__image {
   height: 702px;
   background-size: cover;

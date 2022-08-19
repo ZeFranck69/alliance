@@ -69,6 +69,8 @@ if ( class_exists( 'Timber' ) ) {
 					'right' => new Timber\Menu( 'menu-footer-right' )
 				),
 			);
+
+			$context['menu_header']  = new Timber\Menu('menu-header');
 			
 			// Logo
 			$logo_ID 				= get_theme_mod( 'custom_logo' );

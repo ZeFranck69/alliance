@@ -1,0 +1,75 @@
+.our-grants{
+
+    .main-wrapper{
+        position: relative;
+        padding-top: 52px;
+        padding-bottom: 60px;
+        
+    }
+
+}
+
+
+
+.our-grants-wrapper{
+    margin-top: 32px;
+    .our-grants__title{
+        font-size: 20px;
+        line-height: 1.4;
+        letter-spacing: .8px;
+        font-family: Optima,sans-serif;
+        font-weight: 400;
+        margin-top: 62px;
+        margin-bottom: 46px;
+        position: relative;
+        text-transform: uppercase;
+        left: 17%;
+        &::before{
+            position: absolute;
+            content: "";
+            max-width: 173px;
+            width: 100%;
+            height: 1px;
+            left: -17%;
+            top: 50%;
+            background-color: $black;
+        }
+    }
+    .our-grants-columns__wrapper{
+        background-color: $white;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        .column-left,.column-right{
+            max-width: 470px;
+            width: 100%;
+            font-size: 16px;
+            line-height: 1.4;
+            letter-spacing: 0.8px;
+            font-family: Optima, sans-serif;
+            font-weight: 400;
+            p{
+                margin-bottom: 19px;
+                strong{
+                    font-weight: 700;
+                }
+            }
+            h3, h4{
+                margin-bottom: 19px;
+                text-transform: uppercase;
+            }
+        }
+        .column-right{
+
+            .cta-wrapper{
+                text-align: right;
+                margin-top: 20px;
+                a{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    
+}

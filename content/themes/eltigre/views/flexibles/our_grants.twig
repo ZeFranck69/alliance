@@ -1,0 +1,43 @@
+<section id="{{ section.first_line_title.title|sanitize }}" class="our-grants" data-midnight="light" style="background-color: {{ section.background_color }};">
+    <div class="main-wrapper">
+        {% include 'partial/title.twig' %}
+        <div class="our-grants-wrapper">
+            
+            {% for block_content in section.contents %}
+            {% if block_content.title_content %}
+            <div class="our-grants__title">
+                {{ block_content.title_content }}
+            </div>
+            {% endif %}
+            <div class="our-grants-columns__wrapper" style="background-color:{{ block_content.background_color_content }}">
+                <div class="column-left">   
+                    {{ block_content.left_column.description }}
+                </div>
+                <div class="column-right">
+                    {{ block_content.right_column.description }}
+                    <div class="cta-wrapper">
+                        {% if block_content.right_column_button.type == 'link' %}
+                            <a href="{{ block_content.right_column_button.button.url }}" target="{{block_content.right_column_button.button.target }}">
+                                {{ block_content.right_column_button.button.title }}
+                            </a> 
+                        {% elseif block_content.right_column_button.type == 'popup' %}
+                            <a data-popup=":scope .modal">
+                                 {{ block_content.right_column_button.button.title }}
+                            </a>
+                        {% elseif block_content.right_column_button.type == 'file' %}  
+                            <a href="{{ block_content.right_column_button.file.url }}" target="_blank" download>
+                                {{ block_content.right_column_button.label_file }}     
+                            </a> 
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% if section.cta.title %}
+        <div class="cta-wrapper">
+            <a href="{{ section.cta.url }}" class="cta cta--black">{{ section.cta.title }}</a>
+        </div>
+        {% endif %}
+    </div>
+</section>

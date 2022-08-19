@@ -1,8 +1,8 @@
 <section id="splash" class="splash">
     <div class="splash-container">
-        <div class="splash__image" style="height: {{ section.height }}vh;background-image:url('{{ section.background_image.url }}');background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }}; ">
+        <div class="splash__image {{ section.description is not empty ? '' : 'no-margin' }}" style="height: {{ section.height }}vh;background-image:url('{{ section.background_image.url }}');background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }}; ">
            <div class="main-wrapper">
-               <div class="splash-content__logo">
+               <div class="splash-content__logo {{ section.description is not empty ? '' : 'no-margin' }}">
                    <img src="{{ section.logo.url }}" alt="{{ section.logo.alt }}" class="logo">
                </div>
                {% if section.description %}

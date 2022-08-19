@@ -1,0 +1,35 @@
+<section id="{{ section.first_line_title.title|sanitize }}" class="governance" data-midnight="light" style="background-color: {{ section.background_color }};">
+    <div class="main-wrapper">
+        {% include 'partial/title.twig' %}
+        
+        <div class="governance-wrapper">
+            {% for gov in section.blocks %}
+            <div class="governance-content width-{{ gov.block_width }}" style="border-color:{{ gov.border_color }};">
+                {% if gov.title %}
+                <div class="content-title">
+                    {{ gov.title }}
+                </div>    
+                {% endif %}
+                <div class="content-description">
+                    {{ gov.description }}
+                </div>
+                {% if gov.logos_partners is not empty %}
+                <div class="content-logo__container">
+                    {% for logo in gov.logos_partners %}
+                    <div class="logo">
+                        <img src="{{ logo.logo.url }}" alt="{{ logo.logo.alt }}">
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% if section.cta.title %}
+        <div class="cta-wrapper">
+            <a href="{{ section.cta.url }}" class="cta cta--black">{{ section.cta.title }}</a>
+        </div>
+        {% endif %}
+    </div>
+
+</section>

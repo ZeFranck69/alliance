@@ -12,6 +12,9 @@
     flex-direction: column;
     padding-bottom: 158px;  
     background-repeat: no-repeat;
+    &.no-margin{
+        padding-bottom: 0;
+    }
 }
 .splash-content{
     max-width: 535px;
@@ -28,6 +31,9 @@
     width: 100%;
     margin: 0 auto 94px;
     opacity: 1;
+    &.no-margin{
+        margin-bottom: 0;
+    }
 }
 .splash-content__button{
     text-align: center;
