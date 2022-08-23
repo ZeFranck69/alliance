@@ -1,9 +1,9 @@
-<section id="{{ section.first_line_title.title|sanitize }}" class="about-short" data-midnight="light" style="background-color: {{ section.background_color }};">
+<section id="{{ section.first_line_title.title|sanitize }}" class="governance-short" data-midnight="light" style="background-color: {{ section.background_color }};">
     <div class="main-wrapper">
         {% include 'partial/title.twig' %}
         
-        <div class="about-short-wrapper">
-            <div class="about-short-content" style="border-color:{{ section.border_color }};">
+        <div class="governance-short-wrapper">
+            <div class="governance-short-content" style="border-color:{{ section.border_color }};">
                 {% if section.title %}
                 <div class="content-title">
                     {{ section.title }}
@@ -12,6 +12,16 @@
                 <div class="content-description">
                     {{ section.description }}
                 </div>
+              
+                {% if section.logos is not empty %}
+                <div class="content-logo__container">
+                    {% for logo in section.logos %}
+                    <div class="logo">
+                        <img src="{{ logo.logo.url }}" alt="{{ logo.logo.alt }}">
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
         </div>
         {% if section.cta.title %}

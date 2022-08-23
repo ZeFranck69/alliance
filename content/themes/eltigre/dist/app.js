@@ -431,10 +431,12 @@ var Menu = /*#__PURE__*/function () {
     _defineProperty(this, "stickyMenu", function () {
       if (_this.header && _Device__WEBPACK_IMPORTED_MODULE_0__.default.isDesktop()) {
         if (!_this.isAnimating()) {
+          var splashSection = document.querySelector('.splash');
+
           var isSticky = _this.isSticky();
 
           if ( // Add sticky if scroll position is passed minScrollPositionBeforeSticky and scroll direction is up and is not sticky
-          _this.currentScrollPosition > _this.minScrollPositionBeforeSticky && _this.currentScrollPosition > window.scrollY && !isSticky) {
+          _this.currentScrollPosition > _this.minScrollPositionBeforeSticky && _this.currentScrollPosition > window.scrollY && !isSticky && splashSection) {
             _this.stickMenu();
           } else if ( // Remove sticky if scroll position is below minScrollPositionBeforeSticky or scroll direction is down and is currently sticky
           (_this.currentScrollPosition < _this.minScrollPositionBeforeSticky || _this.currentScrollPosition < window.scrollY) && isSticky) {

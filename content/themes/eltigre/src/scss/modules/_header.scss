@@ -281,14 +281,14 @@
       height: 64px;
       position: absolute;
       top: 50%;
-      right: 50px;
+      right: 20px;
       transform: translateY(-50%);
       .burger-menu__wrapper{
           position: relative;
           top: 18px;
           right: 0px;
           width: 33px;
-          height: 27px;
+          height: 18px;
           margin-left: 16px;
           transform: translateY(-50%);
           cursor: pointer;
@@ -306,10 +306,7 @@
                 top: 0%;
               }
               &:nth-child(2){
-                top: 33%;
-              }
-              &:nth-child(3){
-                top: 67%;
+                top: 50%;
               }
               &:last-child{
                 top: 100%;
@@ -324,9 +321,6 @@
                   }
                   &:nth-child(2){
                       display: none;
-                  }
-                  &:nth-child(3){
-                    display: none;
                   }
                   &:last-child{
                       top: 45%;

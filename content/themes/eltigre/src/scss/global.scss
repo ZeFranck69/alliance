@@ -26,6 +26,28 @@ html {
   overflow: hidden;
 }
 
+body{
+	&::-webkit-scrollbar {
+		width: 7px;
+	}
+	
+	/* Track */
+	&::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+	
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		background: $gold;
+		border-radius: 10px;
+		
+	}
+	
+	/* Handle on hover */
+	&::-webkit-scrollbar-thumb:hover {
+		background: $gold;
+	}
+}
 .main-wrapper {
   max-width: $gridSize;
   margin: 0 auto;
@@ -80,19 +102,19 @@ a {
 .title__number{
   font-family: "Misto", sans-serif;
   
-  font-size: 159px;
+  font-size: 139px;
   line-height: 1;
 
   letter-spacing: 10.9px;
   position: relative;
   left: -40px;
+  @include mobile{
+    font-size: 50px;
+    line-height: 61px;
+    letter-spacing: 0;
+  }
 }
 @media screen and (max-width:630px) {
-  .title__number{
-    font-size: 83px;
-    line-height: 100px;
-    letter-spacing: 8.3px;
-  }
 }
 .title--montserrat{
   font-family: "Montserrat",sans-serif;
@@ -163,6 +185,7 @@ a {
 @import 'flexible/_about';
 @import 'flexible/_about_short';
 @import 'flexible/_our_activities_short';
+@import 'flexible/_our_activities';
 @import 'flexible/_grantee_short';
 @import 'flexible/_our_grants';
 @import 'flexible/_apply';

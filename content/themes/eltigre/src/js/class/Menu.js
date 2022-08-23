@@ -27,12 +27,14 @@ export default class Menu {
 	stickyMenu = () => {
 		if (this.header && Device.isDesktop()) {
 			if (!this.isAnimating()) {
+				const splashSection = document.querySelector('.splash');
 				const isSticky = this.isSticky();
 				if (
 					// Add sticky if scroll position is passed minScrollPositionBeforeSticky and scroll direction is up and is not sticky
 					this.currentScrollPosition > this.minScrollPositionBeforeSticky &&
 					this.currentScrollPosition > window.scrollY &&
-					!isSticky
+					!isSticky &&
+					splashSection
 				) {
 					this.stickMenu();
 				} else if (
