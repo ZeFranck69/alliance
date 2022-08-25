@@ -1,20 +1,30 @@
-<section id="{{ section.first_line_title.title|sanitize }}" class="grantee-short" data-midnight="light" style="background-color: {{ section.background_color }};">
+<section id="{{ section.first_line_title.title|sanitize }}" class="involved" data-midnight="light" style="background-color: {{ section.background_color }};">
     <div class="main-wrapper">
         {% include 'partial/title.twig' %}
-        <div class="grantee-short-wrapper">
+        <div class="involved-wrapper">
             
             {% if section.title_column %}
-            <div class="grantee-short__title">
+            <div class="involved__title">
                 {{ section.title_column }}
             </div>
             {% endif %}
             
-            <div class="grantee-short-columns__wrapper">
+            <div class="involved-columns__wrapper">
                 <div class="column-left">   
-                    {{ section.left_column.description }}
+									<div class="column-title">
+										{{ section.left_column.column_title }}
+									</div>
+									<div class="column-description">
+										{{ section.left_column.description }}
+									</div>
                 </div>
                 <div class="column-right">
+									<div class="column-title">
+										{{ section.right_column.column_title }}
+									</div>			
+									<div class="column-description">
                     {{ section.right_column.description }}
+									</div>							
                 </div>
             </div>
         </div>
