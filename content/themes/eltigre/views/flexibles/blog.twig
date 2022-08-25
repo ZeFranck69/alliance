@@ -1,7 +1,12 @@
 <section class='blog' id="{{ section.title|sanitize }}" data-posts-per-page="" >
+	<div class="news__image" style="background-image:url('{{ section.background_image.url }}'); background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }};" data-midnight="dark">
+		<div class="main-wrapper">
+				{% include 'partial/title.twig' %}
+		</div>
+	</div>
     <div class="main-wrapper">
 
-        <div class="container--posts">
+        {# <div class="container--posts">
             <form class="blog__search-form">
                 <div class="search-form__container">
                     <button type="submit" class="searchButton blog__search-button">
@@ -13,7 +18,7 @@
                 </div>
             </form>
         </div>
-        
+         #}
         <div class="container--posts">
             <div class='blog__posts'>
                 <div class='posts__list infinite-scroll'>
