@@ -1,9 +1,25 @@
 {% extends "partial/tease.twig" %}
 
 {% block content %}
-	<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
-		<p>{{post.preview.length(25)}}</p>
-		{% if post.thumbnail.src %}
-			<img src="{{post.thumbnail.src}}" />
-		{% endif %}
+<a href="{{post.link}}" class="post-link"></a>
+<div class="post-thumbnail__wrapper">
+	<img src="{{ Image(post.thumbnail).src }}" alt="{{ post.thumbnail.title }}" class="post--thumbnail">
+</div>
+<div class="post-content__wrapper">
+	<div class="post-content__head">
+		<div class="head-published-date">
+			{{ post.date|date( 'd F Y' ) }}
+		</div>
+		<div class="head-author">
+			By {{ post.fullname }}
+		</div>
+	</div>	
+	<h2 class="post-content__title">{{ post.title }}</h2>
+	<div class="post-content__excerpt">
+		{{ post.excerpt }}
+	</div>
+</div>
+<div class="post-cross-button">
+	<a href="{{post.link}}" class="post-cross-link"></a>
+</div>
 {% endblock %}

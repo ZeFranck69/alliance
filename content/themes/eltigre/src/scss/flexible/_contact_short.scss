@@ -1,0 +1,184 @@
+.contact-short{
+
+    .main-wrapper{
+        position: relative;
+        padding-top: 47px;
+        padding-bottom: 0;
+        @include mobile{
+            padding-top: 29px;
+            padding-bottom: 40px;
+        }
+        .cta-wrapper{
+            position: absolute;
+            right: 20px;
+            bottom: -20px;
+        }
+		.title__wrapper{
+
+            .title-part{
+                align-items: flex-end;
+                .title__container{
+					.title__first-line{
+                        font-size: 46px;
+                        line-height: .6;
+                        letter-spacing: 2.76px;  
+						@include laptop{
+							font-size: 46px;
+							line-height: 1.7;
+						}
+						@include tablet{
+							font-size: 30px;
+						}
+						@include mobile{
+							font-size: 22px;
+						}
+                    }
+                    .title__second-line{
+                        font-size: 78px;
+                        line-height: 1.1;
+                        letter-spacing: 4.68px;  
+						@include laptop{
+							font-size: 46px;
+							line-height: 1.7;
+						}
+						@include tablet{
+							font-size: 30px;
+						}
+						@include mobile{
+							font-size: 22px;
+						}
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.contact-short-wrapper{
+
+    .contact-short__title{
+        font-size: 23px;
+        line-height: 1.4;
+        letter-spacing: .8px;
+        font-family: Optima,sans-serif;
+        font-weight: 400;
+        margin-bottom: 61px;
+        position: relative;
+        text-transform: uppercase;
+        left: 17%;
+        @include mobile{
+            font-size: 16px;
+            margin-bottom: 22px;
+        }
+        &::before{
+            position: absolute;
+            content: "";
+            max-width: 15%;
+            width: 100%;
+            height: 1px;
+            left: -17%;
+            top: 50%;
+            background-color: $black;
+        }
+    }
+    .contact-short-columns__wrapper{
+        padding: 37px 0 44px;
+        display: flex;
+        justify-content: space-between;
+		flex-wrap: nowrap;
+        @include laptop{
+            padding: 23px 0 30px;
+        }
+		@include tablet{
+			
+			flex-wrap: wrap;
+		}
+        @include mobile{
+            padding: 0 0 7px 0;
+        }
+        .column-left,.column-right{
+            max-width: 555px;
+            width: 100%;
+            font-size: 16px;
+            line-height: 1.4;
+            font-family: Optima, sans-serif;
+            font-weight: 400;
+            @include laptop{
+                max-width: 100%;
+            }
+            @include mobile{
+                font-size: 14px;
+            }
+            p{
+                margin-bottom: 19px;
+                strong{
+                    font-weight: 700;
+                }
+            }
+            h3, h4{
+                margin-bottom: 22px;
+                text-transform: uppercase;
+            }
+			.column-title{
+				position: relative;
+				font-size: 21px;
+				max-width: 300px;
+				width: 100%;
+				min-height: 60px;
+				margin-bottom: 55px;
+				left: 100px;
+				text-transform: uppercase;
+				&:before{
+					position: absolute;
+					content: "";
+					max-width: 28%;
+					width: 100%;
+					height: 1px;
+					left: -32%;
+					top: 13px;				
+					background-color: $text;
+				}
+				@include laptop{
+					margin-bottom: 8px;
+				}
+				@include mobile{
+					font-size: 16px;
+					max-width: 180px;
+					left: 60px;
+				}
+			}
+			.column-newsletter__wrapper{
+				.newsletter-content{
+					display: flex;
+					justify-content: flex-start;
+					.nl-block:first-child{
+						margin-right: 50px;
+					}
+				}
+
+			}
+        }
+		.column-right{
+			background-color: $white;
+			padding: 30px 40px;
+			@include tablet{
+				background-color: transparent;
+			}
+			
+		}
+		.contact-short-cta-wrapper--mobile{
+			display: none;
+			@include tablet{
+				display: block;
+				text-align: center;
+				max-width: 100%;
+				width: 100%;
+				margin:30px;
+			}
+
+		}
+    }
+
+    
+}

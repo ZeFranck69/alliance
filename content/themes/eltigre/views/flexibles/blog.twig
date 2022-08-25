@@ -1,0 +1,44 @@
+<section class='blog' id="{{ section.title|sanitize }}" data-posts-per-page="" >
+    <div class="main-wrapper">
+
+        <div class="container--posts">
+            <form class="blog__search-form">
+                <div class="search-form__container">
+                    <button type="submit" class="searchButton blog__search-button">
+                        <i class="fas fa-search"></i>
+                     </button>
+                     
+                    <input type="text" class="blog__search-input" placeholder="{{ __( 'Rechercher', 'eltigre' ) }}">
+                    <input type="hidden" name="post_type" value="post" />
+                </div>
+            </form>
+        </div>
+        
+        <div class="container--posts">
+            <div class='blog__posts'>
+                <div class='posts__list infinite-scroll'>
+                    {% for post in posts %}
+                    <div class="post">
+                        {% include 'partial/tease-post.twig' %}
+                    </div>
+                    {% endfor %}
+                </div>
+    
+                <div class="pagination">
+                    {% if posts.pagination.next %}
+                        <a href="{{posts.pagination.next.link}}" class="next"></a>
+                    {% endif %}
+                </div>
+    
+                <div class="page-load-status">
+                    <div class="infinite-scroll-request loader-ellips">
+                        <span class="loader-ellips__dot"></span>
+                        <span class="loader-ellips__dot"></span>
+                        <span class="loader-ellips__dot"></span>
+                        <span class="loader-ellips__dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -31,5 +31,37 @@ if ( post_password_required( $timber_post->ID ) ) {
 } else {
     $context['template'] = 'page-' . $timber_post->slug;
     $context['sections'] = get_field( 'sections' );
+	
+	foreach(  $context['sections'] as $key => $section ) {
+        switch ( $section['acf_fc_layout'] ) {
+           
+            case 'news_short' :
+                $context = array_merge( $context, Eltigre\Controllers\News::get_context( $section ) );
+            break;
+
+            case 'blog':
+                $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) :
+                    (get_query_var( 'page' ) ? get_query_var( 'page' ) : 1);
+                $search = get_query_var( 'search' ) ? get_query_var( 'search' ) : '';
+
+                $args = array(
+                    'posts_per_page' => $section['nb_posts'],
+                    'paged'          => $paged,
+                    'orderby'        => 'post_date',
+                    'order'          => 'DESC'
+                );
+
+                if ( ! empty( $search ) ) {
+                    $args[ 's' ] = $search;
+                }
+
+                $context['posts'] = new Timber\PostQuery( $args );
+                break;  
+            default: 
+            break;
+        }
+    }
+
+
     Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );
 }

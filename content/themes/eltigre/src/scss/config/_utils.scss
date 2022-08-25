@@ -50,6 +50,13 @@ $ease: (
   @warn "Unkown '#{$key}' in $ease.";
   @return null;
 }
+@mixin mobile-s {
+	@media only screen and (max-width: 400px) {
+	  @content;
+	}
+  }
+
+
 
 @mixin mobile {
   @media only screen and (max-width: 590px) {

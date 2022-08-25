@@ -133,7 +133,7 @@ if ( class_exists( 'Timber' ) ) {
 				}
 			}
 		}
-	
+		
 		public function theme_supports() {
 			load_theme_textdomain( 'eltigre', get_template_directory() . '/languages' );
 
