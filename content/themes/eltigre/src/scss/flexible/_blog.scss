@@ -1,5 +1,9 @@
 .blog{
     .news__image{
+		height: 512px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: 95px 0 0;
         .main-wrapper{
             padding-top: 52px;
             padding-bottom: 160px;
@@ -48,20 +52,21 @@
     //     padding: 95px 0 0;
     // }
 }
-.news-wrapper{
+.posts__list{
 	display: flex;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	margin-top: -130px;
+	margin-top: -170px;
 	@include tablet{
 		flex-direction: column;
 		margin-top: -90px;
 	}
-	.tease{
+	.post{
 		max-width: 49%;
 		width: 100%;
 		background-color: $opacgrey;
 		position: relative;
+		margin-bottom: 60px;
 		@include tablet{
 			max-width: 100%;
 			margin-bottom: 50px;
@@ -74,8 +79,10 @@
 		.post-thumbnail__wrapper{
 			img{
 				height: 304px;
-				object-fit: cover;
-				object-position: center;
+				-o-object-fit: cover;
+				   object-fit: cover;
+				-o-object-position: center;
+				   object-position: center;
 				max-width: 100%;
 				width: 100%;
 			}

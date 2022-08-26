@@ -1,4 +1,4 @@
-.involved{
+.contact{
 
     .main-wrapper{
         position: relative;
@@ -13,13 +13,51 @@
             right: 20px;
             bottom: -20px;
         }
+		.title__wrapper{
+
+            .title-part{
+                align-items: flex-end;
+                .title__container{
+					.title__first-line{
+                        font-size: 46px;
+                        line-height: .6;
+                        letter-spacing: 2.76px;  
+						@include laptop{
+							font-size: 46px;
+							line-height: 1.7;
+						}
+						@include tablet{
+							font-size: 30px;
+						}
+						@include mobile{
+							font-size: 22px;
+						}
+                    }
+                    .title__second-line{
+                        font-size: 78px;
+                        line-height: 1.1;
+                        letter-spacing: 4.68px;  
+						@include laptop{
+							font-size: 46px;
+							line-height: 1.7;
+						}
+						@include tablet{
+							font-size: 30px;
+						}
+						@include mobile{
+							font-size: 22px;
+						}
+                    }
+                }
+            }
+        }
     }
 
 }
 
-.involved-wrapper{
+.contact-wrapper{
 
-    .involved__title{
+    .contact__title{
         font-size: 23px;
         line-height: 1.4;
         letter-spacing: .8px;
@@ -44,20 +82,23 @@
             background-color: $black;
         }
     }
-    .involved-columns__wrapper{
-        background-color: $white;
-        padding: 37px 74px 24px 44px;
+    .contact-columns__wrapper{
+        padding: 37px 0 44px;
         display: flex;
         justify-content: space-between;
+		flex-wrap: nowrap;
         @include laptop{
-            padding: 23px 30px 28px 30px;
-            flex-wrap: wrap;
+            padding: 23px 0 30px;
         }
+		@include tablet{
+			
+			flex-wrap: wrap;
+		}
         @include mobile{
             padding: 0 0 7px 0;
         }
         .column-left,.column-right{
-            max-width: 470px;
+            max-width: 555px;
             width: 100%;
             font-size: 16px;
             line-height: 1.4;
@@ -78,26 +119,6 @@
             h3, h4{
                 margin-bottom: 22px;
                 text-transform: uppercase;
-            }
-            img{
-                height: auto;
-            }
-            ol{
-                position: relative;
-                counter-reset: li;
-                li{
-                    counter-increment: li;
-                    &:before{
-                        content: counter(li); 
-                        color: $text;
-                        font-weight: 700;
-                        display: inline-block; width: 1em;
-                        margin-left: -1em
-                    }
-                    strong{
-                        font-weight: 700;
-                    }
-                }
             }
 			.column-title{
 				position: relative;
@@ -123,11 +144,40 @@
 				}
 				@include mobile{
 					font-size: 16px;
-					max-width: 210px;
-					left: 68px;
+					max-width: 180px;
+					left: 60px;
 				}
 			}
+			.column-newsletter__wrapper{
+				.newsletter-content{
+					display: flex;
+					justify-content: flex-start;
+					.nl-block:first-child{
+						margin-right: 50px;
+					}
+				}
+
+			}
         }
+		.column-right{
+			background-color: $white;
+			padding: 30px 40px;
+			@include tablet{
+				background-color: transparent;
+			}
+			
+		}
+		.contact-cta-wrapper--mobile{
+			display: none;
+			@include tablet{
+				display: block;
+				text-align: center;
+				max-width: 100%;
+				width: 100%;
+				margin:30px;
+			}
+
+		}
     }
 
     

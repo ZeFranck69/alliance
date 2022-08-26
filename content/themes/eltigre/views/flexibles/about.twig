@@ -21,19 +21,25 @@
                         {% endfor %}
                     </div>
                 {% endif %}
-                <div class="cta-wrapper">
+                <div class="description-cta-wrapper">
                     {% if block.type == 'link' %}
+                        {% if block.button.title %}
                         <a href="{{ block.button.url }}" target="{{block.button.target }}">
                             {{ block.button.title }}
                         </a> 
+                        {% endif %}
                     {% elseif block.type == 'popup' %}
+                        {% if block.button.title %}
                         <a data-popup=":scope .modal">
                              {{ block.button.title }}
                         </a>
+                        {% endif %}
                     {% elseif block.type == 'file' %}  
+                        {% if block.label_file %}
                         <a href="{{ block.file.url }}" target="_blank" download>
                             {{ block.label_file }}     
                         </a> 
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>

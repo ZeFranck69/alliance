@@ -33,7 +33,7 @@ if ( !class_exists( 'Eltigre\Controllers\News' ) ) {
                     'content'   => get_the_content(),
                     'excerpt'   => get_the_excerpt(),
                     'link'      => get_permalink(),
-					'fullname'  => get_the_author_meta('display_name', $author_id),
+					'author'    => get_the_author_meta('display_name', $author_id),
 					'date'		=> get_post_time( get_option( 'date_format' ), false, $next, true ),
                 );
             }

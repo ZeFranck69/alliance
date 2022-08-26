@@ -68,13 +68,13 @@ body{
     padding: 0 20px;
   }
 }
-.about{
-  .main-wrapper{
-    @include mobile {
-      padding: 0;
-    }
-  }
-}
+// .about{
+//   .main-wrapper{
+//     @include mobile {
+//       padding: 0;
+//     }
+//   }
+// }
 
 img {
   max-width: 100%;
@@ -177,6 +177,7 @@ a {
 @import 'modules/_cta';
 @import 'modules/_socials';
 @import 'modules/_title';
+@import 'modules/_single';
 @import 'modules/_modal';
 
 // FLEXIBLES
@@ -192,6 +193,7 @@ a {
 @import 'flexible/_involved_short';
 @import 'flexible/_involved';
 @import 'flexible/_contact_short';
+@import 'flexible/_contact';
 @import 'flexible/_our_grants';
 @import 'flexible/_apply';
 @import 'flexible/_governance';

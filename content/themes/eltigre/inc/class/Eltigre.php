@@ -19,7 +19,7 @@ class Eltigre {
     public static $services;
 
     public function __construct() {
-        $this->register_services();
+        // $this->register_services();
         $this->init();
     }
 
@@ -119,22 +119,22 @@ class Eltigre {
         }
     }
 
-    private function register_services( ) {
-        include_once get_services_directory() . '/AbstractService.php';
+    // private function register_services( ) {
+    //     include_once get_services_directory() . '/AbstractService.php';
 
-        foreach( SERVICES as $name => $class ) {
-            $this->register_service( $name );
-        }
-    }
+    //     foreach( SERVICES as $name => $class ) {
+    //         $this->register_service( $name );
+    //     }
+    // }
 
 
-    private function register_service( $name ) {
-        $dir = strtolower( $name );
-        $service = get_services_directory() . "/$dir/$name.php";
-        if ( file_exists( $service ) ) {
-            include_once $service;
-        }
-    }
+    // private function register_service( $name ) {
+    //     $dir = strtolower( $name );
+    //     $service = get_services_directory() . "/$dir/$name.php";
+    //     if ( file_exists( $service ) ) {
+    //         include_once $service;
+    //     }
+    // }
 
 
     public static function is_ajax() {
