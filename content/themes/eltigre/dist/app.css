@@ -1516,6 +1516,10 @@ a {
   }
 }
 
+.about-short {
+  position: relative;
+  z-index: 1;
+}
 .about-short .main-wrapper {
   position: relative;
   padding-top: 52px;
@@ -1589,6 +1593,10 @@ a {
   }
 }
 
+.our-activities-short {
+  position: relative;
+  z-index: 1;
+}
 .our-activities-short .our-activities__image .main-wrapper {
   padding-top: 52px;
   padding-bottom: 160px;
@@ -1973,6 +1981,10 @@ a {
   margin-bottom: 20px;
 }
 
+.grantee-short {
+  position: relative;
+  z-index: 1;
+}
 .grantee-short .main-wrapper {
   position: relative;
   padding-top: 47px;
@@ -2068,6 +2080,10 @@ a {
   text-transform: uppercase;
 }
 
+.news {
+  position: relative;
+  z-index: 1;
+}
 .news .news__image .main-wrapper {
   padding-top: 52px;
   padding-bottom: 160px;
@@ -2153,9 +2169,9 @@ a {
 .news-wrapper .tease .post-thumbnail__wrapper img {
   height: 304px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   max-width: 100%;
   width: 100%;
 }
@@ -2503,6 +2519,10 @@ a {
   height: 100%;
 }
 
+.involved-short {
+  position: relative;
+  z-index: 1;
+}
 .involved-short .main-wrapper {
   position: relative;
   padding-top: 47px;
@@ -3684,6 +3704,10 @@ a {
     bottom: -15px;
   }
 }
+.governance-short {
+  position: relative;
+  z-index: 1;
+}
 .governance-short .main-wrapper {
   position: relative;
   padding-top: 52px;
@@ -4521,23 +4545,52 @@ a {
   padding-top: 71px;
   padding-bottom: 51px;
 }
-.contact .title__wrapper {
+.contact .title__wrapper .title-part {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
-.contact .title__number {
-  line-height: 85px;
+.contact .title__wrapper .title-part .title__container .title__first-line {
+  font-size: 46px;
+  line-height: 0.6;
+  letter-spacing: 2.76px;
 }
-.contact .title__container {
-  position: relative;
-  left: -21px;
+@media only screen and (max-width: 1024px) {
+  .contact .title__wrapper .title-part .title__container .title__first-line {
+    font-size: 46px;
+    line-height: 1.7;
+  }
 }
-.contact .title__container .title__second-line {
-  font-weight: normal;
-  font-size: 64px;
-  line-height: 49px;
-  letter-spacing: 7.68px;
+@media only screen and (max-width: 768px) {
+  .contact .title__wrapper .title-part .title__container .title__first-line {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 590px) {
+  .contact .title__wrapper .title-part .title__container .title__first-line {
+    font-size: 22px;
+  }
+}
+.contact .title__wrapper .title-part .title__container .title__second-line {
+  font-size: 78px;
+  line-height: 1.1;
+  letter-spacing: 4.68px;
+}
+@media only screen and (max-width: 1024px) {
+  .contact .title__wrapper .title-part .title__container .title__second-line {
+    font-size: 46px;
+    line-height: 1.7;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .contact .title__wrapper .title-part .title__container .title__second-line {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 590px) {
+  .contact .title__wrapper .title-part .title__container .title__second-line {
+    font-size: 22px;
+  }
 }
 
 .contact__form {
@@ -4551,10 +4604,14 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 100%;
+  max-width: 740px;
   width: 100%;
-  margin: 132px 0 20px;
+  margin: auto;
   padding: 0 67.5px;
+}
+
+.input-wrapper input {
+  border: 0px solid transparent;
 }
 
 .textarea-wrapper,
@@ -4569,14 +4626,8 @@ a {
   margin-bottom: 27px;
 }
 
-.contact__form--right,
-.contact__form--left {
-  max-width: 47%;
-  width: 100%;
-}
-
 .contact__input {
-  max-width: 315px;
+  max-width: 100%;
   width: 100%;
   padding: 5px 10px;
   border: 0;

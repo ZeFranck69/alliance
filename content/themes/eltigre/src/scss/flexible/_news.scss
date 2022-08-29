@@ -1,4 +1,6 @@
 .news{
+	position:relative;
+    z-index:1;
     .news__image{
         .main-wrapper{
             padding-top: 52px;
@@ -74,8 +76,10 @@
 		.post-thumbnail__wrapper{
 			img{
 				height: 304px;
-				object-fit: cover;
-				object-position: center;
+				-o-object-fit: cover;
+				   object-fit: cover;
+				-o-object-position: center;
+				   object-position: center;
 				max-width: 100%;
 				width: 100%;
 			}
