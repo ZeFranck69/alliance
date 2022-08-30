@@ -161,6 +161,15 @@ a {
     font-weight: bold;
   }
 }
+.left{
+  text-align: left;
+}
+.center{
+  text-align: center;
+}
+.right{
+  text-align: right;
+}
 @media screen and (max-width:630px) {
   .description--small, 
   .description--small p{

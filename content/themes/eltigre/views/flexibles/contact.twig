@@ -22,9 +22,11 @@
 						<img src="{{ section.left_column.map.url }}" alt="">
 					</div>
 				</div>
+				{% if section.button.title %}
 				<div class="contact-cta-wrapper--mobile">
 					<a href="{{ section.button.url }}" class="cta cta--gold">{{ section.button.title }}</a>
 				</div>
+				{% endif %}
 				<div class="column-right">
 
 

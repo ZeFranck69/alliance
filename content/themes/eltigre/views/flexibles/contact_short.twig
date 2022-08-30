@@ -1,67 +1,70 @@
-<section id="{{ section.first_line_title.title|sanitize }}" class="contact-short" data-midnight="light" style="background-color: {{ section.background_color }};">
-    <div class="main-wrapper">
-        {% include 'partial/title.twig' %}
-        <div class="contact-short-wrapper">
-            
-            {% if section.title_column %}
-            <div class="contact-short__title">
-                {{ section.title_column }}
-            </div>
-            {% endif %}
-            
-            <div class="contact-short-columns__wrapper">
-                <div class="column-left">   
-									<div class="column-image-map">
-										<img src="{{ section.left_column.map.url }}" alt="">
-									</div>
-                </div>
+<section id="{{ section.first_line_title.title|sanitize }}" class="contact-short" data-midnight="light"
+	style="background-color: {{ section.background_color }};">
+	<div class="main-wrapper">
+		{% include 'partial/title.twig' %}
+		<div class="contact-short-wrapper">
+
+			{% if section.title_column %}
+			<div class="contact-short__title">
+				{{ section.title_column }}
+			</div>
+			{% endif %}
+
+			<div class="contact-short-columns__wrapper">
+				<div class="column-left">
+					<div class="column-image-map">
+						<img src="{{ section.left_column.map.url }}" alt="">
+					</div>
+				</div>
+				{% if section.button.title %}
 				<div class="contact-short-cta-wrapper--mobile">
 					<a href="{{ section.button.url }}" class="cta cta--gold">{{ section.button.title }}</a>
 				</div>
-                <div class="column-right">
+				{% endif %}
+				<div class="column-right">
 
 
-									
-									<div class="column-address">
-										{{ section.right_column.address }}
-									</div>			
-									<div class="column-contact-mail">
-                    {{ section.right_column.contact_mail }}
-									</div>		
-									<div class="column-newsletter__wrapper">
-										<div class="newsletter-title">
-											{{ section.right_column.newsletter_title }}
-										</div>
-										<div class="newsletter-content">
-											<div class="nl-block">
-												<div class="block-title">
-													{{ section.right_column.subscribe_title }}
-												</div>
-												<div class="block-picto">
-													<a href="{{ section.right_column.subscribe_link }}">
-														<img src="{{ section.right_column.subscribe_picto.url }}" alt="">
-													</a>
-												</div>
-											</div>
-											<div class="nl-block">
-												<div class="block-title">
-													{{ section.right_column.linkedin_title }}
-												</div>
-												<div class="block-picto">
-													<a href="{{ section.right_column.link_linkedin }}">
-														<img src="{{ section.right_column.picto_linkedin.url }}" alt="">
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>					
-                </div>
-            </div>
-        </div>
-        {% if section.cta.title %}
-        <div class="cta-wrapper">
-            <a href="{{ section.cta.url }}" class="cta cta--black">{{ section.cta.title }}</a>
-        </div>
-        {% endif %}
-    </div>
+
+					<div class="column-address">
+						{{ section.right_column.address }}
+					</div>
+					<div class="column-contact-mail">
+						{{ section.right_column.contact_mail }}
+					</div>
+					<div class="column-newsletter__wrapper">
+						<div class="newsletter-title">
+							{{ section.right_column.newsletter_title }}
+						</div>
+						<div class="newsletter-content">
+							<div class="nl-block">
+								<div class="block-title">
+									{{ section.right_column.subscribe_title }}
+								</div>
+								<div class="block-picto">
+									<a href="{{ section.right_column.subscribe_link }}">
+										<img src="{{ section.right_column.subscribe_picto.url }}" alt="">
+									</a>
+								</div>
+							</div>
+							<div class="nl-block">
+								<div class="block-title">
+									{{ section.right_column.linkedin_title }}
+								</div>
+								<div class="block-picto">
+									<a href="{{ section.right_column.link_linkedin }}">
+										<img src="{{ section.right_column.picto_linkedin.url }}" alt="">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if section.cta.title %}
+		<div class="cta-wrapper">
+			<a href="{{ section.cta.url }}" class="cta cta--black">{{ section.cta.title }}</a>
+		</div>
+		{% endif %}
+	</div>
 </section>

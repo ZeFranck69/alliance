@@ -21,15 +21,15 @@
 						{% endif %}
 					</div>
 				</div>
-				<div class="container--posts">
+				<div class="search--posts">
 					<form class="blog__search-form">
 						<div class="search-form__container">
+							
+							<input type="text" class="blog__search-input">
+							<input type="hidden" name="post_type" value="post" />
 							<button type="submit" class="searchButton blog__search-button">
 								<i class="fas fa-search"></i>
 							</button>
-							
-							<input type="text" class="blog__search-input" placeholder="{{ __( 'Rechercher', 'eltigre' ) }}">
-							<input type="hidden" name="post_type" value="post" />
 						</div>
 					</form>
 				</div>
