@@ -423,7 +423,7 @@ a {
   top: 0;
   left: 0;
   background-color: transparent;
-  z-index: 3;
+  z-index: 100;
 }
 #site-header.sticky {
   position: fixed;
@@ -1628,7 +1628,7 @@ a {
 
 .about-short {
   position: relative;
-  z-index: 1;
+  z-index: 4;
 }
 .about-short .main-wrapper {
   position: relative;
@@ -1705,7 +1705,7 @@ a {
 
 .our-activities-short {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 .our-activities-short .our-activities__image .main-wrapper {
   padding-top: 52px;
@@ -2093,7 +2093,7 @@ a {
 
 .grantee-short {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .grantee-short .main-wrapper {
   position: relative;
@@ -2631,7 +2631,7 @@ a {
 
 .involved-short {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .involved-short .main-wrapper {
   position: relative;
