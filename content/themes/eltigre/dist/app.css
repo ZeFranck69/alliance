@@ -653,7 +653,6 @@ a {
   #site-header.disabled .socials {
     display: none;
   }
-
   .header--mobile {
     display: block;
     position: relative;
@@ -664,7 +663,6 @@ a {
   .header--mobile .return--link {
     display: none;
   }
-
   .main-logo--mobile {
     margin: 36px auto;
     max-width: 155px;
@@ -673,7 +671,6 @@ a {
   .main-logo--mobile img {
     height: 100%;
   }
-
   .site__burger-menu {
     display: inline-block;
     width: 52px;
@@ -732,7 +729,6 @@ a {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
-
   .menu-link svg {
     height: 30px;
     width: 30px;
@@ -847,7 +843,6 @@ a {
   .footer__logo-wrapper {
     display: none;
   }
-
   .footer__logo-wrapper--mobile {
     display: block;
     margin-bottom: 20px;
@@ -2806,7 +2801,7 @@ a {
 }
 .involved-wrapper .involved-columns__wrapper {
   background-color: #fff;
-  padding: 37px 74px 24px 44px;
+  padding: 37px 44px 24px 44px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3742,11 +3737,9 @@ textarea {
   .apply-content {
     margin-right: 0;
   }
-
   .apply-content__subtitle {
     text-align: center;
   }
-
   .column__critera {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3759,7 +3752,6 @@ textarea {
   .column__critera .cta-wrapper {
     margin: 42px auto 56px;
   }
-
   .apply-content__columns {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -3787,17 +3779,14 @@ textarea {
     left: -29px;
     max-width: 184px;
   }
-
   .apply-content {
     margin-right: 0;
   }
-
   .apply .title__container .title__first-line {
     font-size: 48px;
     line-height: 42px;
     letter-spacing: 7.76px;
   }
-
   .apply .title__container .title__second-line {
     font-size: 21px;
     line-height: 25px;
@@ -4364,28 +4353,23 @@ textarea {
     max-width: 307px;
     margin: 0 auto;
   }
-
   .organisation .organisation__first-part .blocks .block:first-child {
     padding-left: 58px;
     padding-right: 58px;
     padding-bottom: 17px;
   }
-
   .organisation .organisation__first-part .blocks .block .block__content {
     margin: 44px 0 0;
   }
-
   .organisation .organisation__first-part .blocks .block:last-child {
     padding-left: 28px;
     padding-right: 28px;
   }
-
   .organisation .organisation__first-part .blocks .block .block__content {
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.7px;
   }
-
   .organisation .organisation__second-part .blocks-circles {
     margin-top: 20px;
   }
@@ -4437,19 +4421,15 @@ textarea {
         -ms-flex-align: center;
             align-items: center;
   }
-
   .organisation .organisation__image {
     padding-top: 20px;
   }
-
   .organisation .organisation__first-part .blocks .block:first-child {
     margin-bottom: 20px;
   }
-
   .organisation .organisation__second-part {
     padding: 444px 0 66px;
   }
-
   .organisation .organisation__first-part {
     margin-top: 27px;
   }
@@ -4470,20 +4450,17 @@ textarea {
   .organisation .organisation__subtitle {
     margin: 71px 0 0;
   }
-
   .organisation .title__container {
     left: -27px;
     max-width: 327px;
     top: 19px;
   }
-
   .organisation .title__container .title__first-line {
     font-size: 34px;
     line-height: 35px;
     letter-spacing: 4.08px;
     word-break: break-all;
   }
-
   .organisation .title__container .title__second-line {
     font-size: 16px;
     line-height: 19px;
@@ -4494,7 +4471,6 @@ textarea {
   .organisation .title__container {
     max-width: 180px;
   }
-
   .organisation .title__container .title__first-line {
     word-break: break-word;
   }
@@ -4514,7 +4490,6 @@ textarea {
   .organisation .organisation__second-part {
     padding-top: 462px;
   }
-
   .organisation .title__container .title__second-line {
     font-size: 13px;
   }
@@ -4667,18 +4642,15 @@ textarea {
   .members__image {
     padding-top: 33px;
   }
-
   .members .title__container {
     max-width: 229px;
     left: -31px;
   }
-
   .members .title__container .title__first-line {
     font-size: 23px;
     line-height: 28px;
     letter-spacing: 11.5px;
   }
-
   .members .title__container .title__second-line {
     font-size: 32px;
     line-height: 39px;
@@ -4689,7 +4661,6 @@ textarea {
   .members__image {
     height: 611px;
   }
-
   .members__block {
     top: 0;
     margin-top: 22px;
@@ -4713,11 +4684,9 @@ textarea {
   .members .title__container {
     max-width: 179px;
   }
-
   .members .title__container .title__first-line {
     font-size: 17px;
   }
-
   .members .title__container .title__second-line {
     font-size: 26px;
   }

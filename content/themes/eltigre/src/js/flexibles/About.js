@@ -18,23 +18,15 @@ class Section {
 
 	animate() {
 		const blocksWrapper = this.section.querySelector('.blocks');
-		const firstColumnDescription = this.section.querySelector('.first-column__description');
 		const button = this.section.querySelectorAll('.first-column__cta-wrapper');
-		const blocks = this.section.querySelectorAll('.block');
-		const blocksElements = blocksWrapper.querySelectorAll(
-			'.block__title, .block__picto, .block__description, block__stats, block__source'
-		);
+		const blocks = this.section.querySelectorAll('.about-block');
+
 		const animation = gsap
 			.timeline()
 			.fromTo(
 				button,
 				{ scale: 0.8, x: -100, autoAlpha: 0 },
 				{ scale: 1, x: 0, autoAlpha: 1, stagger: 0.1, duration: 0.5 }
-			)
-			.fromTo(
-				firstColumnDescription,
-				{ scale: 0.4, y: 50, autoAlpha: 0 },
-				{ scale: 1, y: 0, autoAlpha: 1, stagger: 0.1, duration: 0.5 }
 			)
 			.fromTo(
 				blocks,

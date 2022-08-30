@@ -156,12 +156,16 @@ export default class App {
 			const number = title.querySelector('.title__number');
 			const firstLine = title.querySelector('.title__first-line');
 			const secondLine = title.querySelector('.title__second-line');
-
+			const btn = title.querySelector('.btn-part');
+			const subtitle = title.querySelector('.sutitle-part');
 			const animation = gsap.timeline();
 
 			if (number) animation.fromTo(number, { scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.45 });
 			if (firstLine) animation.fromTo(firstLine, { y: -30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5 });
 			if (secondLine) animation.fromTo(secondLine, { y: 30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5 });
+			if (btn) animation.fromTo(btn, { scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.45 });
+			if (subtitle)
+				animation.fromTo(subtitle, { scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.45 });
 
 			ScrollTrigger.create({
 				trigger: title,
