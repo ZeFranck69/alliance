@@ -27,6 +27,10 @@ define( 'COLORS', array(
         'name' => 'Grey',
         'classname' => 'grey'
     ),
+    '5D3F4D' => array(
+        'name' => 'Dark Violet',
+        'classname' => 'darkviolet'
+    ),
     '5C504B' => array(
         'name' => 'Text',
         'classname' => 'text'
@@ -39,4 +43,5 @@ define( 'COLORS', array(
         'name' => 'Black',
         'classname' => 'black'
     )
+    
 ) );
