@@ -1107,7 +1107,14 @@ var Section = /*#__PURE__*/function () {
     });
 
     _defineProperty(this, "initInfiniteScroll", function () {
-      var path = 'page/{{#}}'; // this.loadMoreButton.style.display = 'inline-block';
+      var search = (0,_utils_functions_js__WEBPACK_IMPORTED_MODULE_0__.getQueryParam)('s');
+
+      if (search) {
+        _this.searchInput.value = search;
+      } // const path = 'page/{{#}}';
+
+
+      var path = _this.searchInput.value ? "page/{{#}}?s=".concat(_this.searchInput.value) : 'page/{{#}}'; // this.loadMoreButton.style.display = 'inline-block';
 
       _this.InfiniteScroll = new (infinite_scroll__WEBPACK_IMPORTED_MODULE_4___default())(_this.postsContainer, {
         path: path,

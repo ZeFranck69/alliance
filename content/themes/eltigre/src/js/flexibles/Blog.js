@@ -52,7 +52,12 @@ class Section {
 		}, searchDelay);
 	};
 	initInfiniteScroll = () => {
-		const path = 'page/{{#}}';
+		const search = getQueryParam('s');
+		if (search) {
+			this.searchInput.value = search;
+		}
+		// const path = 'page/{{#}}';
+		const path = this.searchInput.value ? `page/{{#}}?s=${this.searchInput.value}` : 'page/{{#}}';
 		// this.loadMoreButton.style.display = 'inline-block';
 
 		this.InfiniteScroll = new InfiniteScroll(this.postsContainer, {
