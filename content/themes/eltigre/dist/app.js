@@ -1084,6 +1084,28 @@ var Section = /*#__PURE__*/function () {
 
     _classCallCheck(this, Section);
 
+    _defineProperty(this, "search", function (ev) {
+      ev.preventDefault();
+      var searchDelay = ev.type === 'keyup' ? 1000 : 0;
+      var searchValue = _this.searchInput.value;
+      if (_this.searchTimeout) clearTimeout(_this.searchTimeout);
+      _this.searchTimeout = setTimeout(function () {
+        var args = {
+          action: 'filter_posts',
+          s: searchValue,
+          postsPerPage: _this.postsPerPage
+        };
+        (0,_utils_functions_js__WEBPACK_IMPORTED_MODULE_0__.post)(args, function (response) {
+          var HTML = JSON.parse(response).data;
+          _this.postsContainer.innerHTML = HTML;
+
+          _this.InfiniteScroll.destroy();
+
+          _this.initInfiniteScroll();
+        });
+      }, searchDelay);
+    });
+
     _defineProperty(this, "initInfiniteScroll", function () {
       var path = 'page/{{#}}'; // this.loadMoreButton.style.display = 'inline-block';
 
@@ -1110,10 +1132,19 @@ var Section = /*#__PURE__*/function () {
     this.postsContainer = section.querySelector('.posts__list'); // this.loadMoreButton = section.querySelector('.recipes__load-more');
 
     this.animate();
+    this.initSearchForm();
     this.initInfiniteScroll();
   }
 
   _createClass(Section, [{
+    key: "initSearchForm",
+    value: function initSearchForm() {
+      this.form = this.section.querySelector('form.blog__search-form');
+      this.searchInput = this.form.querySelector('input.blog__search-input');
+      this.form.addEventListener('submit', this.search);
+      this.searchInput.addEventListener('keyup', this.search);
+    }
+  }, {
     key: "animate",
     value: function animate() {
       var blogSection = this.section;

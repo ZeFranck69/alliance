@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 import InfiniteScroll from 'infinite-scroll';
-import { post } from '../utils/functions';
+import { getQueryParam, post } from '../utils/functions';
 
 class Blog {
 	constructor(className) {
@@ -21,8 +21,36 @@ class Section {
 		this.postsContainer = section.querySelector('.posts__list');
 		// this.loadMoreButton = section.querySelector('.recipes__load-more');
 		this.animate();
+		this.initSearchForm();
 		this.initInfiniteScroll();
 	}
+	initSearchForm() {
+		this.form = this.section.querySelector('form.blog__search-form');
+		this.searchInput = this.form.querySelector('input.blog__search-input');
+		this.form.addEventListener('submit', this.search);
+		this.searchInput.addEventListener('keyup', this.search);
+	}
+	search = (ev) => {
+		ev.preventDefault();
+		const searchDelay = ev.type === 'keyup' ? 1000 : 0;
+		const searchValue = this.searchInput.value;
+		if (this.searchTimeout) clearTimeout(this.searchTimeout);
+
+		this.searchTimeout = setTimeout(() => {
+			const args = {
+				action: 'filter_posts',
+				s: searchValue,
+				postsPerPage: this.postsPerPage,
+			};
+
+			post(args, (response) => {
+				const HTML = JSON.parse(response).data;
+				this.postsContainer.innerHTML = HTML;
+				this.InfiniteScroll.destroy();
+				this.initInfiniteScroll();
+			});
+		}, searchDelay);
+	};
 	initInfiniteScroll = () => {
 		const path = 'page/{{#}}';
 		// this.loadMoreButton.style.display = 'inline-block';
