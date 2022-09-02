@@ -1653,6 +1653,10 @@ a {
     margin-bottom: 20px;
   }
 }
+.about-block .about-block__source {
+  margin: 20px 0 0;
+  font-size: 12px;
+}
 
 .about-short {
   position: relative;

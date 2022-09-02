@@ -21,6 +21,11 @@
                         {% endfor %}
                     </div>
                 {% endif %}
+                {% if block.source %}
+                <div class="about-block__source">
+                    {{ block.source }}
+                </div>
+                {% endif %}
                 <div class="description-cta-wrapper">
                     {% if block.type == 'link' %}
                         {% if block.button.title %}
