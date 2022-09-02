@@ -69,13 +69,14 @@
   text-align: right;
   font-weight: 700;
   position: relative;
+  padding-right: 30px;
   a{
       position: relative;
       &:after{
           content: '';
           background-image: url('../images/arrow-view-more.svg');
           position: absolute;
-          right: -10%;
+          right: -18px;
           top: 50%;
           transform: translateY(-50%);
           width: 12px;
@@ -88,7 +89,7 @@
 
           &:after{
               transition: all .4s ease-in-out;
-              right: -12%;
+              right: -24px;
           }
       }
   }

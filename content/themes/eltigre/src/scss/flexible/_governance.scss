@@ -114,7 +114,19 @@
             }
         }
         .content-description{
+            
 
+            p{
+                margin-bottom: 19px;
+                strong{
+                    font-weight: 700;
+                }
+
+                a{
+                    color: $gold;
+                    text-decoration: underline;
+                }
+            }
         }
     }
 }

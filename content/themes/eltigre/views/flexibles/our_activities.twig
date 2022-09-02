@@ -39,7 +39,7 @@
 								{% for list in block.content_picto %}
 								<div class="picto-text">
 									<div class="picto-part">
-										<img src="{{ list.picto.url }}" alt="{{ list.picto.alt }}">
+										<img src="{{ Image(list.picto).src }}" alt="{{ Image(list.picto).alt }}">
 									</div>
 									<div class="text-part">
 										{{ list.text }}
@@ -49,6 +49,29 @@
 							</div>
 						</div>
 						{% endif %}
+						{% for button in block.block_button %}
+						<div class="description-cta-wrapper">
+							{% if button.type == 'link' %}
+								{% if button.button.title  %}
+								<a href="{{ button.button.url }}" target="{{button.button.target }}">
+									{{ button.button.title }}
+								</a> 
+								{% endif %}
+							{% elseif button.type == 'popup' %}
+								{% if button.popup_label  %}
+								<a data-popup=":scope .modal">
+									 {{ button.popup_label }}
+								</a>
+								{%endif%}
+							{% elseif button.type == 'file' %}  
+								{% if button.label_file  %}
+								<a href="{{ button.file.url }}" target="_blank" download>
+									{{ button.label_file }}     
+								</a> 
+								{% endif %}
+							{% endif %}
+						</div>
+						{% endfor %}
 					</div>
 					{% endfor %}
 				</div>

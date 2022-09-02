@@ -41,7 +41,6 @@
                 padding: 40px;
                 font-size: 16px;
                 line-height: 1.4;
-                letter-spacing: .8px;
                 font-family: Optima,sans-serif;
                 font-weight: 400;
                 &:first-child{
@@ -85,16 +84,41 @@
                     .list-picto-text__container{
                         .picto-text{
                             display: flex;
-                            align-items: center;
-                            justify-content: center;
+                            align-items: flex-start;
+                            justify-content: space-between;
                             .picto-part{
-
+                                img{
+                                    max-width: 48px;
+                                    width: 100%;
+                                    height: 100%;
+                                }
                             }
                             .text-part{
-                                max-width: 380px;
+                                max-width: 400px;
                                 width: 100%;
+                                margin-bottom: 8px;
+                                @include laptop{
+                                    max-width: 88%;
+                                }
+
+                                @include mobile{
+                                    margin-left:20px;
+                                    max-width: 100%;
+                                }
+                                p{
+
+                                    strong{
+                                        font-weight: 700;
+                                    }
+                                }
                             }
                         }
+                    }
+                }
+                .description-cta-wrapper{
+
+                    a{
+                        color: $white;
                     }
                 }
             }
@@ -124,7 +148,7 @@
             }
         }
         .three-blocks__description{
-            max-width: 675px;
+            max-width: 849px;
             width: 100%;
             font-size: 16px;
             line-height: 1.4;
