@@ -18,17 +18,23 @@
                     
                     <div class="description-cta-wrapper">
                         {% if block_content.right_column.right_column_button.type == 'link' %}
+                        {% if block_content.right_column.right_column_button.button.title  %}
                             <a href="{{ block_content.right_column.right_column_button.button.url }}" target="{{block_content.right_column.right_column_button.button.target }}">
                                 {{ block_content.right_column.right_column_button.button.title }}
                             </a> 
+                            {% endif %}
                         {% elseif block_content.right_column.right_column_button.type == 'popup' %}
+                        {% if block_content.right_column.right_column_button.popup_label  %}
                             <a data-popup=":scope .modal">
-                                 {{ block_content.right_column.right_column_button.button.title }}
+                                 {{ block_content.right_column.right_column_button.popup_label }}
                             </a>
+                        {%endif%}
                         {% elseif block_content.right_column.right_column_button.type == 'file' %}  
+                            {% if block_content.right_column.right_column_button.label_file  %}
                             <a href="{{ block_content.right_column.right_column_button.file.url }}" target="_blank" download>
                                 {{ block_content.right_column.right_column_button.label_file }}     
                             </a> 
+                            {% endif %}
                         {% endif %}
                     </div>
                 </div>
