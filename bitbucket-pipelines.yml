@@ -1,0 +1,66 @@
+image: atlassian/default-image:3
+
+definitions:
+  caches:
+    node: content/themes/eltigre/node_modules
+    composer: vendor/
+  steps:
+    - step: &composer
+        name: "Install project via composer"
+        image: composer:2
+        caches:
+          - composer
+        script:
+          - composer install --no-dev --ignore-platform-reqs
+        artifacts:
+          - wp/**
+          - content/plugins/**
+          - content/languages/**
+          - vendor/**
+
+    - step: &npm
+        name: "npm install and build"
+        caches:
+          - node
+          - composer
+        script:
+          - cd content/themes/eltigre
+          - npm ci
+          - npm run build
+        artifacts:
+          - content/themes/eltigre/dist/**
+
+    - step: &production_deploy
+        name: Deploy files changes
+        deployment: production
+        script:
+          - pipe: atlassian/rsync-deploy:0.7.1
+            variables:
+              USER: $SFTP_USERNAME
+              SERVER: $SFTP_SERVER
+              REMOTE_PATH: $REMOTE_PATH
+              LOCAL_PATH: './'
+              EXTRA_ARGS: '--exclude-from=deploy/exclude --include-from=deploy/include'
+
+    - step: &dev_deploy
+        name: Deploy files changes
+        deployment: staging
+        script:
+          - pipe: atlassian/rsync-deploy:0.7.1
+            variables:
+              USER: $SFTP_USERNAME
+              SERVER: $SFTP_SERVER
+              REMOTE_PATH: $REMOTE_PATH
+              LOCAL_PATH: './'
+              EXTRA_ARGS: '--exclude-from=deploy/exclude --include-from=deploy/include'
+
+pipelines:
+  branches:
+    dev:
+      - step: *composer
+      - step: *npm
+      - step: *dev_deploy
+    master:
+      - step: *composer
+      - step: *npm
+      - step: *production_deploy

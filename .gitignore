@@ -1,6 +1,3 @@
-# WordPress
-.htaccess
-
 # Configuration file
 .env
 
@@ -13,18 +10,17 @@ logs/
 # Composer / npm
 /vendor
 /wp
-composer.lock
 composer.phar
-package-lock.json
 .vscode*
 **/node_modules/
 
 # ignore everything in the "wp-content" directory, except:
 # "themes" directory
 content/*
-# content/themes/eltigre/dist
-!content/themes/
+!content/uploads/.htaccess
 !content/uploads/.gitkeep
+!content/themes/
+content/themes/eltigre/dist
 
 # Others
 .DS_Store
