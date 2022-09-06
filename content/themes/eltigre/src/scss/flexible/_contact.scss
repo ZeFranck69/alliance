@@ -214,6 +214,24 @@ textarea{
         @include mobile{
             padding: 0 0 7px 0;
         }
+
+        .column-left {
+            margin-right: 20px;
+
+            @include laptop{
+              margin-right: 0;
+            }
+
+            iframe {
+                height: 100% !important;
+                max-width: 100%;
+
+                @include laptop {
+                    height: 400px !important;
+                }
+            }
+        }
+
         .column-left,.column-right{
             max-width: 555px;
             width: 100%;

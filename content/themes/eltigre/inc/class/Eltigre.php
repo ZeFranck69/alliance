@@ -19,13 +19,12 @@ class Eltigre {
     public static $services;
 
     public function __construct() {
-        // $this->register_services();
         $this->init();
     }
 
 
     private function init() {
-        $this->load_service( 'ACF' );
+        // $this->load_service( 'ACF' );
 
         if ( self::is_ajax() ) 
             $this->load_ajax();
@@ -39,13 +38,13 @@ class Eltigre {
 
     
     private function load_ajax() {
-        $this->load_service( 'Contact' );
+        // $this->load_service( 'Contact' );
         self::require_folder( 'ajax' );
     }
 
     
     private function load_admin() {
-        $this->load_service( 'Support' );
+        // $this->load_service( 'Support' );
         self::require_folder( 'admin' );
     }
 
@@ -118,23 +117,6 @@ class Eltigre {
             return self::$services[ $name ];
         }
     }
-
-    // private function register_services( ) {
-    //     include_once get_services_directory() . '/AbstractService.php';
-
-    //     foreach( SERVICES as $name => $class ) {
-    //         $this->register_service( $name );
-    //     }
-    // }
-
-
-    // private function register_service( $name ) {
-    //     $dir = strtolower( $name );
-    //     $service = get_services_directory() . "/$dir/$name.php";
-    //     if ( file_exists( $service ) ) {
-    //         include_once $service;
-    //     }
-    // }
 
 
     public static function is_ajax() {
