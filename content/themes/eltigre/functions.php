@@ -75,7 +75,11 @@ if ( class_exists( 'Timber' ) ) {
 			// Logo
 			$logo_ID 				= get_theme_mod( 'custom_logo' );
 			$context['logo'] 		= wp_get_attachment_image( $logo_ID , '', false, array( 'class' => 'site-logo' ) );
-			$context['logo_src']	= wp_get_attachment_image_src( $logo_ID , 'full' )[0];
+			$image_sources		 	= wp_get_attachment_image_src( $logo_ID , 'full' );
+
+			if ( ! empty( $image_sources ) ) {
+				$context['logo_src' ] = $image_sources[0];
+			}
 
 			// Global options
 			$context['options'] 	= get_fields( 'options' );
