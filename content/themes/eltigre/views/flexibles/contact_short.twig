@@ -1,3 +1,4 @@
+
 <section id="{{ section.first_line_title.title|sanitize }}" class="contact-short" data-midnight="light"
 	style="background-color: {{ section.background_color }};">
 	<div class="main-wrapper">
@@ -29,10 +30,8 @@
 					<div class="column-contact-mail">
 						{{ section.right_column.contact_mail }}
 					</div>
+					
 					<div class="column-newsletter__wrapper">
-						<div class="newsletter-title">
-							{{ section.right_column.newsletter_title }}
-						</div>
 						<div class="newsletter-content">
 							<div class="nl-block">
 								<div class="block-title">
@@ -40,7 +39,11 @@
 								</div>
 								<div class="block-picto">
 									<a href="{{ section.right_column.subscribe_link }}">
+									{% if section.right_column.subscribe_picto.subtype == 'svg+xml' %}
+										{{ fn( 'file_get_contents', section.right_column.subscribe_picto.url ) }}
+									{% else %}
 										<img src="{{ section.right_column.subscribe_picto.url }}" alt="">
+									{% endif %}
 									</a>
 								</div>
 							</div>
@@ -50,7 +53,11 @@
 								</div>
 								<div class="block-picto">
 									<a href="{{ section.right_column.link_linkedin }}">
+									{% if section.right_column.picto_linkedin.subtype == 'svg+xml' %}
+										{{ fn( 'file_get_contents', section.right_column.picto_linkedin.url ) }}
+									{% else %}
 										<img src="{{ section.right_column.picto_linkedin.url }}" alt="">
+									{% endif %}
 									</a>
 								</div>
 							</div>

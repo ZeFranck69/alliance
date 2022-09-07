@@ -42,7 +42,18 @@
         }
     }
 
+    .block-picto {
+        img, svg {
+            height: 45px;
+            width: auto;
+            display: block;
+            g {
+                fill: $darkviolet !important;
+            }
+        }
+    }
 }
+
 .contact {
     padding-top: 71px;
     padding-bottom: 51px;
