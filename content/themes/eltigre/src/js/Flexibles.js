@@ -16,6 +16,7 @@ import Activities from './flexibles/Activities';
 import Grantee from './flexibles/Grantee';
 import Governance from './flexibles/Governance';
 import Blog from './flexibles/Blog';
+import Map from './flexibles/Map';
 
 const SECTIONS = {
 	contact: Contact,
@@ -36,6 +37,7 @@ const SECTIONS = {
 	organisation: Organisation,
 	splash: Splash,
 	members: Members,
+	map: Map,
 };
 
 export default function FlexiblesInit() {

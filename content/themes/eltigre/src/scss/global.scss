@@ -26,6 +26,10 @@ html {
   overflow: hidden;
 }
 
+* {
+  text-align: justify !important;
+}
+
 body{
 	&::-webkit-scrollbar {
 		width: 7px;
@@ -211,3 +215,4 @@ a {
 @import 'flexible/_members';
 @import 'flexible/_simple';
 @import 'flexible/_contact-form';
+@import 'flexible/_map';
