@@ -100,7 +100,7 @@ section a:not(.cta){
   text-decoration: underline;
 }
 .column-contact-mail a{
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .mobile-only {

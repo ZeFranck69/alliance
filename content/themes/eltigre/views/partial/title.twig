@@ -23,7 +23,7 @@
         </div>
     </div>
     {% endif %}
-    {% if section.subtitle %}
+    {% if section.subtitle is not empty %}
     <div class="sutitle-part sutitle__number--{{ section.second_line_title.title|sanitize }}">
         <div class="sutitle__container" style="color:{{ section.subtitle_color }}">
            {{ section.subtitle }}

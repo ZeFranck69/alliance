@@ -44,12 +44,12 @@
 									{{ section.right_column.subscribe_title }}
 								</div>
 								<div class="block-picto">
-									<a href="{{ section.right_column.subscribe_link }}">
-									{% if section.right_column.subscribe_picto.subtype == 'svg+xml' %}
-										{{ fn( 'file_get_contents', section.right_column.subscribe_picto.url ) }}
-									{% else %}
-										<img src="{{ section.right_column.subscribe_picto.url }}" target="_blank">
-									{% endif %}
+									<a href="{{ section.right_column.subscribe_link }}" target="_blank">
+										{% if section.right_column.subscribe_picto.subtype == 'svg+xml' %}
+											{{ fn( 'file_get_contents', section.right_column.subscribe_picto.url ) }}
+										{% else %}
+											<img src="{{ section.right_column.subscribe_picto.url }}">
+										{% endif %}
 									</a>
 								</div>
 							</div>
@@ -58,8 +58,8 @@
 									{{ section.right_column.linkedin_title }}
 								</div>
 								<div class="block-picto">
-									<a href="{{ section.right_column.link_linkedin }}">
-										<img src="{{ section.right_column.picto_linkedin.url }}" target="_blank">
+									<a href="{{ section.right_column.link_linkedin }}" target="_blank">
+										<img src="{{ section.right_column.picto_linkedin.url }}">
 									</a>
 								</div>
 							</div>
