@@ -5,11 +5,11 @@
         </div>
     </div>
     <div class="main-wrapper">
-        <div class="news-wrapper">
-					{# mettre le tease post #}
-					{% for post in news.posts %}
-						{% include 'partial/tease-post.twig' %}
-					{% endfor %}
+        <div class="news-wrapper {% if posts|length == 1 %}only-one-post{% endif %}">
+            {# mettre le tease post #}
+            {% for post in news.posts %}
+                {% include 'partial/tease-post.twig' %}
+            {% endfor %}
         </div>
         {% if section.cta.title %}
         <div class="cta-wrapper">

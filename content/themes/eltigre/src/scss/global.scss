@@ -96,7 +96,9 @@ a {
   color: inherit;
 }
 
-section a:not(.cta),
+section a:not(.cta){
+  text-decoration: underline;
+}
 .column-contact-mail a{
   text-decoration: none;
 }
