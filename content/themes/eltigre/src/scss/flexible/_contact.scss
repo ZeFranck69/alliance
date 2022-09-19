@@ -298,6 +298,9 @@ textarea{
 				.newsletter-content{
 					display: flex;
 					justify-content: flex-start;
+                    @include mobile{
+                        flex-direction: column;
+                    }
 					.nl-block:first-child{
 						margin-right: 50px;
 					}
@@ -327,4 +330,19 @@ textarea{
     }
 
     
+}
+
+
+.nl-block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.newsletter-content p{
+    margin-bottom:0 !important;
+}
+
+.block-picto{
+    margin-left:10px;
 }

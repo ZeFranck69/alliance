@@ -96,6 +96,11 @@ a {
   color: inherit;
 }
 
+section a:not(.cta),
+.column-contact-mail a{
+  text-decoration: none;
+}
+
 .mobile-only {
   display: none;
 

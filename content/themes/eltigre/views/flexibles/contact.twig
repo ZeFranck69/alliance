@@ -48,7 +48,7 @@
 									{% if section.right_column.subscribe_picto.subtype == 'svg+xml' %}
 										{{ fn( 'file_get_contents', section.right_column.subscribe_picto.url ) }}
 									{% else %}
-										<img src="{{ section.right_column.subscribe_picto.url }}" alt="">
+										<img src="{{ section.right_column.subscribe_picto.url }}" target="_blank">
 									{% endif %}
 									</a>
 								</div>
@@ -59,11 +59,7 @@
 								</div>
 								<div class="block-picto">
 									<a href="{{ section.right_column.link_linkedin }}">
-									{% if section.right_column.picto_linkedin.subtype == 'svg+xml' %}
-										{{ fn( 'file_get_contents', section.right_column.picto_linkedin.url ) }}
-									{% else %}
-										<img src="{{ section.right_column.picto_linkedin.url }}" alt="">
-									{% endif %}
+										<img src="{{ section.right_column.picto_linkedin.url }}" target="_blank">
 									</a>
 								</div>
 							</div>
