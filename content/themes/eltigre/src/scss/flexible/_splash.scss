@@ -12,6 +12,10 @@
     flex-direction: column;
     padding-bottom: 158px;  
     background-repeat: no-repeat;
+	
+	@media screen and (max-height:700px) {
+		padding-bottom: 0;
+	}
     &.no-margin{
         padding-bottom: 0;
     }

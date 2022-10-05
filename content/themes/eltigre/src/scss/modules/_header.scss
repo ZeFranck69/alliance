@@ -187,7 +187,7 @@
                   li{
                       text-align: center !important;
                       margin: 0 auto;
-                      padding: 22px 0;
+                      padding: 16px 0;
                       border-bottom: 1px solid;
                       max-width: 370px;
                         width: 100%;
@@ -223,8 +223,12 @@
           }
       }
       &.active{
-
-          .header-content{
+			.header--mobile{
+				background-color: #fff;
+    			opacity: 0.9;
+				transition: opacity 0.35s ease, background-color 0.35s ease;
+			}
+          	.header-content{
               display: flex;
               opacity: 1;
               height: 100%;
@@ -233,6 +237,9 @@
               transition: opacity .35s ease, background-color .35s ease;
               background-color: rgba(255, 255, 255, 0.9) ;
               height: 100vh;
+			  top: 96px;
+			  justify-content: flex-start;
+
 
               .main-logo{
                   display: none;
@@ -262,6 +269,7 @@
       width: 100%;
       height: 100px !important;
       margin: auto;
+	  top: -40px;
 
       .return--link{
           display: none;
@@ -347,7 +355,7 @@
               ul{
                   
                   li{
-                      margin: 12px auto;
+                      margin: 12px auto 5px;
                       a{
                           color: $black;
                           font-size: 22px;
