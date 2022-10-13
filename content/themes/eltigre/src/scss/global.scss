@@ -26,8 +26,20 @@ html {
   overflow: hidden;
 }
 
-* {
-  text-align: justify !important;
+.content-description p,
+.block-content__simple,
+.three-blocks__description p,
+.column-left p,
+.column-right p,
+.column-description,
+.article-body p,
+.about-block__description,
+.stats-wrapper,
+.about-block__description ul li,
+.block-content__list,
+.three-blocks__description,
+.our-activities-wrapper .three-blocks__part .three-blocks__wrapper .three-blocks__block .block-description {
+  text-align: justify;
 }
 
 i, em {

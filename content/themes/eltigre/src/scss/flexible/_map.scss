@@ -1,6 +1,10 @@
 .map {
+    padding: 60px 20px;
     .map__container {
         position: relative;
+        max-width: 700px;
+        width: 100%;
+        margin: auto;
     }
     
     img {

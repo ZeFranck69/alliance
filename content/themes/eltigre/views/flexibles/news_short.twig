@@ -5,8 +5,8 @@
         </div>
     </div>
     <div class="main-wrapper">
-        <div class="news-wrapper {% if news.posts|length < 1 %}only-one-post{% endif %}">
-            {# mettre le tease post #}
+        <div class="news-wrapper {% if news.posts|length == 1 %}only-one-post{% endif %}">
+            
             {% for post in news.posts %}
                 {% include 'partial/tease-post.twig' %}
             {% endfor %}
