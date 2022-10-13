@@ -45,6 +45,14 @@
 
         .header-content {
             height: 126px;
+            .header__logo-wrapper{
+                display: none;
+            }
+            .header__logo-wrapper--alternate{
+                display: block;
+                max-width: 80px;
+                width: 100%;
+            }
             .main-logo{
                 max-width: 95px;
                 width: 100%;
@@ -60,6 +68,19 @@
       height: 126px;
       position: relative;
       // background-color: darkorange;
+      .header__logo-wrapper{
+        max-width: 80px;
+        width: 100%;
+        img{
+            height: 100%;
+        }
+      }
+      .header__logo-wrapper--alternate{
+        display: none;
+        img{
+            height: 100%;
+        }
+       }
       .header--menu-container{
           max-width: 100%;
           background-color: transparent;
@@ -237,9 +258,20 @@
               transition: opacity .35s ease, background-color .35s ease;
               background-color: rgba(255, 255, 255, 0.9) ;
               height: 100vh;
-			  top: 96px;
+              top: 100px;
 			  justify-content: flex-start;
-
+                .header__logo-wrapper{
+                    display: none;
+                }
+                .header__logo-wrapper--alternate{
+                    display: block;
+                    max-width: 80px;
+                    width: 100%;
+                    margin-bottom: 20px;
+                    img{
+                        height: auto;
+                    }
+                }
 
               .main-logo{
                   display: none;

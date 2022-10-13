@@ -1,4 +1,14 @@
 <div class='header-content main-wrapper'>
+    <div class="header__logo-wrapper">
+        <a href="{{ site.url }}" class="logo--sticky">
+            {{ logo }}
+        </a>
+    </div>
+    <div class="header__logo-wrapper--alternate">
+        <a href="{{ site.url }}">
+            <img src="{{ options.logo_alternatif.url }}" alt="{{ options.logo_alternatif.alt }}"> 
+        </a>
+    </div>
     <div class='header--menu-container'>
         <nav class='nav__links'>
             {% include 'partial/menu.twig' with {'items': menu_header.get_items } %}
@@ -8,9 +18,10 @@
 
 <div class="header--mobile">
     <div class="main-logo--mobile">
-        <a class='logo--link' href='{{ site.url }}'>
-            <!-- <img src="{{ options.footer_logo.url }}" alt="{{ options.footer_logo.alt }}"> -->
-        </a>
+        <!-- <a class='logo--link' href='{{ site.url }}'>
+            <img src="{{ options.logo_alternatif.url }}" alt="{{ options.logo_alternatif.alt }}"> 
+            <!-- <img src="{{ options.footer_logo.url }}" alt="{{ options.footer_logo.alt }}"> 
+        </a> -->
     </div>
 
     <div class="site__burger-menu">
