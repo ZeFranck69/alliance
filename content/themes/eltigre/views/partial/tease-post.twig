@@ -3,12 +3,16 @@
 {% block content %}
 <a href="{{post.link}}" class="post-link"></a>
 <div class="post-thumbnail__wrapper">
-	<img src="{{ Image(post.thumbnail).src }}" alt="{{ post.thumbnail.title }}" class="post--thumbnail">
+	{% if post.thumbnail %}
+		<img src="{{ Image(post.thumbnail).src }}" alt="{{ post.thumbnail.title }}" class="post--thumbnail">
+	{% else %}
+		<img src="{{ options.default_image.url  }}" alt="{{ options.default_image.title }}" class="post--thumbnail">
+	{% endif %}
 </div>
 <div class="post-content__wrapper">
 	<div class="post-content__head">
 		<div class="head-published-date">
-			{{ post.date|date( 'd F Y' ) }}
+			{{  post.post_date|date( 'd F Y' ) }}
 		</div>
 		<!-- <div class="head-author">
 			By {{ post.author.name }}
