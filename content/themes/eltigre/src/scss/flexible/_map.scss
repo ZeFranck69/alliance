@@ -1,10 +1,19 @@
 .map {
     padding: 60px 20px;
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    @include laptop{
+        gap: 15px;
+    }
+    @include tablet{
+        flex-direction: column-reverse;
+    }
     .map__container {
         position: relative;
         max-width: 700px;
         width: 100%;
-        margin: auto;
+        margin: 0;
     }
     
     img {
@@ -96,6 +105,31 @@
             img {
                 height: 72px;
                 width: auto;
+            }
+        }
+    }
+    .map__wrapper-legend{
+        font-family: 'Optima', sans-serif;
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: center;
+        }
+        .legend-wrapper{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding-bottom:15px;
+            @include tablet{
+                gap: 5px;
+                padding-bottom:0;
+            }
+            .caption-color{
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                border: 1px solid white;
             }
         }
     }

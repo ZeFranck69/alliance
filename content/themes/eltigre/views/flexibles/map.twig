@@ -19,5 +19,16 @@
                 <div class="tooltip__logo"></div>
             </div>
         </div>
+
+    </div>
+    <div class="map__wrapper-legend">
+        {% for legend in section.captions %}
+            <div class="legend-wrapper">
+                <div class="caption-color" style="background-color: {{ legend.caption_color }};"></div>
+                <div class="caption">
+                    {{ legend.caption }}
+                </div>
+            </div>
+        {% endfor %}
     </div>
 </section>
