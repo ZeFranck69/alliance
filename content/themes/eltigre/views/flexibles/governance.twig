@@ -13,15 +13,36 @@
                 <div class="content-description">
                     {{ gov.description }}
                 </div>
-                {% if gov.logos_partners is not empty %}
-                <div class="content-logo__container">
-                    {% for logo in gov.logos_partners %}
-                    <div class="logo">
-                        <img src="{{ logo.logo.url }}" alt="{{ logo.logo.alt }}">
+                {% if gov.logos_partners is not empty and gov.images_type == "logo" %}
+                    <div class="content-logo__container">
+                        {% for logo in gov.logos_partners %}
+                            <div class="logo">
+                                <img src="{{ logo.logo.url }}" alt="{{ logo.logo.alt }}">
+                            </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-                </div>
+                {% elseif gov.images_type == "teams" %}
+                    <div class="content-image__container">
+                        {% for image in gov.logos_partners %}
+                            <div class="team-block">
+                                <div class="image">
+                                    <img src="{{ image.image.url }}" alt="{{ image.image.alt }}">
+                                </div>
+                                {% if image.name %}
+                                <h3 class="team-name">
+                                    {{ image.name }}  
+                                </h3>
+                                {% endif %}
+                                {% if image.position %}
+                                <p class="team-position">
+                                    {{ image.position }}
+                                </p>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
                 {% endif %}
+
             </div>
             {% endfor %}
         </div>
