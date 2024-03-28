@@ -1,0 +1,50 @@
+.splash{
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.splash__image{
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 158px;  
+    background-repeat: no-repeat;
+	
+	@media screen and (max-height:700px) {
+		padding-bottom: 0;
+	}
+    &.no-margin{
+        padding-bottom: 0;
+    }
+}
+.splash-content{
+    max-width: 535px;
+    width: 100%;
+    margin: 0 auto;
+    letter-spacing: 1.8px;
+    p{
+        margin-bottom: 19px;
+        opacity: 1;
+    }
+}
+.splash-content__logo{
+    max-width: 204px;
+    width: 100%;
+    margin: 0 auto 94px;
+    opacity: 1;
+    &.no-margin{
+        margin-bottom: 0;
+    }
+}
+.splash-content__button{
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+@media screen and (max-width:1024px) {
+    
+}

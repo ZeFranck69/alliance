@@ -1,0 +1,155 @@
+.governance{
+
+    .main-wrapper{
+        position: relative;
+        padding-top: 52px;
+        padding-bottom: 60px;
+        @include mobile{
+            padding-top: 19px;
+            padding-bottom: 15px;
+        }
+        .cta-wrapper{
+            position: absolute;
+            right: 20px;
+            bottom: -20px;
+        }
+        .title__wrapper{
+
+            .title-part{
+                align-items: flex-end;
+                .title__container{
+
+                    .title__second-line{
+                        font-size: 78px;
+                        line-height: 98px;
+                        letter-spacing: 0;  
+						@include laptop{
+							font-size: 46px;
+							line-height: 1.7;
+						}
+						@include tablet{
+							font-size: 30px;
+						}
+						@include mobile{
+							font-size: 22px;
+						}
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.governance-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .governance-content{
+        border: 1px solid;
+        padding: 30px;
+        margin: 20px 0;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.2;
+        // letter-spacing: 3.2px;
+        font-family: 'Optima',sans-serif;
+        @include mobile{
+            font-size: 14px;
+        }
+        &.width-full{
+            max-width: 100%;
+            width: 100%;
+            padding: 40px 95px;
+            @include tablet{
+                padding: 20px;
+            }
+        }
+        &.width-demi{
+            max-width: 49.5%;
+            width: 100%;
+            @include laptop{
+                max-width: 100%;
+            }
+            @include tablet{
+                padding: 20px;
+            }
+        }
+        .content-logo__container{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            margin: 30px 30px 45px;
+            @include tablet{
+                margin-top: 20px;
+                margin-bottom: 0;
+            }
+            .logo{
+                max-width:135px;
+                width: 100%;
+                margin: 10px 20px;
+                @include mobile{
+                    margin: 10px 5px;
+                }
+            }
+        }
+        .content-image__container{
+            display: flex;
+            gap: 15px;
+            flex-wrap:wrap;
+            margin: 30px auto 10px;
+            @include mobile-s {
+                flex-direction: column;
+            }
+            .team-block {
+                flex: 1;
+            }
+            .team-name {
+                color: $moutarde;
+                font-weight: 700;
+                margin: 5px auto;
+                text-align: center
+            }
+            .team-position {
+                margin: 0 auto 5px;
+                text-align: center;
+            }
+        }
+        .content-title{
+            margin-bottom: 60px;
+            position: relative;
+            @include tablet{
+                margin-bottom: 32px;
+            }
+            &:after{
+                content: '';
+                height: 1px;
+                width: 60px;
+                background-color: #e1b920;;
+                position: absolute;
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+                @include tablet{
+                    bottom: -15px;
+                }
+            }
+        }
+        .content-description{
+            
+
+            p{
+                text-align: justify !important;
+                margin-bottom: 19px;
+                strong{
+                    font-weight: 700;
+                }
+
+                a{
+                    color: $gold;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

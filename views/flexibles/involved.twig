@@ -1,0 +1,59 @@
+<section id="{{ section.first_line_title.title|sanitize }}" class="involved" data-midnight="light"
+	style="background-color: {{ section.background_color }};">
+	<div class="main-wrapper">
+		{% include 'partial/title.twig' %}
+		<div class="involved-wrapper">
+
+			{% if section.title_column %}
+			<div class="involved__title">
+				{{ section.title_column }}
+			</div>
+			{% endif %}
+
+			<div class="involved-columns__wrapper">
+				<div class="column-left">
+					<div class="column-title">
+						{{ section.left_column.column_title }}
+					</div>
+					<div class="column-description">
+						{{ section.left_column.description }}
+					</div>
+				</div>
+				<div class="column-right">
+					<div class="column-title">
+						{{ section.right_column.column_title }}
+					</div>
+					<div class="column-description">
+						{{ section.right_column.description }}
+                        <div class="description-cta-wrapper">
+                            {% if section.right_column.right_column_button.type == 'link' %}
+                            {% if section.right_column.right_column_button.button.title %}
+                            <a href="{{ section.right_column.right_column_button.button.url }}" target="{{ section.right_column.right_column_button.button.target }}">
+                                {{ section.right_column.right_column_button.button.title }}
+                            </a>
+                            {% endif %}
+                            {% elseif section.right_column.right_column_button.type == 'popup' %}
+                            {% if section.right_column.right_column_button.button.title %}
+                            <a data-popup=":scope .modal">
+                                {{ section.right_column.right_column_button.button.title }}
+                            </a>
+                            {% endif %}
+                            {% elseif section.right_column.right_column_button.type == 'file' %}
+                            {% if section.right_column.right_column_button.label_file %}
+                            <a href="{{ section.right_column.right_column_button.file.url }}" target="_blank" download>
+                                {{ section.right_column.right_column_button.label_file }}
+                            </a>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if section.cta.title %}
+		<div class="cta-wrapper">
+			<a href="{{ section.cta.url }}" class="cta cta--black">{{ section.cta.title }}</a>
+		</div>
+		{% endif %}
+	</div>
+</section>

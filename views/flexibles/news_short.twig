@@ -1,0 +1,20 @@
+<section id="{{ section.first_line_title.title|sanitize }}" class="news" data-midnight="light" style="background-color: {{ section.background_color }};">
+    <div class="news__image" style="background-image:url('{{ section.background_image.url }}'); background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }};" data-midnight="dark">
+        <div class="main-wrapper">
+            {% include 'partial/title.twig' %}
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div class="news-wrapper {% if news.posts|length == 1 %}only-one-post{% endif %}">
+            
+            {% for post in news.posts %}
+                {% include 'partial/tease-post.twig' %}
+            {% endfor %}
+        </div>
+        {% if section.cta.title %}
+        <div class="cta-wrapper">
+            <a href="{{ section.cta.url }}" class="cta cta--black">{{ section.cta.title }}</a>
+        </div>
+        {% endif %}
+    </div>
+</section>

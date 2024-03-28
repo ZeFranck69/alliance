@@ -1,0 +1,27 @@
+<section id="{{ section.first_line_title.title|sanitize }}" class="grantee-short" data-midnight="light" style="background-color: {{ section.background_color }};">
+    <div class="main-wrapper">
+        {% include 'partial/title.twig' %}
+        <div class="grantee-short-wrapper">
+            
+            {% if section.title_column %}
+            <div class="grantee-short__title">
+                {{ section.title_column }}
+            </div>
+            {% endif %}
+            
+            <div class="grantee-short-columns__wrapper">
+                <div class="column-left">   
+                    {{ section.left_column.description }}
+                </div>
+                <div class="column-right">
+                    {{ section.right_column.description }}
+                </div>
+            </div>
+        </div>
+        {% if section.cta.title %}
+        <div class="cta-wrapper">
+            <a href="{{ section.cta.url }}" class="cta cta--black">{{ section.cta.title }}</a>
+        </div>
+        {% endif %}
+    </div>
+</section>

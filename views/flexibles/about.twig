@@ -1,0 +1,61 @@
+<section id="{{ section.first_line_title.title|sanitize }}" class="about" data-midnight="light">
+    <div class="main-wrapper">
+        <div class="about-wrapper">
+        {% include 'partial/title.twig' %}
+        
+        {% for block in section.blocks %}
+            <div class="about-block about-block--{{ loop.index }}" 
+            style="{% if block.background_type == 'color' %}background-color:{{ block.background_color }}{% elseif block.background_type == 'image' %}background-image:url('{{ block.background_image.url }}'){% endif %}; border-color:{% if block.border_color is not empty %}{{ block.border_color }}{% else %}transparent{% endif %};">
+                <div class="about-block__title">
+                    {{ block.title }}
+                </div>
+                <div class="about-block__description">
+                    {{ block.description }}
+                </div>
+                {% if block.stats is not empty %}
+                    <div class="stats-wrapper">
+                        {% for stat in block.stats %}
+                        <div class="stat">
+                            {{ stat.text }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if block.source %}
+                <div class="about-block__source">
+                    {{ block.source }}
+                </div>
+                {% endif %}
+                <div class="description-cta-wrapper">
+                    {% if block.type == 'link' %}
+                        {% if block.button.title %}
+                        <a href="{{ block.button.url }}" target="{{block.button.target }}">
+                            {{ block.button.title }}
+                        </a> 
+                        {% endif %}
+                    {% elseif block.type == 'popup' %}
+                        {% if block.button.title %}
+                        <a data-popup=":scope .modal">
+                             {{ block.button.title }}
+                        </a>
+                        {% endif %}
+                    {% elseif block.type == 'file' %}  
+                        {% if block.label_file %}
+                        <a href="{{ block.file.url }}" target="_blank" download>
+                            {{ block.label_file }}     
+                        </a> 
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        {% if section.cta.title %}
+        <div class="splash-content__button">
+            <a href="{{ section.cta.url }}" class="cta cta--gold cta--small" target="{{ section.cta.target }}">
+                {{ section.cta.title }}
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,96 @@
+.cta {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 10px 60px 9px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: .8px;
+  font-family: 'Optima',sans-serif;
+  font-weight: 400;
+}
+.cta--small{
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 1.32px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 6px 23px 5px;
+  text-transform: uppercase;
+}
+.cta--gold{
+  border: 1px solid $moutarde;
+  color: $moutarde;
+  transition: all .35s ease;
+  background-color: transparent;
+  &:hover{
+    background-color: $moutarde;
+    color: $white;
+    
+  }
+}
+.cta--black{
+  border: 1px solid $black;
+  color: $black;
+  transition: all .35s ease;
+  background-color: $white;
+  padding: 10px 34px 9px;
+  &:hover{
+    background-color: $black;
+    color: $white;
+    
+  }
+}
+
+.cta--join-us{
+  border: 1px solid $moutarde;
+  color: $moutarde;
+  transition: all .35s ease;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 1.92px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 86px 55px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .35s ease;
+  background-color: transparent;
+  &:hover{
+    color: $white;
+    background-color: $moutarde;
+  }
+}
+.description-cta-wrapper{
+  text-align: right;
+  font-weight: 700;
+  position: relative;
+  padding-right: 30px;
+  a{
+      position: relative;
+      &:after{
+          content: '';
+          background-image: url('../images/arrow-view-more.svg');
+          position: absolute;
+          right: -18px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 12px;
+          height: 12px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          transition: all .4s ease-in-out;
+      }
+      &:hover{
+
+          &:after{
+              transition: all .4s ease-in-out;
+              right: -24px;
+          }
+      }
+  }
+}

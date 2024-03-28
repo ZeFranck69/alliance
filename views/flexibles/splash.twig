@@ -1,0 +1,25 @@
+<section id="splash" class="splash">
+    <div class="splash-container">
+        <div class="splash__image {{ section.description is not empty ? '' : 'no-margin' }}" style="height: {{ section.height }}vh;background-image:url('{{ section.background_image.url }}');background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }}; ">
+           <div class="main-wrapper">
+               <div class="splash-content__logo {{ section.description is not empty ? '' : 'no-margin' }}">
+							 		<a href="{{ site.url }}" class="splash-logo__link">
+										 <img src="{{ section.logo.url }}" alt="{{ section.logo.alt }}" class="logo">
+									</a>
+               </div>
+               {% if section.description %}
+               <div class="splash-content description">
+                   {{ section.description }}
+               </div>
+               {% endif %}
+               {% if section.button.title %}
+               <div class="splash-content__button">
+                    <a href="{{ section.button.url }}" class="cta cta--gold cta--small" target="{{ section.link.target }}">
+                        {{ section.button.title }}
+                    </a>
+               </div>
+               {% endif %}
+           </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,80 @@
+<section class='blog' id="{{ section.title|sanitize }}" data-posts-per-page="" >
+	<div class="news__image" style="background-image:url('{{ section.background_image.url }}'); background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }};" data-midnight="dark">
+		<div class="main-wrapper">
+			<div class="title__wrapper">
+                <div class="title-part">
+                    <div class="title__number title__number--{{ section.second_line_title.title|sanitize }}">
+                        {{ section.number }}
+                    </div>
+                    <div class="title__container">
+                        {% if section.first_line_title.title %}
+                        <div class="title__first-line">
+                            <h2 class="title--{{ section.first_line_title.fonts }}" style="color: {{section.first_line_title.color}};">{{ section.first_line_title.title }}</h2>
+                        </div>
+                        {% endif %}
+                        {% if section.second_line_title.title %}
+                        <div class="title__second-line">
+                            <h2 class="title--{{ section.second_line_title.fonts }}" style="color: {{section.second_line_title.color}};">{{ section.second_line_title.title }}</h2>    
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="search--posts">
+                    <form class="blog__search-form">
+                        <div class="search-form__container">
+                            
+                            <input type="text" class="blog__search-input">
+                            <input type="hidden" name="post_type" value="post" />
+                            <button type="submit" class="searchButton blog__search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+               
+            </div>
+            <style>
+                .title__number--{{ section.second_line_title.title|sanitize }}{ 
+                    /* color: {{ section.background_color }}; 
+                    text-shadow: {{ section.number_color }} 1px 1px, {{ section.number_color }} -1px 1px, {{ section.number_color }} -1px -1px,{{ section.number_color }} 1px -1px; */
+                    color: transparent;
+                    -webkit-text-stroke: 1px {{ section.number_color }};
+                }
+            
+                .sutitle__number--{{ section.second_line_title.title|sanitize }}.sutitle-part:before{
+                    background-color: {{ section.number_color }};
+            
+                }
+                
+            </style>
+		</div>
+	</div>
+    <div class="main-wrapper">
+        <div class="container--posts">
+            <div class='blog__posts'>
+                <div class='posts__list infinite-scroll {% if posts|length == 1 %}only-one-post{% endif %}'>
+                    {% for post in posts %}                                                                          
+                        <div class="post">
+                            {% include 'partial/tease-post.twig' %}
+                        </div>
+                    {% endfor %}
+                </div>
+    
+                <div class="pagination">
+                    {% if posts.pagination.next %}
+                        <a href="{{posts.pagination.next.link}}" class="next"></a>
+                    {% endif %}
+                </div>
+    
+                <div class="page-load-status">
+                    <div class="infinite-scroll-request loader-ellips">
+                        <span class="loader-ellips__dot"></span>
+                        <span class="loader-ellips__dot"></span>
+                        <span class="loader-ellips__dot"></span>
+                        <span class="loader-ellips__dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

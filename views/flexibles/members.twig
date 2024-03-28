@@ -1,0 +1,45 @@
+<section id="{{ section.first_line_title.title|sanitize }}" class="members" data-midnight="dark">
+    <div class="members__image" style="background-image:url('{{ section.background_image.url }}'); background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }};background-repeat:no-repeat">
+
+        {% include 'partial/title.twig' %}
+
+        <div class="main-wrapper members-wrapper">
+            <div class="members__block" style="background-color: {{ section.first_part.background_color }};" data-midnight="light">
+                {% if section.first_part.hook %}
+                <div class="hook">
+                    {{ section.first_part.hook }}
+                </div>
+                {% endif %}
+                <div class="logos">
+                    {% for logo in section.first_part.logos %}
+                    <div class="logo">
+                        <img src="{{ logo.logo.url }}" alt="{{ logo.logo.alt }}" style="width: {{ logo.width }}px;">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    {% if section.display_members == true %}
+    <div class="main-wrapper members-wrapper">
+        <div class="members--second_part" style="background-color:{{ section.second_part.background_color }}">
+            {% for block in section.second_part.members %}
+            <div class="second-part__members-block">
+                <div class="hook" gsap-reveal>
+                    {{ block.hook }}
+                </div>
+                <div class="members-block__logos">
+                    {% for logo in block.logos %}
+                    <div class="members-block__logo" style="background-image: url('{{ logo.logo.url }}'); background-position: center;background-size: cover;background-repeat: no-repeat;">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+</section>

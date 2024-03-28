@@ -1,0 +1,66 @@
+<section id="{{ section.first_line_title.title|sanitize }}" class="organisation">
+    <div class="organisation__image" style="background-image:url('{{ section.background_image.url }}'); background-position: {{ section.horizontal_layout }} {{ section.vertical_layout }};" data-midnight="dark">
+        
+        {% include 'partial/title.twig' %}
+        {% if section.first_part.subtitle %}
+        <div class="organisation__subtitle">
+            <h3 class="subtitle" style="color: {{ section.first_part.subtitle_color }};">
+                {{ section.first_part.subtitle }}
+            </h3>
+        </div>
+        {% endif %}
+        <div class="main-wrapper organisation__first-part">
+            <div class="blocks">
+                {% for block in section.first_part.blocks %}
+                    <div class="block" style="background-color: {{ block.background_color }}; color:{{ block.text_color }};background-image:url('{{ block.background_image.url }}');">
+                        {% if block.block_title %}
+                        <div class="block__title">
+                            <h4 class="title">{{ block.block_title }}</h4>
+                        </div>
+                        {% endif %}
+                        {% if block.picto.url %}
+                        <div class="block__picto">
+                            <img src="{{ block.picto.url }}" alt="{{ block.picto.alt }}" class="picto__image">
+                        </div>
+                        {% endif %}
+                        <div class="block__content">
+                            {% for paragraph in block.contents %}
+                            <div class="content__paragraph">
+                                {{ paragraph.paragraph }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="organisation__second-part" data-midnight="light">
+        {% if section.second_part.subtitle %}
+        <div class="organisation__subtitle">
+            <h3 class="subtitle " style="color: {{ section.second_part.subtitle_color }};">
+                {{ section.second_part.subtitle }}
+            </h3>
+        </div>  
+        {% endif %}
+
+        <div class="main-wrapper">
+            <div class="blocks-circles">
+                {% for circle in section.second_part.blocks %}
+                <div class="block-circle" style="background-image: url('{{ circle.background.url }}'); background-position: center; background-size: cover; color:{{ circle.text_color }};">
+                    {% if circle.block_title %}
+                    <span class="block-circle__title">
+                        <h4 class="title">{{ circle.block_title }}</h4>
+                    </span>
+                    {% endif %} 
+                    {% if circle.content %}
+                    <span class="block-circle__content">
+                        {{ circle.content }}
+                    </span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

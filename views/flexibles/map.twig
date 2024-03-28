@@ -1,0 +1,34 @@
+<section class="map main-wrapper">
+    <div class="map__container">
+        <img src="{{ section.image.url }}" alt="" />    
+
+        {% for pin in section.pins %}
+            {% set top = pin.position.y / section.image.height * 100 %}
+            {% set left = pin.position.x / section.image.width * 100 %}
+            <div 
+            class="pin" 
+            style="top: {{ top > 100 ? 100 : top < 0 ? 0 : top }}%; left: {{ left > 100 ? 100 : left < 0 ? 0 : left }}%; background-color: {{pin.color}};" 
+            data-pin={{pin|json_encode|e('html_attr') }}></div>
+        {% endfor %}
+
+        <div class="tooltip">
+            <h3 class="tooltip__title"></h3>
+            <div class="tooltip__content"></div>
+            <div class="tooltip__footer">
+                <div class="tooltip__links"></div>
+                <div class="tooltip__logo"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="map__wrapper-legend">
+        {% for legend in section.captions %}
+            <div class="legend-wrapper">
+                <div class="caption-color" style="background-color: {{ legend.caption_color }};"></div>
+                <div class="caption">
+                    {{ legend.caption }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>

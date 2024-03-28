@@ -1,0 +1,244 @@
+@import 'lib/_reset';
+// @import 'lib/_normalize';
+
+// Config
+
+@import 'config/_variables';
+@import 'config/_utils';
+@import 'config/_fonts';
+
+// Global style
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: inherit;
+}
+
+#content {
+  position: relative;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.content-description p,
+.block-content__simple,
+.three-blocks__description p,
+.column-left p,
+.column-right p,
+.column-description,
+.article-body p,
+.about-block__description,
+.stats-wrapper,
+.about-block__description ul li,
+.block-content__list,
+.three-blocks__description, {
+  text-align: justify;
+}
+
+i, em {
+  font-style: 'italic' !important;
+}
+
+strong, b {
+  font-weight: bold !important;
+}
+
+body{
+	&::-webkit-scrollbar {
+		width: 7px;
+	}
+	
+	/* Track */
+	&::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+	
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		background: $gold;
+		border-radius: 10px;
+		
+	}
+	
+	/* Handle on hover */
+	&::-webkit-scrollbar-thumb:hover {
+		background: $gold;
+	}
+}
+.main-wrapper {
+  max-width: $gridSize;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include desktop-large {
+    max-width: $gridSize;
+  }
+
+  @include laptop {
+    padding: 0 20px;
+  }
+  @include mobile {
+    padding: 0 20px;
+  }
+
+  @include tablet {
+    padding: 0 20px;
+  }
+}
+// .about{
+//   .main-wrapper{
+//     @include mobile {
+//       padding: 0;
+//     }
+//   }
+// }
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+section a:not(.cta){
+  text-decoration: underline;
+}
+.column-contact-mail a{
+  text-decoration: none !important;
+}
+
+.mobile-only {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+.title__wrapper{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.title__number{
+  font-family: "Misto", sans-serif;
+  
+  font-size: 139px;
+  line-height: 1;
+
+  letter-spacing: 10.9px;
+  position: relative;
+  left: -40px;
+  @include mobile{
+    font-size: 50px;
+    line-height: 61px;
+    letter-spacing: 0;
+  }
+}
+@media screen and (max-width:630px) {
+}
+.title--montserrat{
+  font-family: "Montserrat",sans-serif;
+  font-weight: 600;
+}
+.title--misto{
+  font-family: "Misto", sans-serif;
+}
+.title--optima{
+  font-family: "Optima", sans-serif;
+}
+.block__title{
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 3.6px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.descritpion,
+.description p{
+  
+  font-family: "Optima",sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: normal;
+  color: $white;
+
+  strong{
+    font-weight: bold;
+  }
+}
+.description--small, 
+.description--small p{
+  font-family: "Optima",sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: normal;
+  letter-spacing: 0.8px;
+
+  strong{
+    font-weight: bold;
+  }
+}
+.left{
+  text-align: left;
+}
+.center{
+  text-align: center;
+}
+.right{
+  text-align: right;
+}
+@media screen and (max-width:630px) {
+  .description--small, 
+  .description--small p{
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.7px;
+  }
+}
+
+// Modules
+
+@import 'modules/_header';
+@import 'modules/_footer';
+@import 'modules/_cta';
+@import 'modules/_socials';
+@import 'modules/_title';
+@import 'modules/_single';
+@import 'modules/_modal';
+
+// FLEXIBLES
+
+@import 'flexible/_splash';
+@import 'flexible/_about';
+@import 'flexible/_about_short';
+@import 'flexible/_our_activities_short';
+@import 'flexible/_our_activities';
+@import 'flexible/_grantee_short';
+@import 'flexible/_news';
+@import 'flexible/_blog';
+@import 'flexible/_involved_short';
+@import 'flexible/_involved';
+@import 'flexible/_contact_short';
+@import 'flexible/_contact';
+@import 'flexible/_our_grants';
+@import 'flexible/_apply';
+@import 'flexible/_governance';
+@import 'flexible/_governance_short';
+@import 'flexible/_organisation';
+@import 'flexible/_members';
+@import 'flexible/_simple';
+@import 'flexible/_contact-form';
+@import 'flexible/_map';
